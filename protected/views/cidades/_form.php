@@ -1,6 +1,6 @@
 <div class="box box-primary">
     <div class="box-header with-border">
-        <h2>Cidades</h2>
+        <h2>Cidade</h2>
     </div>
 
     <?php $form=$this->beginWidget('CActiveForm', array(

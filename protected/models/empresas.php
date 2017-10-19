@@ -72,6 +72,7 @@ class empresas extends CActiveRecord
 			'endereco' => 'Endereco',
 			'bairro' => 'Bairro',
 			'cidadeId' => 'Cidade',
+                        'cidade.nome' => 'Cidade',
 			'cep' => 'Cep',
 			'telefone' => 'Telefone',
 			'cnpj' => 'Cnpj',
@@ -131,4 +132,20 @@ class empresas extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+        
+        public function afterFind() {
+            
+            //Adiciona as mascaras de CNPJ e Telefone
+             
+            $this->cnpj = Yii::app()->functions->mask($this->cnpj, '##.###.###/####-##'); 
+            
+            if (strlen($this->telefone) == 11) {
+                $this->telefone = Yii::app()->functions->mask($this->telefone, '(##) #####-####');
+            }else if (strlen($this->telefone) == 10) {
+                $this->telefone = Yii::app()->functions->mask($this->telefone, '(##) ####-####');
+            }
+                
+            
+            parent::afterFind();
+        }
 }

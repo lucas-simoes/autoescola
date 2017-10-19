@@ -3,61 +3,43 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
-)); ?>
+)); 
+
+    $cidades = new cidades();
+    $objCidades = $cidades->findAll();
+    
+    $cidades = array();
+    
+    foreach ($objCidades as $rst) {
+        $cidades[$rst['id']] = $rst['nome'];
+    }
+
+?>
 
 	<div class="row">
-		<?php echo $form->label($model,'empresasId'); ?>
-		<?php echo $form->textField($model,'empresasId'); ?>
+            <div class="col-md-2">
+                <?php echo $form->label($model,'empresasId'); ?>
+		<?php echo $form->textField($model,'empresasId', array('class'=>'form-control input-sm')); ?>
+            </div>
+		
+            <div class="col-md-4">
+                <?php echo $form->label($model,'nome'); ?>
+		<?php echo $form->textField($model,'nome',array('size'=>60,'maxlength'=>80, 'class'=>'form-control input-sm')); ?>
+            </div>
+                
+            <div class="col-md-4">
+                <?php echo $form->label($model,'cidadeId'); ?>
+		<?php echo $form->dropDownList($model,'cidadeId', $cidades, array('class'=>'form-control')); ?> 
+            </div>                
+            
+            <div class="col-md-2">
+                <div class="row buttons" style="padding-top: 20px">
+                    <?php echo CHtml::submitButton('Filtrar', array('class'=>'btn btn-default')); ?>
+                </div>
+            </div>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'nome'); ?>
-		<?php echo $form->textField($model,'nome',array('size'=>60,'maxlength'=>80)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'endereco'); ?>
-		<?php echo $form->textField($model,'endereco',array('size'=>60,'maxlength'=>80)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'bairro'); ?>
-		<?php echo $form->textField($model,'bairro',array('size'=>40,'maxlength'=>40)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'cidadeId'); ?>
-		<?php echo $form->textField($model,'cidadeId'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'cep'); ?>
-		<?php echo $form->textField($model,'cep',array('size'=>10,'maxlength'=>10)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'telefone'); ?>
-		<?php echo $form->textField($model,'telefone',array('size'=>20,'maxlength'=>20)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'cnpj'); ?>
-		<?php echo $form->textField($model,'cnpj',array('size'=>20,'maxlength'=>20)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>80)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'uf'); ?>
-		<?php echo $form->textField($model,'uf',array('size'=>2,'maxlength'=>2)); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
-	</div>
+	
 
 <?php $this->endWidget(); ?>
 

@@ -73,6 +73,10 @@ return array(
 				*/
 			),
 		),
+            
+                'functions'=> array(
+                    'class'=>'Functions'	       
+                 ),
 
 	),
 
