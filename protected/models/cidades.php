@@ -53,7 +53,7 @@ class cidades extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'Id',
+			'id' => 'Código',
 			'nome' => 'Nome',
 		);
 	}
