@@ -756,5 +756,6 @@
 <script src="<?php echo Yii::app()->baseUrl; ?>/dist/js/demo.js"></script>
 
 <script src="<?php echo Yii::app()->baseUrl; ?>/dist/js/autoescola.js"></script>
+<script src="<?php echo Yii::app()->baseUrl; ?>/dist/js/jquery.maskedinput.min.js"></script>
 </body>
 </html>

@@ -96,7 +96,7 @@
             <div class="form-group">
                     <?php echo $form->labelEx($model,'cnpj', array('class'=>'col-sm-2 control-label')); ?>
                 <div class="col-sm-10">
-                    <?php echo $form->textField($model,'cnpj',array('size'=>20,'maxlength'=>20, 'class'=>'form-control')); ?>
+                    <?php echo $form->textField($model,'cnpj',array('size'=>20,'maxlength'=>20, 'class'=>'form-control cnpj')); ?>
                     <?php echo $form->error($model,'cnpj'); ?>
                 </div>		
             </div>    

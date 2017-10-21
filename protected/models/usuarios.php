@@ -6,17 +6,18 @@
  * The followings are the available columns in table 'usuarios':
  * @property integer $id
  * @property string $nome
- * @property integer $cpf
+ * @property string $cpf
  * @property string $nascimento
- * @property integer $fixo
- * @property integer $celular
+ * @property string $telefone
  * @property string $endereco
- * @property integer $numero
  * @property string $bairro
  * @property integer $cidadeId
- * @property integer $cep
+ * @property string $cep
  * @property string $email
  * @property integer $empresasId
+ * @property string $login
+ * @property string $senha
+ * @property string $uf 
  */
 class usuarios extends CActiveRecord
 {
@@ -36,16 +37,22 @@ class usuarios extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nome, cpf, endereco, numero, bairro, cidadeId, cep, empresasId', 'required'),
-			array('cpf, fixo, celular, numero, cidadeId, cep, empresasId', 'numerical', 'integerOnly'=>true),
+			array('nome, cpf, endereco, bairro, cidadeId, cep, empresasId, login, senha, uf', 'required'),
+			array('cidadeId, empresasId', 'numerical', 'integerOnly'=>true),
 			array('nome', 'length', 'max'=>150),
 			array('endereco', 'length', 'max'=>80),
-			array('bairro', 'length', 'max'=>2),
+			array('bairro', 'length', 'max'=>40),
 			array('email', 'length', 'max'=>100),
+                        array('telefone', 'length', 'max'=>20),
+                        array('login', 'length', 'max'=>20),
+			array('senha', 'length', 'max'=>120),
+                        array('uf', 'length', 'max'=>2),
+                        array('cpf', 'length', 'max'=>20),
+                        array('cep', 'length', 'max'=>10),
 			array('nascimento', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, nome, cpf, nascimento, fixo, celular, endereco, numero, bairro, cidadeId, cep, email, empresasId', 'safe', 'on'=>'search'),
+			array('id, nome, cpf, nascimento, telefone, endereco, bairro, cidadeId, cep, email, empresasId, login', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -69,19 +76,22 @@ class usuarios extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'Id',
+			'id' => 'Código',
 			'nome' => 'Nome',
 			'cpf' => 'Cpf',
 			'nascimento' => 'Nascimento',
-			'fixo' => 'Fixo',
-			'celular' => 'Celular',
-			'endereco' => 'Endereco',
-			'numero' => 'Numero',
+			'telefone' => 'Telefone',
+			'endereco' => 'Endereço',
 			'bairro' => 'Bairro',
 			'cidadeId' => 'Cidade',
+                        'cidade.nome' => 'Cidade',
 			'cep' => 'Cep',
 			'email' => 'Email',
-			'empresasId' => 'Empresas',
+			'empresasId' => 'Empresa',
+                        'empresas.nome' => 'Empresa',
+                        'login' => 'Login',
+			'senha' => 'Senha',
+                        'uf' => 'UF',
 		);
 	}
 
@@ -107,27 +117,29 @@ class usuarios extends CActiveRecord
 
 		$criteria->compare('nome',$this->nome,true);
 
-		$criteria->compare('cpf',$this->cpf);
+		$criteria->compare('cpf',$this->cpf, true);
 
 		$criteria->compare('nascimento',$this->nascimento,true);
 
-		$criteria->compare('fixo',$this->fixo);
-
-		$criteria->compare('celular',$this->celular);
+		$criteria->compare('telefone',$this->telefone,true);
 
 		$criteria->compare('endereco',$this->endereco,true);
-
-		$criteria->compare('numero',$this->numero);
 
 		$criteria->compare('bairro',$this->bairro,true);
 
 		$criteria->compare('cidadeId',$this->cidadeId);
 
-		$criteria->compare('cep',$this->cep);
+		$criteria->compare('cep',$this->cep, true);
 
 		$criteria->compare('email',$this->email,true);
 
 		$criteria->compare('empresasId',$this->empresasId);
+                
+                $criteria->compare('login',$this->login,true);
+
+		$criteria->compare('senha',$this->senha,true);
+                
+                $criteria->compare('uf',$this->uf,true);
 
 		return new CActiveDataProvider('usuarios', array(
 			'criteria'=>$criteria,
@@ -142,4 +154,20 @@ class usuarios extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+        
+        public function afterFind() {
+            
+            //Adiciona as mascaras de CNPJ e Telefone
+             
+            $this->cpf = Yii::app()->functions->mask($this->cpf, '###.###.###-##'); 
+            
+            if (strlen($this->telefone) == 11) {
+                $this->telefone = Yii::app()->functions->mask($this->telefone, '(##) #####-####');
+            }else if (strlen($this->telefone) == 10) {
+                $this->telefone = Yii::app()->functions->mask($this->telefone, '(##) ####-####');
+            }
+                
+            
+            parent::afterFind();
+        }
 }
