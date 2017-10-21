@@ -754,5 +754,7 @@
 <script src="<?php echo Yii::app()->baseUrl; ?>/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo Yii::app()->baseUrl; ?>/dist/js/demo.js"></script>
+
+<script src="<?php echo Yii::app()->baseUrl; ?>/dist/js/autoescola.js"></script>
 </body>
 </html>
