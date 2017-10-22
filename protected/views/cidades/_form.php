@@ -20,7 +20,7 @@
         </div> 
 
         <div class="box-footer">
-            <?php echo CHtml::submitButton('Salvar', array('class'=>'btn btn-primary', 'onclick'=>'loading()')); ?>
+            <?php echo CHtml::submitButton($model->isNewRecord ? 'Salvar' : 'Atualizar', array('class'=>'btn btn-primary', 'onclick'=>'loading()')); ?>
         </div>
 
     <?php $this->endWidget(); ?>

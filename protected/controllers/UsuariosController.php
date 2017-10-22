@@ -66,14 +66,17 @@ class UsuariosController extends Controller
 		{
                         //criptografa a senha
                         $_POST['usuarios']['senha'] = md5($_POST['usuarios']['senha']);
+                        
+                        
+			$model->attributes=$_POST['usuarios'];
+                        
                         //removendo os caracteres diferente de numeros.
                         $model->telefone = preg_replace("/[^0-9]/", "", $model->telefone);
                         $model->cpf = preg_replace("/[^0-9]/", "", $model->cpf);
                         $model->cep = preg_replace("/[^0-9]/", "", $model->cep);
                         
-			$model->attributes=$_POST['usuarios'];
 			if($model->save())
-				$this->redirect(array('update','id'=>$model->id));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('create',array(

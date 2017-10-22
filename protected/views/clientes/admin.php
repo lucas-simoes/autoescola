@@ -4,11 +4,6 @@ $this->breadcrumbs=array(
 	'Manage',
 );
 
-$this->menu=array(
-	array('label'=>'List clientes', 'url'=>array('index')),
-	array('label'=>'Create clientes', 'url'=>array('create')),
-);
-
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.search-form').toggle();
@@ -23,43 +18,62 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Clientes</h1>
-
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
+<div class="box">
+            <div class="box-header">
+              <h2>Clientes</h2>
+              
+    <div class="search-form">
+    <?php $this->renderPartial('_search',array(
+            'model'=>$model,
+    )); ?>
+    </div><!-- search-form -->
+    <div class="box-header with-border">
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'clientes-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
 	'columns'=>array(
 		'id',
 		'nome',
 		'cpfCnpj',
-		'nascimento',
-		'fixo',
-		'celular',
-		/*
-		'endereco',
-		'numero',
-		'bairro',
-		'estado',
-		'cidadeId',
-		'cep',
+		'telefone',
 		'email',
-		'empresasId',
-		*/
 		array(
 			'class'=>'CButtonColumn',
+                        'template'=>'{orcamento}{update}{deletar}',
+                        'updateButtonLabel' => '<i class="fa fa-eye"></i>',
+                        'updateButtonImageUrl'=> false,
+                        'deleteButtonLabel' => '<i class="fa fa-trash"></i>',
+                        'deleteButtonImageUrl'=> false,
+                        'buttons' => array (
+                            'orcamento' => array(
+                                'options'=>array('title'=>'Gerar Orçamento', 'class'=>'btn btn-default' ),
+                                'label'=>'<i class="fa fa-money"></i>',
+                                'url'=>'Yii::app()->createUrl("orcamentos/create", array("cliente"=>"$data->id"))',
+                            ),
+                            'update' => array(
+                                'options'=>array('title'=>'Ver Cadastro', 'class'=>'btn btn-default' ),
+                                'label'=>'<i class="fa fa-eye"></i>',
+                                'url'=>'Yii::app()->createUrl("clientes/update", array("id"=>"$data->id"))',
+                            ),
+                            'deletar' => array(
+                                'label'=>'<i class="fa fa-trash"></i>',
+                                'url'=>'Yii::app()->createUrl("clientes/delete", array("id"=>"$data->id"))',
+                                'options'=>array('title'=>'Excluir', 'class'=>'btn btn-default' ),
+                            ),
+                        ),
 		),
 	),
+        'htmlOptions'=>array('class'=>'table table-responsive'),
+        'itemsCssClass' => 'table table-hover',
+        'pagerCssClass' => 'text-center',
+        'pager' => array(
+            'htmlOptions'=> array('class'=>'pagination pagination-sm no-margin pull-right'),
+            'header'=>'',
+            ),
 )); ?>
+</div>
+
+
+            </div>
+</div>

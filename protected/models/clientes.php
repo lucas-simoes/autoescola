@@ -6,16 +6,14 @@
  * The followings are the available columns in table 'clientes':
  * @property integer $id
  * @property string $nome
- * @property integer $cpfCnpj
+ * @property string $cpfCnpj
  * @property string $nascimento
- * @property integer $fixo
- * @property integer $celular
+ * @property string $telefone
  * @property string $endereco
- * @property integer $numero
  * @property string $bairro
- * @property string $estado
+ * @property string uf
  * @property integer $cidadeId
- * @property integer $cep
+ * @property string $cep
  * @property string $email
  * @property integer $empresasId
  */
@@ -37,16 +35,19 @@ class clientes extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nome, cpfCnpj, endereco, numero, bairro, estado, cidadeId, cep, empresasId', 'required'),
-			array('cpfCnpj, fixo, celular, numero, cidadeId, cep, empresasId', 'numerical', 'integerOnly'=>true),
+			array('nome, cpfCnpj, endereco, bairro, uf, cidadeId, cep, empresasId', 'required'),
+			array('cidadeId, empresasId', 'numerical', 'integerOnly'=>true),
 			array('nome', 'length', 'max'=>150),
-			array('endereco, bairro', 'length', 'max'=>80),
-			array('estado', 'length', 'max'=>2),
+                        array('cpfCnpj, telefone', 'length', 'max'=>20),
+			array('endereco', 'length', 'max'=>80),
+                        array('bairro', 'length', 'max'=>40),
+			array('uf', 'length', 'max'=>2),
+                        array('cep', 'length', 'max'=>10),
 			array('email', 'length', 'max'=>100),
 			array('nascimento', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, nome, cpfCnpj, nascimento, fixo, celular, endereco, numero, bairro, estado, cidadeId, cep, email, empresasId', 'safe', 'on'=>'search'),
+			array('id, nome, cpfCnpj, nascimento, fixo, celular, endereco, numero, bairro, uf, cidadeId, cep, email, empresasId', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,20 +71,20 @@ class clientes extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'Id',
+			'id' => 'Código',
 			'nome' => 'Nome',
-			'cpfCnpj' => 'Cpf Cnpj',
+			'cpfCnpj' => 'Cpf/Cnpj',
 			'nascimento' => 'Nascimento',
-			'fixo' => 'Fixo',
-			'celular' => 'Celular',
+			'telefone' => 'Telefone',
 			'endereco' => 'Endereco',
-			'numero' => 'Numero',
 			'bairro' => 'Bairro',
-			'estado' => 'Estado',
+			'uf' => 'UF',
 			'cidadeId' => 'Cidade',
+                        'cidade.nome' => 'Cidade',
 			'cep' => 'Cep',
 			'email' => 'Email',
 			'empresasId' => 'Empresas',
+                        'empresas.nome' => 'Empresa',
 		);
 	}
 
@@ -109,25 +110,21 @@ class clientes extends CActiveRecord
 
 		$criteria->compare('nome',$this->nome,true);
 
-		$criteria->compare('cpfCnpj',$this->cpfCnpj);
+		$criteria->compare('cpfCnpj',$this->cpfCnpj,true);
 
 		$criteria->compare('nascimento',$this->nascimento,true);
 
-		$criteria->compare('fixo',$this->fixo);
-
-		$criteria->compare('celular',$this->celular);
+		$criteria->compare('telefone',$this->telefone, true);
 
 		$criteria->compare('endereco',$this->endereco,true);
 
-		$criteria->compare('numero',$this->numero);
-
 		$criteria->compare('bairro',$this->bairro,true);
 
-		$criteria->compare('estado',$this->estado,true);
+		$criteria->compare('uf',$this->uf,true);
 
 		$criteria->compare('cidadeId',$this->cidadeId);
 
-		$criteria->compare('cep',$this->cep);
+		$criteria->compare('cep',$this->cep, true);
 
 		$criteria->compare('email',$this->email,true);
 

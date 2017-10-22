@@ -35,7 +35,7 @@ $( function($){
 		 
 		if (el.val().length > 13) {
 			el.unmask();
-			<!--el.cleanVal('000.000.000-00');-->
+			//el.cleanVal('000.000.000-00');
 			el.mask("99.999.999/9999-99")
 		} else {
 			el.unmask();
