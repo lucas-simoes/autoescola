@@ -4,11 +4,6 @@ $this->breadcrumbs=array(
 	'Manage',
 );
 
-$this->menu=array(
-	array('label'=>'List modalidades', 'url'=>array('index')),
-	array('label'=>'Create modalidades', 'url'=>array('create')),
-);
-
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.search-form').toggle();
@@ -23,30 +18,57 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Modalidades</h1>
-
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
+<div class="box">
+    <div class="box-header">
+        <h2>Modalidades de Pagamento</h2>
+        
+        <div class="search-form">
+            <?php $this->renderPartial('_search',array(
+                'model'=>$model,
+            )); ?>
+        </div><!-- search-form -->
+        <div class="box-header with-border">
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'modalidades-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
 	'columns'=>array(
 		'modalidadesId',
 		'nome',
-		'prazo',
+                array(
+                    'name'=>'prazo',
+                    'value'=>'$data->prazo == 1?"Sim":"Não"',
+                ),
 		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-)); ?>
+                                    'class'=>'CButtonColumn',
+                                    'template'=>'{update}{deletar}',
+                                    'updateButtonLabel' => '<i class="fa fa-eye"></i>',
+                                    'updateButtonImageUrl'=> false,
+                                    'deleteButtonLabel' => '<i class="fa fa-trash"></i>',
+                                    'deleteButtonImageUrl'=> false,
+                                    'buttons' => array (
+                                        'update' => array(
+                                            'options'=>array('title'=>'Ver Cadastro', 'class'=>'btn btn-default' ),
+                                            'label'=>'<i class="fa fa-eye"></i>',
+                                            'url'=>'Yii::app()->createUrl("modalidades/update", array("id"=>"$data->modalidadesId"))',
+                                        ),
+                                        'deletar' => array(
+                                            'label'=>'<i class="fa fa-trash"></i>',
+                                            'url'=>'Yii::app()->createUrl("modalidades/delete", array("id"=>"$data->modalidadesId"))',
+                                            'options'=>array('title'=>'Excluir', 'class'=>'btn btn-default' ),
+                                        ),
+                                    ),
+                            ),
+                    ),
+                    'htmlOptions'=>array('class'=>'table table-responsive'),
+                    'itemsCssClass' => 'table table-hover',
+                    'pagerCssClass' => 'text-center',
+                    'pager' => array(
+                        'htmlOptions'=> array('class'=>'pagination pagination-sm no-margin pull-right'),
+                        'header'=>'',
+                        ),
+            )); ?>
+        </div>
+    </div>
+</div>
+

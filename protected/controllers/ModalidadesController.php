@@ -32,16 +32,8 @@ class ModalidadesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','create','update','admin','delete'),
 				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -74,7 +66,7 @@ class ModalidadesController extends Controller
 		{
 			$model->attributes=$_POST['modalidades'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->modalidadesId));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('create',array(
@@ -97,7 +89,7 @@ class ModalidadesController extends Controller
 		{
 			$model->attributes=$_POST['modalidades'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->modalidadesId));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('update',array(
@@ -111,14 +103,14 @@ class ModalidadesController extends Controller
 	 */
 	public function actionDelete()
 	{
-		if(Yii::app()->request->isPostRequest)
+		if(!Yii::app()->request->isPostRequest)
 		{
 			// we only allow deletion via POST request
 			$this->loadModel()->delete();
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))
-				$this->redirect(array('index'));
+				$this->redirect(array('admin'));
 		}
 		else
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');

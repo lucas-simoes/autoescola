@@ -53,9 +53,9 @@ class modalidades extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'modalidadesId' => 'Modalidades',
+			'modalidadesId' => 'Código',
 			'nome' => 'Nome',
-			'prazo' => 'Prazo',
+			'prazo' => 'A Prazo?',
 		);
 	}
 
