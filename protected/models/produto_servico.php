@@ -57,11 +57,11 @@ class produto_servico extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'Id',
-			'descricao' => 'Descricao',
-			'valorAvista' => 'Valor Avista',
-			'valorAprazo' => 'Valor Aprazo',
-			'produtoAutoEscola' => 'Produto Auto Escola',
+			'id' => 'Código',
+			'descricao' => 'Descrição',
+			'valorAvista' => 'Valor A Vista',
+			'valorAprazo' => 'Valor A Prazo',
+			'produtoAutoEscola' => 'Auto Escola?',
 		);
 	}
 

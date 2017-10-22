@@ -1,42 +1,69 @@
-<div class="form">
+<div class="box box-primary">
+    <div class="box-header with-border">
+        <h2>Produto/Serviço</h2>
+    </div>
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'produto-servico-form',
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
 	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'descricao'); ?>
-		<?php echo $form->textField($model,'descricao',array('size'=>60,'maxlength'=>150)); ?>
-		<?php echo $form->error($model,'descricao'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'valorAvista'); ?>
-		<?php echo $form->textField($model,'valorAvista'); ?>
-		<?php echo $form->error($model,'valorAvista'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'valorAprazo'); ?>
-		<?php echo $form->textField($model,'valorAprazo'); ?>
-		<?php echo $form->error($model,'valorAprazo'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'produtoAutoEscola'); ?>
-		<?php echo $form->textField($model,'produtoAutoEscola'); ?>
+    
+        <div class="box-body">
+            <div class="form-group">
+                    <?php echo $form->labelEx($model,'descricao', array('class'=>'col-sm-2 control-label')); ?>
+                <div class="col-sm-10">
+                    <?php echo $form->textField($model,'descricao',array('size'=>60,'maxlength'=>150, 'class'=>'form-control')); ?>
+                    <?php echo $form->error($model,'descricao'); ?>
+                </div>		
+            </div>    
+        </div> 
+    
+        <div class="box-body">
+            <div class="form-group">
+                    <?php echo $form->labelEx($model,'valorAvista', array('class'=>'col-sm-2 control-label')); ?>
+                <div class="col-sm-10">
+                    <?php echo $form->textField($model,'valorAvista',array('class'=>'form-control')); ?>
+                    <?php echo $form->error($model,'valorAvista'); ?>
+                </div>		
+            </div>    
+        </div>
+    
+        <div class="box-body">
+            <div class="form-group">
+                    <?php echo $form->labelEx($model,'valorAprazo', array('class'=>'col-sm-2 control-label')); ?>
+                <div class="col-sm-10">
+                    <?php echo $form->textField($model,'valorAprazo',array('class'=>'form-control')); ?>
+                    <?php echo $form->error($model,'valorAprazo'); ?>
+                </div>		
+            </div>    
+        </div>
+    
+        <div class="box-body">
+            <div class="form-group">
+                    
+                <div class="col-sm-12">
+                    <label>
+                    <?php echo $form->checkbox($model,'produtoAutoEscola', array('class'=>'checkbox-inline')); ?> Produto da Auto Escola?
+                </label>
 		<?php echo $form->error($model,'produtoAutoEscola'); ?>
-	</div>
+                </div>		
+            </div>    
+        </div>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
+	<div class="box-footer">
+            <?php echo CHtml::submitButton($model->isNewRecord ? 'Salvar' : 'Atualizar', array('class'=>'btn btn-primary', 'onclick'=>'loading()')); ?>
+        </div>
 
-<?php $this->endWidget(); ?>
+    <?php $this->endWidget(); ?>
 
-</div><!-- form -->
+</div>    
+
+<script type="text/javascript">
+    function loading() {
+        document.getElementById('loading').style.display = 'block';
+    }    
+          
+});
+</script>
