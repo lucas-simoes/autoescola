@@ -49,9 +49,9 @@ class itensorcamento extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'modalidades' => array(self::BELONGS_TO, 'Modalidades', 'modalidadesId'),
-			'orcamentos' => array(self::BELONGS_TO, 'Orcamentos', 'orcamentosId'),
-			'produtos' => array(self::BELONGS_TO, 'ProdutoServico', 'produtosId'),
+			'modalidades' => array(self::BELONGS_TO, 'modalidades', 'modalidadesId'),
+			'orcamentos' => array(self::BELONGS_TO, 'orcamentos', 'orcamentosId'),
+			'produtos' => array(self::BELONGS_TO, 'produto_servico', 'produtosId'),
 		);
 	}
 
@@ -63,13 +63,15 @@ class itensorcamento extends CActiveRecord
 		return array(
 			'itensId' => 'Itens',
 			'orcamentosId' => 'Orcamentos',
-			'produtosId' => 'Produtos',
+			'produtosId' => 'Cód. Produto/Serviço',
 			'quantidade' => 'Quantidade',
 			'valorUnitario' => 'Valor Unitario',
 			'valorDesconto' => 'Valor Desconto',
-			'valorTotalLiquido' => 'Valor Total Liquido',
-			'valorTotalPrazo' => 'Valor Total Prazo',
-			'modalidadesId' => 'Modalidades',
+			'valorTotalLiquido' => 'Total Liquido',
+			'valorTotalPrazo' => 'Total Prazo',
+			'modalidadesId' => 'Modalidade',
+                        'modalidades.nome' => 'Modalidade',
+                        'produtos.descricao' => 'Produto/Serviço'
 		);
 	}
 

@@ -63,4 +63,12 @@ $(function () {
       showInputs: false
     })
   })
+  
+  function updateForm(data) {        
+    document.getElementById('itensorcamento_valorUnitario').value = data.valorUnitario;
+    document.getElementById('itensorcamento_quantidade').value = data.quantidade;
+    document.getElementById('itensorcamento_valorDesconto').value = data.valorDesconto;
+    document.getElementById('itensorcamento_valorTotalLiquido').value = data.valorTotalLiquido;
+    document.getElementById('itensorcamento_valorTotalPrazo').value = data.valorTotalPrazo;
+}
 

@@ -32,7 +32,7 @@ class OrcamentosController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','create','update','admin','delete'),
+				'actions'=>array('index','view','create','update','admin','delete', 'inserirItem', 'deleteItem', 'getDadosProduto'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -58,6 +58,28 @@ class OrcamentosController extends Controller
 	public function actionCreate()
 	{
 		$model=new orcamentos;
+                
+                if (!isset($_GET['cliente'])) {
+                    $cliente = new clientes;
+                } else {
+                    $cliente = clientes::model()->findByPk($_GET['cliente']);
+                }
+                
+                $model->setAttribute('empresasId', 1);
+                $model->setAttributes(array(
+                    'inclusao'=>date('Y-m-d', time()),
+                    'empresasId'=>1,
+                    'valorPrazo'=>0,
+                    'valorBruto'=>0,
+                    'valorDesconto'=>0,
+                    'valorLiquido'=>0,
+                    'status'=>1,
+                    'clientesId'=>$cliente->id,
+                    'data'=>date('Y-m-d', time()),
+                    'validade'=>date('Y-m-d', strtotime("+30 days")),
+                ));
+                
+                $itens = new itensorcamento();
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -65,12 +87,17 @@ class OrcamentosController extends Controller
 		if(isset($_POST['orcamentos']))
 		{
 			$model->attributes=$_POST['orcamentos'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->orcamentosId));
+			if($model->save()) {
+                            
+                            $this->redirect(array('update','id'=>$model->orcamentosId));
+                            //$this->renderPartial('itens', array('itens'=>$itens));
+                        }
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
+                        'cliente'=>$cliente,
+                        'itens'=>$itens,
 		));
 	}
 
@@ -81,6 +108,12 @@ class OrcamentosController extends Controller
 	public function actionUpdate()
 	{
 		$model=$this->loadModel();
+                
+                $cliente = clientes::model()->findByPk($model->clientesId);
+                
+                $itens = new itensorcamento;   
+                
+                $itens->setAttribute('orcamentosId', $model->orcamentosId);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -89,11 +122,13 @@ class OrcamentosController extends Controller
 		{
 			$model->attributes=$_POST['orcamentos'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->orcamentosId));
+				$this->redirect(array('update','id'=>$model->orcamentosId));
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
+                        'cliente'=>$cliente,
+                        'itens'=>$itens,
 		));
 	}
 
@@ -170,4 +205,76 @@ class OrcamentosController extends Controller
 			Yii::app()->end();
 		}
 	}
+        
+        public function actionInserirItem() {
+            
+            if (isset($_POST['itensorcamento'])) {
+                
+                $model = orcamentos::model()->findByPk($_POST['itensorcamento']['orcamentosId']);
+                
+                $cliente = clientes::model()->findByPk($model->clientesId);
+                
+                $itens = new itensorcamento;   
+                
+                $itens->setAttribute('orcamentosId', $model->orcamentosId);
+                
+                $itens = new itensorcamento();
+                
+                $itens->attributes = $_POST['itensorcamento'];
+                
+                if ($itens->save()) {
+                    $this->redirect(array('update','id'=>$model->orcamentosId));
+                } else {
+                    $this->render('update',array(
+			'model'=>$model,
+                        'cliente'=>$cliente,
+                        'itens'=>$itens,
+                    ));
+                }
+            }
+        }
+        
+        public function actionDeleteItem() {
+            
+            $item = itensorcamento::model()->findByPk($_GET['id']);
+            
+            $orcamentosId = $item->orcamentosId;
+            
+            $item->delete();
+            
+            $model = orcamentos::model()->findByPk($orcamentosId);
+                
+            $cliente = clientes::model()->findByPk($model->clientesId);
+
+            $itens = new itensorcamento;   
+
+            $itens->setAttribute('orcamentosId', $model->orcamentosId);
+
+            $this->redirect(array('update', 'id'=>$model->orcamentosId));
+        }
+        
+        public function actionGetDadosProduto() {
+            
+            if (isset($_POST['itensorcamento']['produtosId'])) {
+            
+                $produto = produto_servico::model()->findByPk($_POST['itensorcamento']['produtosId']);
+
+                if (isset($produto)) {
+
+                    $item = new itensorcamento();
+
+                    $item->setAttributes(array(
+                        'quantidade'=>1,
+                        'valorUnitario'=>$produto->valorAvista,
+                        'valorDesconto'=>0,
+                        'valorTotalLiquido'=>1 * $produto->valorAvista,
+                        'valorTotalPrazo'=>1 * $produto->valorAvista, 
+                    ));
+                    
+                    $json = CJSON::encode($item);
+
+                    echo $json;
+                }
+            }
+        }
 }

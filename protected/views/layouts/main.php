@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/bower_components/select2/dist/css/select2.min.css"> 
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
