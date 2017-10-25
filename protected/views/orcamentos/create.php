@@ -4,12 +4,11 @@ $this->breadcrumbs=array(
 	'Create',
 );
 
-$this->menu=array(
-	array('label'=>'List orcamentos', 'url'=>array('index')),
-	array('label'=>'Manage orcamentos', 'url'=>array('admin')),
-);
+Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/bower_components/select2/dist/css/select2.min.css', CClientScript::POS_HEAD);
+Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/bower_components/select2/dist/js/select2.full.min.js', CClientScript::POS_END);
+Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/orcamentos.js', CClientScript::POS_END);
 ?>
 
-<h1>Create orcamentos</h1>
+<h1>Novo Orçamento</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
