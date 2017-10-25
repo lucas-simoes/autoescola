@@ -125,8 +125,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-plus-circle"></i> Novo Orçamento</a></li>
-            <li><a href="index2.html"><i class="fa fa fa-list"></i> Lista de Orçamentos</a></li>
+            <li class="active"><a href="<?php echo Yii::app()->createUrl('orcamentos/create') ?>"><i class="fa fa-plus-circle"></i> Novo Orçamento</a></li>
+            <li><a href="<?php echo Yii::app()->createUrl('orcamentos/admin') ?>"><i class="fa fa fa-list"></i> Lista de Orçamentos</a></li>
           </ul>
         </li>
         
