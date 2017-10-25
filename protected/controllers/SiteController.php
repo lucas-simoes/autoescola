@@ -34,7 +34,6 @@ class SiteController extends Controller
                 } else {
                     $this->render('index');
                 }
-            //$this->render('index');
 	}
 
 	/**

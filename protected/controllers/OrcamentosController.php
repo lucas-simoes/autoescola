@@ -33,7 +33,7 @@ class OrcamentosController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view','create','update','admin','delete', 'inserirItem', 'deleteItem', 'getDadosProduto'),
-				'users'=>array('*'),
+				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -65,7 +65,6 @@ class OrcamentosController extends Controller
                     $cliente = clientes::model()->findByPk($_GET['cliente']);
                 }
                 
-                $model->setAttribute('empresasId', 1);
                 $model->setAttributes(array(
                     'inclusao'=>date('Y-m-d', time()),
                     'empresasId'=>1,
@@ -77,6 +76,7 @@ class OrcamentosController extends Controller
                     'clientesId'=>$cliente->id,
                     'data'=>date('Y-m-d', time()),
                     'validade'=>date('Y-m-d', strtotime("+30 days")),
+                    'usuariosId'=>Yii::app()->user->UserId,
                 ));
                 
                 $itens = new itensorcamento();

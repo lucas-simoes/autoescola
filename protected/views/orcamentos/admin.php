@@ -1,12 +1,7 @@
 <?php
-$this->breadcrumbs=array(
-	'Orcamentoses'=>array('index'),
-	'Manage',
-);
-
-$this->menu=array(
-	array('label'=>'List orcamentos', 'url'=>array('index')),
-	array('label'=>'Create orcamentos', 'url'=>array('create')),
+$this->breadcrumbs = array(
+    'Orcamentoses' => array('index'),
+    'Manage',
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -22,42 +17,73 @@ $('.search-form form').submit(function(){
 });
 ");
 ?>
+<div class="box">
+    <div class="box-header">
+        <h1>Orçamentos</h1>
 
-<h1>Manage Orcamentoses</h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
+        <div class="search-form" style="display:none">
+            <?php
+            $this->renderPartial('_search', array(
+                'model' => $model,
+            ));
+            ?>
+        </div><!-- search-form -->
+        <div class="box-header with-border">
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
+            <?php
+            $this->widget('zii.widgets.grid.CGridView', array(
+                'id' => 'orcamentos-grid',
+                'dataProvider' => $model->search(),
+                'columns' => array(
+                    'orcamentosId',
+                    array(
+                        'name'=>'Data',
+                        'value'=>'date("d/m/Y", strtotime($data->data))'
+                    ),
+                    'clientes.nome',
+                    'valorBruto',
+                    'valorDesconto',
+                    'valorLiquido',
+                    'statusNome',
+                    /* 'usuariosId',
+                      'validade',
+                      'valorPrazo',
+                      'inclusao',
+                      'empresasId',
+                     */
+                    array(
+                        'class' => 'CButtonColumn',
+                        'template' => '{update}{deletar}',
+                        'updateButtonLabel' => '<i class="fa fa-eye"></i>',
+                        'updateButtonImageUrl' => false,
+                        'deleteButtonLabel' => '<i class="fa fa-trash"></i>',
+                        'deleteButtonImageUrl' => false,
+                        'buttons' => array(
+                            'update' => array(
+                                'options' => array('title' => 'Ver Cadastro', 'class' => 'btn btn-default'),
+                                'label' => '<i class="fa fa-eye"></i>',
+                                'url' => 'Yii::app()->createUrl("orcamentos/update", array("id"=>"$data->orcamentosId"))',
+                            ),
+                            'deletar' => array(
+                                'label' => '<i class="fa fa-trash"></i>',
+                                'url' => 'Yii::app()->createUrl("orcamentos/delete", array("id"=>"$data->orcamentosId"))',
+                                'options' => array('title' => 'Excluir', 'class' => 'btn btn-default'),
+                            ),
+                        ),
+                    ),
+                ),
+                'htmlOptions' => array('class' => 'table table-responsive'),
+                'itemsCssClass' => 'table table-hover',
+                'pagerCssClass' => 'text-center',
+                'pager' => array(
+                    'htmlOptions' => array('class' => 'pagination pagination-sm no-margin pull-right'),
+                    'header' => '',
+                ),
+            ));
+            ?>
+        </div>
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'orcamentos-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'orcamentosId',
-		'data',
-		'clientesId',
-		'valorBruto',
-		'valorDesconto',
-		'valorLiquido',
-		/*
-		'status',
-		'usuariosId',
-		'validade',
-		'valorPrazo',
-		'inclusao',
-		'empresasId',
-		*/
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-)); ?>
+
+    </div>
+</div>

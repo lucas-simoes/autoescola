@@ -19,6 +19,7 @@
  */
 class orcamentos extends CActiveRecord
 {
+    public $statusNome;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -52,11 +53,11 @@ class orcamentos extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'itensorcamentos' => array(self::HAS_MANY, 'Itensorcamento', 'orcamentosId'),
-			'empresas' => array(self::BELONGS_TO, 'Empresas', 'empresasId'),
-			'clientes' => array(self::BELONGS_TO, 'Clientes', 'clientesId'),
-			'usuarios' => array(self::BELONGS_TO, 'Usuarios', 'usuariosId'),
-			'tituloses' => array(self::HAS_MANY, 'Titulos', 'orcamentosId'),
+			'itensorcamentos' => array(self::HAS_MANY, 'itensorcamento', 'orcamentosId'),
+			'empresas' => array(self::BELONGS_TO, 'empresas', 'empresasId'),
+			'clientes' => array(self::BELONGS_TO, 'clientes', 'clientesId'),
+			'usuarios' => array(self::BELONGS_TO, 'usuarios', 'usuariosId'),
+			'tituloses' => array(self::HAS_MANY, 'titulos', 'orcamentosId'),
 		);
 	}
 
@@ -78,6 +79,7 @@ class orcamentos extends CActiveRecord
 			'valorPrazo' => 'Valor Prazo',
 			'inclusao' => 'Inclusao',
 			'empresasId' => 'Empresas',
+                        'statusNome' => 'Status'
 		);
 	}
 
@@ -136,4 +138,21 @@ class orcamentos extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+        
+        public function afterFind() {
+            
+            switch ($this->status) {
+                case 1:
+                    $this->statusNome = 'Em Aberto';
+                    break;
+                case 2:
+                    $this->statusNome = 'Fechado';
+                    break;
+                case 3:
+                    $this->statusNome = 'Perdido';
+                    break;
+            }
+            
+            parent::afterFind();
+        }
 }

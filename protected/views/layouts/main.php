@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Controle de Orçamentos| Auto Escola</title>
+  <title><?php echo CHtml::encode($this->pageTitle); ?></title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -63,13 +63,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="<?php echo Yii::app()->baseUrl; ?>/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs"><?php echo !Yii::app()->user->isGuest?Yii::app()->user->Nome:'Visitante'; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="<?php echo Yii::app()->baseUrl; ?>/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
                   <?php echo !Yii::app()->user->isGuest?Yii::app()->user->Nome:'Visitante'; ?>                  
@@ -79,7 +79,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-right">
-                    <a href="<?php Yii::app()->user->logout(); ?>" class="btn btn-default btn-flat">Sair</a>
+                    <a href="<?php echo Yii::app()->createUrl('site/logout'); ?>" class="btn btn-default btn-flat">Sair</a>
                 </div>
               </li>
             </ul>
@@ -97,7 +97,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="<?php echo Yii::app()->baseUrl; ?>/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
             <p><?php echo !Yii::app()->user->isGuest?Yii::app()->user->Nome:'Visitante'; ?></p>

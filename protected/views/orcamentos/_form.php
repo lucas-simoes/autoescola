@@ -119,7 +119,6 @@
                                                                       'ajax'=>array('type'=>'POST',
                                                                                     'dataType'=>'json',
                                                                                     'url'=> Yii::app()->createUrl('orcamentos/getDadosProduto'),
-                                                                                    //'success'=>'function(data) { updateForm(data);}',
                                                                                     'success'=>'updateForm',
 
                                                                    ))); ?>
@@ -130,7 +129,7 @@
                     <div class="col-md-1">
                         <div class="form-group">
                             <?php echo $formItens->labelEx($itens,'quantidade'); ?>
-                            <?php echo $formItens->textField($itens,'quantidade',array('size'=>11,'maxlength'=>11, 'class'=>'form-control')); ?>
+                            <?php echo $formItens->textField($itens,'quantidade',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'updateValores()')); ?>
                             <?php echo $formItens->error($itens,'quantidade'); ?>
                         </div>
                     </div>
@@ -138,7 +137,7 @@
                     <div class="col-md-1">
                         <div class="form-group">
                             <?php echo $formItens->labelEx($itens,'valorUnitario'); ?>
-                            <?php echo $formItens->textField($itens,'valorUnitario',array('size'=>11,'maxlength'=>11, 'class'=>'form-control')); ?>
+                            <?php echo $formItens->textField($itens,'valorUnitario',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'updateValores()')); ?>
                             <?php echo $formItens->error($itens,'valorUnitario'); ?>
                         </div>
                     </div>
@@ -146,7 +145,7 @@
                     <div class="col-md-1">
                         <div class="form-group">
                             <?php echo $formItens->labelEx($itens,'valorDesconto'); ?>
-                            <?php echo $formItens->textField($itens,'valorDesconto',array('size'=>11,'maxlength'=>11, 'class'=>'form-control')); ?>
+                            <?php echo $formItens->textField($itens,'valorDesconto',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'updateValores()')); ?>
                             <?php echo $formItens->error($itens,'valorDesconto'); ?>
                         </div>
                     </div>
@@ -154,7 +153,7 @@
                     <div class="col-md-1">
                         <div class="form-group">
                             <?php echo $formItens->labelEx($itens,'valorTotalLiquido'); ?>
-                            <?php echo $formItens->textField($itens,'valorTotalLiquido',array('size'=>11,'maxlength'=>11, 'class'=>'form-control')); ?>
+                            <?php echo $formItens->textField($itens,'valorTotalLiquido',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'calculaDesconto()')); ?>
                             <?php echo $formItens->error($itens,'valorTotalLiquido'); ?>
                         </div>
                     </div>
@@ -162,7 +161,7 @@
                     <div class="col-md-1">
                         <div class="form-group">
                             <?php echo $formItens->labelEx($itens,'valorTotalPrazo'); ?>
-                            <?php echo $formItens->textField($itens,'valorTotalPrazo',array('size'=>11,'maxlength'=>11, 'class'=>'form-control')); ?>
+                            <?php echo $formItens->textField($itens,'valorTotalPrazo',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'disabled'=>true)); ?>
                             <?php echo $formItens->error($itens,'valorTotalPrazo'); ?>
                         </div>
                     </div>
@@ -227,10 +226,43 @@
 
 <script type="text/javascript">
     function updateForm(data) {        
-        document.getElementById('itensorcamento_valorUnitario').value = data.valorUnitario;
-        document.getElementById('itensorcamento_quantidade').value = data.quantidade;
-        document.getElementById('itensorcamento_valorDesconto').value = data.valorDesconto;
-        document.getElementById('itensorcamento_valorTotalLiquido').value = data.valorTotalLiquido;
-        document.getElementById('itensorcamento_valorTotalPrazo').value = data.valorTotalPrazo;
+    document.getElementById('itensorcamento_valorUnitario').value = data.valorUnitario;
+    document.getElementById('itensorcamento_quantidade').value = data.quantidade;
+    document.getElementById('itensorcamento_valorDesconto').value = data.valorDesconto;
+    document.getElementById('itensorcamento_valorTotalLiquido').value = data.valorTotalLiquido;
+    document.getElementById('itensorcamento_valorTotalPrazo').value = data.valorTotalPrazo;
+}
+
+function updateValores() {
+    var valorUn = document.getElementById('itensorcamento_valorUnitario');
+    var qtd = document.getElementById('itensorcamento_quantidade');
+    var desconto = document.getElementById('itensorcamento_valorDesconto');
+    var liq = document.getElementById('itensorcamento_valorTotalLiquido');
+    var prazo = document.getElementById('itensorcamento_valorTotalPrazo');
+    
+    var descPerc = desconto.value / 100;
+    
+    if (qtd.value <= 0) {
+        qtd.value = 1;
     }
+    
+    prazo.value = qtd.value * valorUn.value;
+    liq.value = prazo.value - (prazo.value * descPerc);
+}
+
+function calculaDesconto() {
+    var valorUn = document.getElementById('itensorcamento_valorUnitario');
+    var qtd = document.getElementById('itensorcamento_quantidade');
+    var desconto = document.getElementById('itensorcamento_valorDesconto');
+    var liq = document.getElementById('itensorcamento_valorTotalLiquido');
+    var prazo = document.getElementById('itensorcamento_valorTotalPrazo');
+    
+    if (qtd.value <= 0) {
+        qtd.value = 1;
+    }
+    
+    var valorDesc = prazo.value - liq.value;
+    
+    desconto.value = (valorDesc / prazo.value) * 100; 
+}
 </script>
