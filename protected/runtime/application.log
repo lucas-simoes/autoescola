@@ -1240,3 +1240,91 @@ Stack trace:
 REQUEST_URI=/autoescola/index.php/cidades/dist/img/user2-160x160.jpg
 HTTP_REFERER=http://localhost/autoescola/index.php/cidades/create
 ---
+2017/10/25 05:21:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "dist" solicitada.' in C:\xampp\htdocs\autoescola\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\autoescola\yii\framework\web\CController.php(270): CController->missingAction('dist')
+#1 C:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('dist')
+#2 C:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ORCAMENTOS/dist...')
+#3 C:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/autoescola/index.php/ORCAMENTOS/dist/img/user2-160x160.jpg
+HTTP_REFERER=http://localhost/autoescola/index.php/ORCAMENTOS/create
+---
+2017/10/25 05:22:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "dist" solicitada.' in C:\xampp\htdocs\autoescola\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\autoescola\yii\framework\web\CController.php(270): CController->missingAction('dist')
+#1 C:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('dist')
+#2 C:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ORCAMENTOS/dist...')
+#3 C:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/autoescola/index.php/ORCAMENTOS/dist/img/user2-160x160.jpg
+HTTP_REFERER=http://localhost/autoescola/index.php/ORCAMENTOS/ADMIN
+---
+2017/10/25 05:23:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "dist" solicitada.' in C:\xampp\htdocs\autoescola\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\autoescola\yii\framework\web\CController.php(270): CController->missingAction('dist')
+#1 C:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('dist')
+#2 C:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/dist...')
+#3 C:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/autoescola/index.php/orcamentos/dist/img/user2-160x160.jpg
+HTTP_REFERER=http://localhost/autoescola/index.php/orcamentos/create
+---
+2017/10/25 05:23:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "dist" solicitada.' in C:\xampp\htdocs\autoescola\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\autoescola\yii\framework\web\CController.php(270): CController->missingAction('dist')
+#1 C:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('dist')
+#2 C:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/dist...')
+#3 C:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/autoescola/index.php/orcamentos/dist/img/user2-160x160.jpg
+HTTP_REFERER=http://localhost/autoescola/index.php/orcamentos/admin
+---
+2017/10/25 05:23:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "dist" solicitada.' in C:\xampp\htdocs\autoescola\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\autoescola\yii\framework\web\CController.php(270): CController->missingAction('dist')
+#1 C:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('dist')
+#2 C:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/dist...')
+#3 C:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/autoescola/index.php/orcamentos/dist/img/user2-160x160.jpg
+HTTP_REFERER=http://localhost/autoescola/index.php/orcamentos/create
+---
+2017/10/25 05:23:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "dist" solicitada.' in C:\xampp\htdocs\autoescola\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\autoescola\yii\framework\web\CController.php(270): CController->missingAction('dist')
+#1 C:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('dist')
+#2 C:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/dist...')
+#3 C:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/autoescola/index.php/orcamentos/dist/img/user2-160x160.jpg
+HTTP_REFERER=http://localhost/autoescola/index.php/orcamentos/create
+---
+2017/10/25 05:23:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "dist" solicitada.' in C:\xampp\htdocs\autoescola\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\autoescola\yii\framework\web\CController.php(270): CController->missingAction('dist')
+#1 C:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('dist')
+#2 C:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('produto_servico...')
+#3 C:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/autoescola/index.php/produto_servico/dist/img/user2-160x160.jpg
+HTTP_REFERER=http://localhost/autoescola/index.php/produto_servico/create
+---
+2017/10/25 05:23:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "dist" solicitada.' in C:\xampp\htdocs\autoescola\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\autoescola\yii\framework\web\CController.php(270): CController->missingAction('dist')
+#1 C:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('dist')
+#2 C:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes/dist/i...')
+#3 C:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/autoescola/index.php/clientes/dist/img/user2-160x160.jpg
+HTTP_REFERER=http://localhost/autoescola/index.php/clientes/admin
+---
