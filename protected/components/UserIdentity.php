@@ -17,17 +17,30 @@ class UserIdentity extends CUserIdentity
 	 */
 	public function authenticate()
 	{
-		$users=array(
-			// username => password
-			'demo'=>'demo',
-			'admin'=>'admin',
-		);
-		if(!isset($users[$this->username]))
-			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		elseif($users[$this->username]!==$this->password)
-			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-		else
-			$this->errorCode=self::ERROR_NONE;
-		return !$this->errorCode;
+                $usuario = new usuarios;
+                $objUser = $usuario->findBySql("select * from usuarios where login = '$this->username'");
+            
+                if ((!isset($objUser['login'])) && (!isset($objUser['senha']))) {
+                    $this->errorCode = self::ERROR_UNKNOWN_IDENTITY;
+                } else if ($objUser['login'] != $this->username) {
+                    $this->errorCode = self::ERROR_USERNAME_INVALID;
+                } else if ($objUser['senha'] != $this->password) {
+                    $this->errorCode = self::ERROR_PASSWORD_INVALID;
+                } else {
+                    $this->errorCode=self::ERROR_NONE;
+                    return !$this->errorCode;
+                } 
+                
+                if ((!isset($objAdminUser['username'])) && (!isset($objAdminUser['password']))) {
+                    $this->errorCode = self::ERROR_UNKNOWN_IDENTITY;
+                } else if ($objAdminUser['username'] != $this->username) {
+                    $this->errorCode = self::ERROR_USERNAME_INVALID;
+                } else if ($objAdminUser['password'] != $this->password) {
+                    $this->errorCode = self::ERROR_PASSWORD_INVALID;
+                } else {
+                    $this->errorCode=self::ERROR_NONE;
+                } 
+                
+                return !$this->errorCode;
 	}
 }
