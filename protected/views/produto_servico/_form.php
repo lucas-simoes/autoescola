@@ -6,7 +6,18 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'produto-servico-form',
 	'enableAjaxValidation'=>false,
-)); ?>
+)); 
+
+    $empresas= new empresas();
+    $objEmpresas = $empresas->findAll();
+    
+    $empresas = array();
+    
+    foreach ($objEmpresas as $rst) {
+        $empresas[$rst['empresasId']] = $rst['nome'];
+    }
+
+?>
 
 	<?php echo $form->errorSummary($model); ?>
     
