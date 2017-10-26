@@ -17,7 +17,8 @@
  * @property integer $empresasId
  * @property string $login
  * @property string $senha
- * @property string $uf 
+ * @property string $uf
+ * @property integer $admin 
  */
 class usuarios extends CActiveRecord
 {
@@ -37,8 +38,8 @@ class usuarios extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nome, cpf, endereco, bairro, cidadeId, cep, empresasId, login, senha, uf', 'required'),
-			array('cidadeId, empresasId', 'numerical', 'integerOnly'=>true),
+			array('nome, cpf, endereco, bairro, cidadeId, cep, empresasId, login, senha, uf, admin', 'required'),
+			array('cidadeId, empresasId, admin', 'numerical', 'integerOnly'=>true),
 			array('nome', 'length', 'max'=>150),
 			array('endereco', 'length', 'max'=>80),
 			array('bairro', 'length', 'max'=>40),
@@ -52,7 +53,7 @@ class usuarios extends CActiveRecord
 			array('nascimento', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, nome, cpf, nascimento, telefone, endereco, bairro, cidadeId, cep, email, empresasId, login', 'safe', 'on'=>'search'),
+			array('id, nome, cpf, nascimento, telefone, endereco, bairro, cidadeId, cep, email, empresasId, login, admin', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -92,6 +93,7 @@ class usuarios extends CActiveRecord
                         'login' => 'Login',
 			'senha' => 'Senha',
                         'uf' => 'UF',
+                        'admin' => 'Administrador'
 		);
 	}
 
@@ -140,6 +142,8 @@ class usuarios extends CActiveRecord
 		$criteria->compare('senha',$this->senha,true);
                 
                 $criteria->compare('uf',$this->uf,true);
+                
+                $criteria->compare('admin',$this->admin);
 
 		return new CActiveDataProvider('usuarios', array(
 			'criteria'=>$criteria,

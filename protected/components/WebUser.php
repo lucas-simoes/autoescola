@@ -51,6 +51,15 @@ class WebUser extends CWebUser {
      return $user->id;
   }
   
+  public function getIsAdmin() {
+      $user = $this->loadUser(Yii::app()->user->name);
+      if (isset($user)) {
+          $perfil = ($user->admin == 1)?true:false;
+      }
+      
+      return $perfil;
+  }
+  
   // Load user model.
   protected function loadUser($login=null)
     {

@@ -134,6 +134,7 @@
                                 <?php echo $form->error($model,'login'); ?>
                             </div> 
                         </div>
+                        
                         <?php if ($model->isNewRecord) : ?>
                         <div class="col-md-6">
                             <div class="form-group">
@@ -143,6 +144,13 @@
                             </div> 
                         </div>
                         <?php endif; ?>
+                        
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <?php echo $form->checkbox($model,'admin', array('class'=>'checkbox-inline')); ?> <b>Administrador?</b>
+                                <?php echo $form->error($model,'admin'); ?>
+                            </div> 
+                        </div>
                     </div>
                     <div class="box-footer"> 
                         <?php echo CHtml::submitButton($model->isNewRecord ? 'Salvar' : 'Atualizar', array('class'=>'btn btn-info pull-right', 'onclick'=>'loading()')); ?>
