@@ -60,6 +60,11 @@ class WebUser extends CWebUser {
       return $perfil;
   }
   
+  public function getEmpresa() {
+    $user = $this->loadUser(Yii::app()->user->name);
+     return $user->empresasId;
+  }
+  
   // Load user model.
   protected function loadUser($login=null)
     {

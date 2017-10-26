@@ -20,6 +20,22 @@
             </div>    
         </div> 
     
+        <?php if (Yii::app()->user->isAdmin){  ?>
+        <div class="box-body">
+            <div class="form-group">
+                    <?php echo $form->labelEx($model,'empresasId', array('class'=>'col-sm-2 control-label')); ?>
+                <div class="col-sm-10">
+                    <?php echo $form->dropDownList($model,'empresasId', $empresas, array('class'=>'form-control')); ?> 
+                    <?php echo $form->error($model,'empresasId'); ?>
+                </div>		
+            </div>    
+        </div>
+        <?php 
+            }else{   
+                echo $form->hiddenField($model,'empresasId', array('value' => Yii::app()->user->Empresa)); 
+            }
+        ?>
+    
         <div class="box-body">
             <div class="form-group">
                     <?php echo $form->labelEx($model,'valorAvista', array('class'=>'col-sm-2 control-label')); ?>

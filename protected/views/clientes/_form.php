@@ -129,7 +129,8 @@
                 </div>		
             </div>    
         </div>
-    
+        
+        <?php if (Yii::app()->user->isAdmin){  ?>
         <div class="box-body">
             <div class="form-group">
                     <?php echo $form->labelEx($model,'empresasId', array('class'=>'col-sm-2 control-label')); ?>
@@ -139,6 +140,11 @@
                 </div>		
             </div>    
         </div>
+        <?php 
+            }else{   
+                echo $form->hiddenField($model,'empresasId', array('value' => Yii::app()->user->Empresa)); 
+            }
+        ?>
 
 	<div class="box-footer">
             <?php echo CHtml::submitButton($model->isNewRecord ? 'Salvar' : 'Atualizar', array('class'=>'btn btn-primary', 'onclick'=>'loading()')); 

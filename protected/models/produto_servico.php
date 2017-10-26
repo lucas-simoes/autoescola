@@ -9,6 +9,7 @@
  * @property double $valorAvista
  * @property double $valorAprazo
  * @property integer $produtoAutoEscola
+ * @property integer $empresasId
  */
 class produto_servico extends CActiveRecord
 {
@@ -28,13 +29,13 @@ class produto_servico extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('descricao, produtoAutoEscola', 'required'),
+			array('descricao, produtoAutoEscola,empresasId', 'required'),
 			array('produtoAutoEscola', 'numerical', 'integerOnly'=>true),
 			array('valorAvista, valorAprazo', 'numerical'),
 			array('descricao', 'length', 'max'=>150),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, descricao, valorAvista, valorAprazo, produtoAutoEscola', 'safe', 'on'=>'search'),
+			array('id, descricao, valorAvista, valorAprazo, produtoAutoEscola,empresasId', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -46,6 +47,7 @@ class produto_servico extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                        'empresas' => array(self::BELONGS_TO, 'Empresas', 'empresasId'),
 			'itensorcamentos' => array(self::HAS_MANY, 'Itensorcamento', 'produtosId'),
 			'tituloses' => array(self::HAS_MANY, 'Titulos', 'produtosId'),
 		);
@@ -62,6 +64,8 @@ class produto_servico extends CActiveRecord
 			'valorAvista' => 'Valor A Vista',
 			'valorAprazo' => 'Valor A Prazo',
 			'produtoAutoEscola' => 'Auto Escola?',
+                        'empresasId' => 'Empresas',
+                        'empresas.nome' => 'Empresa',
 		);
 	}
 
@@ -92,6 +96,12 @@ class produto_servico extends CActiveRecord
 		$criteria->compare('valorAprazo',$this->valorAprazo);
 
 		$criteria->compare('produtoAutoEscola',$this->produtoAutoEscola);
+                
+                if (Yii::app()->user->isAdmin){
+                    $criteria->compare('empresasId',$this->empresasId);
+                }else{
+                    $criteria->compare('empresasId', Yii::app()->user->Empresa, true);
+                }
 
 		return new CActiveDataProvider('produto_servico', array(
 			'criteria'=>$criteria,

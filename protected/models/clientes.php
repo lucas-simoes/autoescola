@@ -127,8 +127,16 @@ class clientes extends CActiveRecord
 		$criteria->compare('cep',$this->cep, true);
 
 		$criteria->compare('email',$this->email,true);
-
-		$criteria->compare('empresasId',$this->empresasId);
+                
+                if (Yii::app()->user->isAdmin){
+                    $criteria->compare('empresasId',$this->empresasId);
+                }else{
+                    $criteria->compare('empresasId', Yii::app()->user->Empresa, true);
+                }
+                
+                
+                
+		
 
 		return new CActiveDataProvider('clientes', array(
 			'criteria'=>$criteria,
