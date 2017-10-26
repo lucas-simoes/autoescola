@@ -186,8 +186,9 @@
             <li><a href="<?php echo Yii::app()->createUrl('cidades/admin') ?>"><i class="fa fa fa-list"></i> Lista de Cidades</a></li>
           </ul>
         </li>
-        
-        <li class="treeview">
+                  
+        <?php if (Yii::app()->user->isAdmin){  ?>
+        <li class="treeview">        
           <a href="#">
             <i class="fa fa-briefcase"></i>
             <span>Empresas</span>            
@@ -199,7 +200,24 @@
             <li><a href="<?php echo Yii::app()->createUrl('empresas/create') ?>"><i class="fa fa-plus-circle"></i> Nova Empresa</a></li>
             <li><a href="<?php echo Yii::app()->createUrl('empresas/admin') ?>"><i class="fa fa fa-list"></i> Lista de Empresas</a></li>
           </ul>
-        </li>      
+        </li>
+        <?php }  ?> 
+        
+        <?php if (Yii::app()->user->isAdmin){  ?>
+        <li class="treeview">        
+          <a href="#">
+            <i class="fa fa-user"></i>
+            <span>Usuários</span>            
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo Yii::app()->createUrl('usuarios/create') ?>"><i class="fa fa-plus-circle"></i> Novo Usuário</a></li>
+            <li><a href="<?php echo Yii::app()->createUrl('usuarios/admin') ?>"><i class="fa fa fa-list"></i> Lista de Usuários</a></li>
+          </ul>
+        </li>
+        <?php }  ?> 
         
    
         <li hidden="true" class="treeview">

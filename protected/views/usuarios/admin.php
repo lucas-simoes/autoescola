@@ -38,6 +38,10 @@ $('.search-form form').submit(function(){
 		'telefone',
                 'empresas.nome',
                 'login',
+                array(
+                    'name'=>'admin',
+                    'value'=>'$data->admin == 1?"Sim":"Não"',
+                ),
 		array(
 			'class'=>'CButtonColumn',
                         'template'=>'{update}{deletar}',
