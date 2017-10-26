@@ -64,7 +64,7 @@ class produto_servico extends CActiveRecord
 			'valorAvista' => 'Valor A Vista',
 			'valorAprazo' => 'Valor A Prazo',
 			'produtoAutoEscola' => 'Auto Escola?',
-                        'empresasId' => 'Empresas',
+                        'empresasId' => 'Empresa',
                         'empresas.nome' => 'Empresa',
 		);
 	}

@@ -83,7 +83,7 @@ class clientes extends CActiveRecord
                         'cidade.nome' => 'Cidade',
 			'cep' => 'Cep',
 			'email' => 'Email',
-			'empresasId' => 'Empresas',
+			'empresasId' => 'Empresa',
                         'empresas.nome' => 'Empresa',
 		);
 	}
