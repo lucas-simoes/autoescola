@@ -5,5 +5,5 @@ $this->breadcrumbs=array(
 	'Update',
 );
 ?>
-
+<h1>Empresa #<?php echo $model->empresasId; ?></h1>
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

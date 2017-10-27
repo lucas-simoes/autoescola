@@ -5,5 +5,5 @@ $this->breadcrumbs=array(
 	'Update',
 );
 ?>
-
+<h1>Modalidade #<?php echo $model->modalidadesId; ?></h1>
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

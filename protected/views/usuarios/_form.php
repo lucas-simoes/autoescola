@@ -16,25 +16,6 @@
                             'id'=>'usuarios-form',
                             'enableAjaxValidation'=>false,
                         )); 
-
-                        $cidades = new cidades();
-                        $objCidades = $cidades->findAll();
-
-                        $cidades = array();
-
-                        foreach ($objCidades as $rst) {
-                            $cidades[$rst['id']] = $rst['nome'];
-                        }
-
-                        $empresas= new empresas();
-                        $objEmpresas = $empresas->findAll();
-
-                        $empresas = array();
-
-                        foreach ($objEmpresas as $rst) {
-                            $empresas[$rst['empresasId']] = $rst['nome'];
-                        }
-
                     ?>
                         <?php echo $form->errorSummary($model); ?>
                     <div class="box-body">
@@ -70,7 +51,7 @@
                             </div>
                         </div>
                         
-                        <div class="col-md-12">
+                        <div class="col-md-8">
                             <div class="form-group">
                                 <?php echo $form->labelEx($model,'endereco'); ?>
                                 <?php echo $form->textField($model,'endereco',array('size'=>60,'maxlength'=>80, 'class'=>'form-control')); ?>
@@ -86,10 +67,10 @@
                             </div> 
                         </div>
                         
-                        <div class="col-md-3">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <?php echo $form->labelEx($model,'cidadeId'); ?>
-                                <?php echo $form->dropDownList($model,'cidadeId', $cidades, array('class'=>'form-control')); ?> 
+                                <?php echo $form->dropDownList($model, 'cidadeId', CHtml::listData(cidades::model()->findAll(), 'id', 'nome'), array('class'=>'form-control select2', 'empty'=>'', 'style'=>'width: 100%')); ?>
                                 <?php echo $form->error($model,'cidadeId'); ?>
                             </div> 
                         </div>
@@ -102,7 +83,7 @@
                             </div> 
                         </div>
                         
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <?php echo $form->labelEx($model,'cep'); ?>
                                 <?php echo $form->textField($model,'cep',array('size'=>10,'maxlength'=>10, 'class'=>'form-control cep')); ?>
@@ -122,7 +103,6 @@
                             <div class="form-group">
                                 <?php echo $form->labelEx($model,'empresasId'); ?>
                                 <?php echo $form->dropDownList($model, 'empresasId', CHtml::listData(empresas::model()->findAll(), 'empresasId', 'nome'), array('class'=>'form-control select2', 'empty'=>'', 'style'=>'width: 100%')); ?>
-                                <?php //echo $form->dropDownList($model,'empresasId', $empresas, array('class'=>'form-control')); ?> 
                                 <?php echo $form->error($model,'empresasId'); ?>
                             </div> 
                         </div>
