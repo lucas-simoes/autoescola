@@ -66,7 +66,7 @@ class itensorcamento extends CActiveRecord
 			'produtosId' => 'Cód. Produto/Serviço',
 			'quantidade' => 'Quantidade',
 			'valorUnitario' => 'Valor Unitario',
-			'valorDesconto' => 'Valor Desconto',
+			'valorDesconto' => 'Desconto (%)',
 			'valorTotalLiquido' => 'Total Liquido',
 			'valorTotalPrazo' => 'Total Prazo',
 			'modalidadesId' => 'Modalidade',
