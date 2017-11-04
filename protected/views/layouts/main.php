@@ -155,7 +155,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo Yii::app()->createUrl('clientes/create') ?>"><i class="fa fa-plus-circle"></i> Novo Cliente</a></li>
-            <li><a href="<?php echo Yii::app()->createUrl('clientes/admin') ?>"><i class="fa fa fa-list"></i> Lista de Cidades</a></li>
+            <li><a href="<?php echo Yii::app()->createUrl('clientes/admin') ?>"><i class="fa fa fa-list"></i> Lista de Clientes</a></li>
           </ul>
         </li>
         
