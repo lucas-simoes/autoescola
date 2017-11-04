@@ -161,7 +161,7 @@
                     <div class="col-md-1">
                         <div class="form-group">
                             <?php echo $formItens->labelEx($itens,'valorTotalPrazo'); ?>
-                            <?php echo $formItens->textField($itens,'valorTotalPrazo',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', /*'disabled'=>true*/)); ?>
+                            <?php echo $formItens->textField($itens,'valorTotalPrazo',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'readOnly'=>TRUE)); ?>
                             <?php echo $formItens->error($itens,'valorTotalPrazo'); ?>
                         </div>
                     </div>
@@ -263,6 +263,6 @@ function calculaDesconto() {
     
     var valorDesc = prazo.value - liq.value;
     
-    desconto.value = (valorDesc / prazo.value) * 100; 
+    desconto.value = roun (valorDesc / prazo.value) * 100; 
 }
 </script>
