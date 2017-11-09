@@ -1,0 +1,6 @@
+ALTER TABLE  `clientes` CHANGE  `cpfCnpj`  `cpfCnpj` VARCHAR( 20 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL;
+ALTER TABLE  `clientes` CHANGE  `endereco`  `endereco` VARCHAR( 80 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL;
+ALTER TABLE  `clientes` CHANGE  `bairro`  `bairro` VARCHAR( 40 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL;
+ALTER TABLE  `clientes` CHANGE  `uf`  `uf` VARCHAR( 2 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL;
+ALTER TABLE  `clientes` CHANGE  `cidadeId`  `cidadeId` INT( 11 ) NULL;
+ALTER TABLE  `clientes` CHANGE  `cep`  `cep` VARCHAR( 10 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL;

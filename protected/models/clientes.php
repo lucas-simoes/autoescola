@@ -35,7 +35,7 @@ class clientes extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nome, cpfCnpj, endereco, bairro, uf, cidadeId, cep, empresasId', 'required'),
+			array('nome, empresasId', 'required'),
 			array('cidadeId, empresasId', 'numerical', 'integerOnly'=>true),
 			array('nome', 'length', 'max'=>150),
                         array('cpfCnpj, telefone', 'length', 'max'=>20),
