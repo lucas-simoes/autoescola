@@ -145,6 +145,19 @@
           </ul>
         </li>
         
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-id-card-o"></i> <span>Categorias</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="<?php echo Yii::app()->createUrl('categorias/create') ?>"><i class="fa fa-plus-circle"></i> Nova Categoria</a></li>
+            <li><a href="<?php echo Yii::app()->createUrl('categorias/admin') ?>"><i class="fa fa fa-list"></i> Lista de Categorias</a></li>
+          </ul>
+        </li>
+        
          <li class="treeview">
           <a href="#">
             <i class="fa fa-users"></i>
