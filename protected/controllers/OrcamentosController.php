@@ -268,7 +268,7 @@ class OrcamentosController extends Controller
                         'valorUnitario'=>$produto->valorAvista,
                         'valorDesconto'=>0,
                         'valorTotalLiquido'=>1 * $produto->valorAvista,
-                        'valorTotalPrazo'=>1 * $produto->valorAvista, 
+                        'valorTotalPrazo'=>1 * $produto->valorAprazo, 
                     ));
                     
                     $json = CJSON::encode($item);
