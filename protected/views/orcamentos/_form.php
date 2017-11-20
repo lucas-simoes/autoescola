@@ -61,18 +61,32 @@
                         </div>
                         
                         <div class="col-md-4">
-                            <div class="row">
+                            <div class="form-group">
                                 <?php echo $form->labelEx($cliente, 'telefone'); ?>
                                 <?php echo $form->textField($cliente, 'telefone', array('size' => 20, 'maxlength' => 20, 'class'=>'form-control', 'data-inputmask'=>'\"mask\": \"\(999\) 999\-9999\"')); ?>
                             </div> 
-                        </div>                       
+                        </div>  
+                        
+                        <?php 
+                            if (!Yii::app()->user->isAdmin) {
+                                if ($model->isNewRecord) {
+                                    echo CHtml::hiddenField('empresasId', Yii::app()->user->Empresa);
+                                } else {
+                                    echo $form->hiddenField($model, 'empresasId');
+                                } 
+                            } else {
+                                echo '<div class="col-md-12"><div class="form-group">';
+                                echo $form->labelEx($model, 'empresasId');
+                                echo CHtml::dropDownList('empresasId', $model->empresasId, CHtml::listData(empresas::model()->findAll(), 'empresasId', 'nome'), array('class'=>'form-control', 'empty'=>''));
+                                echo '</div></div>';
+                            }
+                        ?>
                             
                         <?php echo $form->hiddenField($model, 'valorPrazo'); ?>                        
                         <?php echo $form->hiddenField($model, 'valorBruto'); ?>                        
                         <?php echo $form->hiddenField($model, 'valorDesconto'); ?>
                         <?php echo $form->hiddenField($model, 'valorLiquido'); ?>
                         <?php echo $form->hiddenField($model, 'inclusao'); ?>
-                        <?php echo $form->hiddenField($model, 'empresasId'); ?>
                     </div>
                     <div class="box-footer">                        
                         <?php echo CHtml::link('Cancelar', Yii::app()->createUrl('orcamentos/admin'), array('class'=>'btn btn-default')) ?>
@@ -180,6 +194,7 @@
                         </div>
                     </div>
                     
+                    <?php echo CHtml::hiddenField('valorUnPrazo'); ?>
                     <?php $this->endWidget(); ?>
                 </div>
                 
@@ -231,6 +246,7 @@
     document.getElementById('itensorcamento_valorDesconto').value = data.valorDesconto;
     document.getElementById('itensorcamento_valorTotalLiquido').value = data.valorTotalLiquido;
     document.getElementById('itensorcamento_valorTotalPrazo').value = data.valorTotalPrazo;
+    document.getElementById('valorUnPrazo').value = data.valorTotalPrazo;
 }
 
 function updateValores() {
@@ -239,6 +255,7 @@ function updateValores() {
     var desconto = document.getElementById('itensorcamento_valorDesconto');
     var liq = document.getElementById('itensorcamento_valorTotalLiquido');
     var prazo = document.getElementById('itensorcamento_valorTotalPrazo');
+    var unPrazo = document.getElementById('valorUnPrazo');
     
     var descPerc = desconto.value / 100;
     
@@ -246,7 +263,7 @@ function updateValores() {
         qtd.value = 1;
     }
     
-    prazo.value = qtd.value * valorUn.value;
+    prazo.value = qtd.value * unPrazo.value;
     liq.value = prazo.value - (prazo.value * descPerc);
 }
 

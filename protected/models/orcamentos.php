@@ -78,7 +78,7 @@ class orcamentos extends CActiveRecord
 			'validade' => 'Validade',
 			'valorPrazo' => 'Valor Prazo',
 			'inclusao' => 'Inclusao',
-			'empresasId' => 'Empresas',
+			'empresasId' => 'Empresa',
                         'statusNome' => 'Status'
 		);
 	}

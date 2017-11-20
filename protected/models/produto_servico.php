@@ -97,10 +97,8 @@ class produto_servico extends CActiveRecord
 
 		$criteria->compare('produtoAutoEscola',$this->produtoAutoEscola);
                 
-                if (Yii::app()->user->isAdmin){
-                    $criteria->compare('empresasId',$this->empresasId);
-                }else{
-                    $criteria->compare('empresasId', Yii::app()->user->Empresa, true);
+                if (!Yii::app()->user->isAdmin){
+                    $criteria->addCondition('empresasId=' . Yii::app()->user->Empresa);
                 }
 
 		return new CActiveDataProvider('produto_servico', array(

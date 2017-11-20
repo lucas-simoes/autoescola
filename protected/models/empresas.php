@@ -67,7 +67,7 @@ class empresas extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'empresasId' => 'Empresas',
+			'empresasId' => 'Empresa',
 			'nome' => 'Nome',
 			'endereco' => 'Endereco',
 			'bairro' => 'Bairro',

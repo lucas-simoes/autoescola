@@ -5348,3 +5348,50 @@ Stack trace:
 REQUEST_URI=/autoescola/index.php/orcamentos/admin
 HTTP_REFERER=http://localhost/autoescola/index.php/orcamentos/update/1
 ---
+2017/11/20 21:53:31 [error] [exception.CDbException] exception 'CDbException' with message 'A tabela "usuarios" não possui uma coluna chamada "login".' in C:\wamp\www\autoescola\yii\framework\db\schema\CDbCommandBuilder.php:697
+Stack trace:
+#0 C:\wamp\www\autoescola\yii\framework\db\ar\CActiveRecord.php(1523): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#1 C:\wamp\www\autoescola\protected\components\UserIdentity.php(22): CActiveRecord->findByAttributes(Array)
+#2 C:\wamp\www\autoescola\protected\models\LoginForm.php(54): UserIdentity->authenticate()
+#3 C:\wamp\www\autoescola\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 C:\wamp\www\autoescola\yii\framework\validators\CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 C:\wamp\www\autoescola\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#6 C:\wamp\www\autoescola\protected\controllers\SiteController.php(100): CModel->validate()
+#7 C:\wamp\www\autoescola\protected\controllers\SiteController.php(33): SiteController->actionLogin()
+#8 C:\wamp\www\autoescola\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#9 C:\wamp\www\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\wamp\www\autoescola\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\wamp\www\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('')
+#13 C:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#14 C:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\wamp\www\autoescola\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/autoescola/index.php?XDEBUG_SESSION_START=netbeans-xdebug
+HTTP_REFERER=http://localhost/autoescola/index.php?XDEBUG_SESSION_START=netbeans-xdebug
+---
+2017/11/20 22:20:22 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::execute(): SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`autoescola`.`clientes`, CONSTRAINT `clientes_ibfk_2` FOREIGN KEY (`cidadeId`) REFERENCES `cidades` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). A declaração SQL executada foi: INSERT INTO `clientes` (`nome`, `cpfCnpj`, `nascimento`, `telefone`, `endereco`, `bairro`, `cidadeId`, `uf`, `cep`, `email`, `empresasId`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10).
+in C:\wamp\www\autoescola\protected\controllers\ClientesController.php (73)
+in C:\wamp\www\autoescola\index.php (13)
+2017/11/20 22:20:22 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`autoescola`.`clientes`, CONSTRAINT `clientes_ibfk_2` FOREIGN KEY (`cidadeId`) REFERENCES `cidades` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `clientes` (`nome`, `cpfCnpj`, `nascimento`, `telefone`, `endereco`, `bairro`, `cidadeId`, `uf`, `cep`, `email`, `empresasId`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10)' in C:\wamp\www\autoescola\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\wamp\www\autoescola\yii\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\wamp\www\autoescola\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\autoescola\protected\controllers\ClientesController.php(73): CActiveRecord->save()
+#3 C:\wamp\www\autoescola\yii\framework\web\actions\CInlineAction.php(49): ClientesController->actionCreate()
+#4 C:\wamp\www\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp\www\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp\www\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes/create')
+#14 C:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\wamp\www\autoescola\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/autoescola/index.php/clientes/create
+HTTP_REFERER=http://localhost/autoescola/index.php/clientes/create
+---
