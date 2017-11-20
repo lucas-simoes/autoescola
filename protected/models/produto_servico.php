@@ -47,9 +47,9 @@ class produto_servico extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-                        'empresas' => array(self::BELONGS_TO, 'Empresas', 'empresasId'),
-			'itensorcamentos' => array(self::HAS_MANY, 'Itensorcamento', 'produtosId'),
-			'tituloses' => array(self::HAS_MANY, 'Titulos', 'produtosId'),
+                        'empresas' => array(self::BELONGS_TO, 'empresas', 'empresasId'),
+			'itensorcamentos' => array(self::HAS_MANY, 'itensorcamento', 'produtosId'),
+			'tituloses' => array(self::HAS_MANY, 'titulos', 'produtosId'),
 		);
 	}
 
@@ -99,6 +99,8 @@ class produto_servico extends CActiveRecord
                 
                 if (!Yii::app()->user->isAdmin){
                     $criteria->addCondition('empresasId=' . Yii::app()->user->Empresa);
+                }else{
+                    $criteria->compare('empresasId',$this->empresasId);
                 }
 
 		return new CActiveDataProvider('produto_servico', array(
