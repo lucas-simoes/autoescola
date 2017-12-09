@@ -5956,3 +5956,15 @@ Stack trace:
 REQUEST_URI=/autoescola/index.php/orcamentos/update/18
 HTTP_REFERER=http://localhost/autoescola/index.php/orcamentos/update/18
 ---
+2017/12/09 11:25:18 [warning] [application] Failed to set unsafe attribute "itensId" of "itensorcamento".
+in C:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (100)
+in C:\wamp\www\autoescola\index.php (13)
+2017/12/09 11:25:18 [warning] [application] Failed to set unsafe attribute "categoriasId" of "itensorcamento".
+in C:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (100)
+in C:\wamp\www\autoescola\index.php (13)
+2017/12/09 11:25:18 [warning] [application] Failed to set unsafe attribute "itensId" of "itensorcamento".
+in C:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (100)
+in C:\wamp\www\autoescola\index.php (13)
+2017/12/09 11:25:18 [warning] [application] Failed to set unsafe attribute "categoriasId" of "itensorcamento".
+in C:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (100)
+in C:\wamp\www\autoescola\index.php (13)

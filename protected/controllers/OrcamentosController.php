@@ -121,7 +121,7 @@ class OrcamentosController extends Controller
                                         $model->setAttribute('valorPrazo', $model->valorPrazo + $catItens->valorTotalPrazo);
 
                                         $valorDesconto = $model->valorPrazo - $model->valorLiquido;
-                                        $desconto = $valorDesconto / $model->valorPrazo * 100;
+                                        $desconto = round($valorDesconto / $model->valorPrazo * 100, 2);
 
                                         $model->setAttribute('valorDesconto', $desconto);
 
@@ -274,9 +274,11 @@ class OrcamentosController extends Controller
                 $model->setAttribute('valorPrazo', $model->valorPrazo + $itens->valorTotalPrazo);
                 
                 $valorDesconto = $model->valorPrazo - $model->valorLiquido;
-                $desconto = $valorDesconto / $model->valorPrazo * 100;
+                $desconto = round($valorDesconto / $model->valorPrazo * 100, 2);
                 
                 $model->setAttribute('valorDesconto', $desconto);
+                
+                $model->attributes;
                 
                 if ($itens->save()) {
                     $titulos = new titulos();
@@ -324,7 +326,7 @@ class OrcamentosController extends Controller
             $model->setAttribute('valorPrazo', $model->valorPrazo - $item->valorTotalPrazo);
 
             $valorDesconto = $model->valorPrazo - $model->valorLiquido;
-            $desconto = $valorDesconto / $model->valorPrazo * 100;
+            $desconto = round($valorDesconto / $model->valorPrazo * 100, 2);
 
             $model->setAttribute('valorDesconto', $desconto);
             
