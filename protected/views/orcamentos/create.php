@@ -7,4 +7,4 @@ $this->breadcrumbs=array(
 
 <h1>Novo Orçamento</h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model, 'cliente'=>$cliente, 'itens'=>$itens)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'cliente'=>$cliente, 'itens'=>$itens, 'titulos'=>$titulos)); ?>

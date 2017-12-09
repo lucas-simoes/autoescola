@@ -81,6 +81,29 @@
                                 echo '</div></div>';
                             }
                         ?>
+                        
+                        <?php if ($model->isNewRecord) : ?>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <?php echo CHtml::label('Categoria', 'categoria'); ?>
+                                    <?php echo CHtml::dropDownList('categoria', '', CHtml::listData(categorias::model()->findAll(), 'id', 'nome'), array('class'=>'form-control', 'empty'=>'')); ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                        
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <?php echo $form->labelEx($model,'valorBruto'); ?>
+                                <?php echo $form->textField($model,'valorBruto',array('class'=>'form-control', 'readOnly'=>TRUE)); ?>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <?php echo $form->labelEx($model,'valorLiquido'); ?>
+                                <?php echo $form->textField($model,'valorLiquido',array('class'=>'form-control', 'readOnly'=>TRUE)); ?>
+                            </div>
+                        </div>
                             
                         <?php echo $form->hiddenField($model, 'valorPrazo'); ?>                        
                         <?php echo $form->hiddenField($model, 'valorBruto'); ?>                        
@@ -119,78 +142,109 @@
                     <?php echo $formItens->errorSummary($model); ?>
                     <?php echo $formItens->hiddenField($itens,'orcamentosId'); ?>
 
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <?php echo $formItens->labelEx($itens,'produtosId'); ?>
-                            <?php echo $formItens->dropDownList($itens,
-                                                                'produtosId', 
-                                                                CHtml::listData(produto_servico::model()->findAll(), 
-                                                                                'id', 
-                                                                                'descricao'), 
-                                                                array('class'=>'form-control select2', 
-                                                                      'empty'=>'', 
-                                                                      'style'=>'width: 100%',
-                                                                      'ajax'=>array('type'=>'POST',
-                                                                                    'dataType'=>'json',
-                                                                                    'url'=> Yii::app()->createUrl('orcamentos/getDadosProduto'),
-                                                                                    'success'=>'updateForm',
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <?php echo $formItens->labelEx($itens,'produtosId'); ?>
+                                <?php echo $formItens->dropDownList($itens,
+                                                                    'produtosId', 
+                                                                    CHtml::listData(produto_servico::model()->findAll(), 
+                                                                                    'id', 
+                                                                                    'descricao'), 
+                                                                    array('class'=>'form-control select2', 
+                                                                          'empty'=>'', 
+                                                                          'style'=>'width: 100%',
+                                                                          'ajax'=>array('type'=>'POST',
+                                                                                        'dataType'=>'json',
+                                                                                        'url'=> Yii::app()->createUrl('orcamentos/getDadosProduto'),
+                                                                                        'success'=>'updateForm',
 
-                                                                   ))); ?>
-                            <?php echo $formItens->error($itens,'produtosId'); ?>
+                                                                       ))); ?>
+                                <?php echo $formItens->error($itens,'produtosId'); ?>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-1">
-                        <div class="form-group">
-                            <?php echo $formItens->labelEx($itens,'quantidade'); ?>
-                            <?php echo $formItens->textField($itens,'quantidade',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'updateValores()')); ?>
-                            <?php echo $formItens->error($itens,'quantidade'); ?>
+                        <div class="col-md-1">
+                            <div class="form-group">
+                                <?php echo $formItens->labelEx($itens,'quantidade'); ?>
+                                <?php echo $formItens->textField($itens,'quantidade',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'updateValores()')); ?>
+                                <?php echo $formItens->error($itens,'quantidade'); ?>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-1">
-                        <div class="form-group">
-                            <?php echo $formItens->labelEx($itens,'valorUnitario'); ?>
-                            <?php echo $formItens->textField($itens,'valorUnitario',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'updateValores()')); ?>
-                            <?php echo $formItens->error($itens,'valorUnitario'); ?>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <?php echo $formItens->labelEx($itens,'valorUnitario'); ?>
+                                <?php echo $formItens->textField($itens,'valorUnitario',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'updateValores()')); ?>
+                                <?php echo $formItens->error($itens,'valorUnitario'); ?>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-1">
-                        <div class="form-group">
-                            <?php echo $formItens->labelEx($itens,'valorDesconto'); ?>
-                            <?php echo $formItens->textField($itens,'valorDesconto',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'updateValores()')); ?>
-                            <?php echo $formItens->error($itens,'valorDesconto'); ?>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <?php echo $formItens->labelEx($itens,'valorDesconto'); ?>
+                                <?php echo $formItens->textField($itens,'valorDesconto',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'updateValores()')); ?>
+                                <?php echo $formItens->error($itens,'valorDesconto'); ?>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-md-1">
-                        <div class="form-group">
-                            <?php echo $formItens->labelEx($itens,'valorTotalLiquido'); ?>
-                            <?php echo $formItens->textField($itens,'valorTotalLiquido',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'calculaDesconto()')); ?>
-                            <?php echo $formItens->error($itens,'valorTotalLiquido'); ?>
-                        </div>
-                    </div>
-
-                    <div class="col-md-1">
-                        <div class="form-group">
-                            <?php echo $formItens->labelEx($itens,'valorTotalPrazo'); ?>
-                            <?php echo $formItens->textField($itens,'valorTotalPrazo',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'readOnly'=>TRUE)); ?>
-                            <?php echo $formItens->error($itens,'valorTotalPrazo'); ?>
-                        </div>
-                    </div>
-
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <?php echo $formItens->labelEx($itens,'modalidadesId'); ?>
-                            <?php echo $formItens->dropDownList($itens,'modalidadesId', CHtml::listData(modalidades::model()->findAll(), 'modalidadesId', 'nome'), array('class'=>'form-control select2', 'empty'=>'')); ?>
-                            <?php echo $formItens->error($itens,'modalidadesId'); ?>
-                        </div>
+                        
+                         
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <?php echo $formItens->labelEx($itens,'valorTotalPrazo'); ?>
+                                <?php echo $formItens->textField($itens,'valorTotalPrazo',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'readOnly'=>TRUE)); ?>
+                                <?php echo $formItens->error($itens,'valorTotalPrazo'); ?>
+                            </div>
+                        </div>                        
                     </div>
                     
-                    <div class="col-md-1">
-                        <div class="form-group">
-                            <?php echo CHtml::submitButton('Inserir Item', array('class'=>'btn btn-info pull-right')); ?>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <?php echo $formItens->labelEx($itens,'valorTotalLiquido'); ?>
+                                <?php echo $formItens->textField($itens,'valorTotalLiquido',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'calculaDesconto()', 'readOnly'=>TRUE)); ?>
+                                <?php echo $formItens->error($itens,'valorTotalLiquido'); ?>
+                            </div>
+                        </div>
+                        
+                        <?php echo $formItens->hiddenField($titulos, 'produtosId'); ?>
+                        
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <?php echo $formItens->labelEx($itens,'modalidadesId'); ?>
+                                <?php echo $formItens->dropDownList($itens,'modalidadesId', CHtml::listData(modalidades::model()->findAll(), 'modalidadesId', 'nome'), array('class'=>'form-control select2', 'empty'=>'')); ?>
+                                <?php echo $formItens->error($itens,'modalidadesId'); ?>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <?php echo $formItens->labelEx($titulos, 'parcelas'); ?>
+                                <?php echo $formItens->numberField($titulos, 'parcelas', array('class'=>'form-control', 'onfocusout'=>'calculaValorParcela()'));?>
+                                <?php echo $formItens->error($titulos, 'parcelas'); ?>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <?php echo $formItens->labelEx($titulos, 'valorParcela'); ?>
+                                <?php echo $formItens->numberField($titulos, 'valorParcela', array('class'=>'form-control', 'readOnly'=>TRUE));?>
+                                <?php echo $formItens->error($titulos, 'valorParcela'); ?>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <?php echo $formItens->labelEx($titulos, 'vencimento'); ?>
+                                <?php echo $formItens->dateField($titulos, 'vencimento', array('class'=>'form-control'));?>
+                                <?php echo $formItens->error($titulos, 'vencimento'); ?>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-1">
+                            <div class="form-group" style="padding-top: 25px">
+                                <?php echo CHtml::submitButton('Inserir Item', array('class'=>'btn btn-info pull-right')); ?>
+                            </div>
                         </div>
                     </div>
                     
@@ -200,18 +254,17 @@
                 
                 <?php $this->widget('zii.widgets.grid.CGridView', array(
                         'id'=>'itensorcamento-grid',
-                        'dataProvider'=>$itens->search(),
-                        'columns'=>array(
-                                //'itensId',
-                                //'orcamentosId',
-                                'produtosId',
+                        'dataProvider'=>$titulos->search(),
+                        'columns'=>array(                                
                                 'produtos.descricao',
-                                'quantidade',
-                                'valorUnitario',
-                                'valorDesconto',
-                                'valorTotalLiquido',
-                                'valorTotalPrazo',
-                                'modalidades.nome',
+                                'itens.quantidade',
+                                'itens.valorUnitario',
+                                'itens.valorDesconto',
+                                'itens.valorTotalLiquido',
+                                'itens.valorTotalPrazo',
+                                'itens.modalidades.nome',
+                                'parcelas',
+                                'valorParcela',
                                 array(
                                         'class'=>'CButtonColumn',
                                         'template'=>'{deletar}',
@@ -220,7 +273,7 @@
                                         'buttons' => array (
                                             'deletar' => array(
                                                 'label'=>'<i class="fa fa-trash"></i>',
-                                                'url'=>'Yii::app()->createUrl("orcamentos/deleteItem", array("id"=>"$data->itensId"))',
+                                                'url'=>'Yii::app()->createUrl("orcamentos/deleteItem", array("id"=>"$data->itensorcamentoId"))',
                                                 'options'=>array('title'=>'Excluir', 'class'=>'btn btn-default' ),
                                             ),
                                         ),
@@ -246,7 +299,11 @@
     document.getElementById('itensorcamento_valorDesconto').value = data.valorDesconto;
     document.getElementById('itensorcamento_valorTotalLiquido').value = data.valorTotalLiquido;
     document.getElementById('itensorcamento_valorTotalPrazo').value = data.valorTotalPrazo;
-    document.getElementById('valorUnPrazo').value = data.valorTotalPrazo;
+    document.getElementById('itensorcamento_valorUnitario').value = data.valorTotalPrazo;
+    
+    document.getElementById('titulos_parcelas').value = 1;
+    document.getElementById('titulos_valorParcela').value = document.getElementById('itensorcamento_valorTotalLiquido').value;
+    document.getElementById('titulos_vencimento').value = document.getElementById('orcamentos_data').value;
 }
 
 function updateValores() {
@@ -255,7 +312,8 @@ function updateValores() {
     var desconto = document.getElementById('itensorcamento_valorDesconto');
     var liq = document.getElementById('itensorcamento_valorTotalLiquido');
     var prazo = document.getElementById('itensorcamento_valorTotalPrazo');
-    var unPrazo = document.getElementById('valorUnPrazo');
+    var unPrazo = document.getElementById('itensorcamento_valorUnitario');
+    var valorParcela = document.getElementById('titulos_valorParcela');
     
     var descPerc = desconto.value / 100;
     
@@ -263,8 +321,9 @@ function updateValores() {
         qtd.value = 1;
     }
     
-    prazo.value = qtd.value * unPrazo.value;
+    prazo.value = qtd.value * valorUn.value;
     liq.value = prazo.value - (prazo.value * descPerc);
+    valorParcela.value = liq.value;
 }
 
 function calculaDesconto() {
@@ -281,5 +340,13 @@ function calculaDesconto() {
     var valorDesc = prazo.value - liq.value;
     
     desconto.value = roun (valorDesc / prazo.value) * 100; 
+}
+
+function calculaValorParcela() {
+    var valorParcela = document.getElementById('titulos_valorParcela');
+    var qtdParcelas = document.getElementById('titulos_parcelas');
+    var liq = document.getElementById('itensorcamento_valorTotalLiquido');
+    
+    valorParcela.value = liq.value / qtdParcelas.value;
 }
 </script>

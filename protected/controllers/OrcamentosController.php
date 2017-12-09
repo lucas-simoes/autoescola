@@ -80,6 +80,7 @@ class OrcamentosController extends Controller
                 ));
                 
                 $itens = new itensorcamento();
+                $titulos = new titulos();
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -88,6 +89,48 @@ class OrcamentosController extends Controller
 		{
 			$model->attributes=$_POST['orcamentos'];
 			if($model->save()) {
+                            if ((isset($_POST['categoria'])) && ($_POST['categoria'] != '')) {  
+                                
+                                $setItens = itenscategoria::model()->findAllByAttributes(array('categoriasId'=>$_POST['categoria']));
+                                
+                                foreach ($setItens as $singleItem) {
+                                    
+                                    $catItens = new itensorcamento();
+                                
+                                    $catItens->attributes = $singleItem->attributes;
+
+                                    $catItens->setAttribute('orcamentosId', $model->orcamentosId);
+
+                                    if ($catItens->save()) {
+                                    
+                                        $setTitulos = new titulos();
+
+                                        $setTitulos->setAttributes(array(
+                                            'valor' => $catItens->valorTotalLiquido,
+                                            'parcelas' => 1,
+                                            'vencimento' => $model->data,
+                                            'itensorcamentoId' => $catItens->itensId,
+                                            'produtosId' => $catItens->produtosId,
+                                            'valorParcela' => $catItens->valorTotalLiquido
+                                        ));
+
+                                        $setTitulos->save();
+
+                                        $model->setAttribute('valorBruto', $model->valorPrazo + $catItens->valorTotalPrazo);
+                                        $model->setAttribute('valorLiquido', $model->valorLiquido + $catItens->valorTotalLiquido);
+                                        $model->setAttribute('valorPrazo', $model->valorPrazo + $catItens->valorTotalPrazo);
+
+                                        $valorDesconto = $model->valorPrazo - $model->valorLiquido;
+                                        $desconto = $valorDesconto / $model->valorPrazo * 100;
+
+                                        $model->setAttribute('valorDesconto', $desconto);
+
+                                        $model->save();
+                                    }
+                                    
+                                }
+                                
+                            }
                             
                             $this->redirect(array('update','id'=>$model->orcamentosId));
                             //$this->renderPartial('itens', array('itens'=>$itens));
@@ -98,6 +141,7 @@ class OrcamentosController extends Controller
 			'model'=>$model,
                         'cliente'=>$cliente,
                         'itens'=>$itens,
+                        'titulos'=>$titulos,
 		));
 	}
 
@@ -111,9 +155,13 @@ class OrcamentosController extends Controller
                 
                 $cliente = clientes::model()->findByPk($model->clientesId);
                 
-                $itens = new itensorcamento;   
+                $itens = new itensorcamento();
                 
                 $itens->setAttribute('orcamentosId', $model->orcamentosId);
+                
+                $titulos = new titulos();
+                
+                $titulos->setAttribute('_orcamentosId', $model->orcamentosId);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -129,6 +177,7 @@ class OrcamentosController extends Controller
 			'model'=>$model,
                         'cliente'=>$cliente,
                         'itens'=>$itens,
+                        'titulos'=>$titulos,
 		));
 	}
 
@@ -138,14 +187,14 @@ class OrcamentosController extends Controller
 	 */
 	public function actionDelete()
 	{
-		if(Yii::app()->request->isPostRequest)
+		if(!Yii::app()->request->isPostRequest)
 		{
 			// we only allow deletion via POST request
 			$this->loadModel()->delete();
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))
-				$this->redirect(array('index'));
+				$this->redirect(array('admin'));
 		}
 		else
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
@@ -218,17 +267,43 @@ class OrcamentosController extends Controller
                 
                 $itens->setAttribute('orcamentosId', $model->orcamentosId);
                 
-                $itens = new itensorcamento();
-                
                 $itens->attributes = $_POST['itensorcamento'];
                 
+                $model->setAttribute('valorBruto', $model->valorPrazo + $itens->valorTotalPrazo);
+                $model->setAttribute('valorLiquido', $model->valorLiquido + $itens->valorTotalLiquido);
+                $model->setAttribute('valorPrazo', $model->valorPrazo + $itens->valorTotalPrazo);
+                
+                $valorDesconto = $model->valorPrazo - $model->valorLiquido;
+                $desconto = $valorDesconto / $model->valorPrazo * 100;
+                
+                $model->setAttribute('valorDesconto', $desconto);
+                
                 if ($itens->save()) {
-                    $this->redirect(array('update','id'=>$model->orcamentosId));
+                    $titulos = new titulos();
+                
+                    $titulos->attributes = $_POST['titulos'];
+
+                    $titulos->setAttribute('valor', $itens->valorTotalLiquido);
+                    $titulos->setAttribute('itensorcamentoId', $itens->itensId);
+                    $titulos->setAttribute('produtosId', $itens->produtosId);
+                    
+                    if ($titulos->save()) { 
+                        $model->save();
+                        $this->redirect(array('update','id'=>$model->orcamentosId));
+                    } else {
+                        $this->render('update',array(
+                            'model'=>$model,
+                            'cliente'=>$cliente,
+                            'itens'=>$itens,
+                            'titulos'=>$titulos,
+                        ));
+                    }
                 } else {
                     $this->render('update',array(
 			'model'=>$model,
                         'cliente'=>$cliente,
                         'itens'=>$itens,
+                        'titulos'=>$titulos,
                     ));
                 }
             }
@@ -240,11 +315,22 @@ class OrcamentosController extends Controller
             
             $orcamentosId = $item->orcamentosId;
             
-            $item->delete();
-            
             $model = orcamentos::model()->findByPk($orcamentosId);
                 
             $cliente = clientes::model()->findByPk($model->clientesId);
+            
+            $model->setAttribute('valorBruto', $model->valorPrazo - $item->valorTotalPrazo);
+            $model->setAttribute('valorLiquido', $model->valorLiquido - $item->valorTotalLiquido);
+            $model->setAttribute('valorPrazo', $model->valorPrazo - $item->valorTotalPrazo);
+
+            $valorDesconto = $model->valorPrazo - $model->valorLiquido;
+            $desconto = $valorDesconto / $model->valorPrazo * 100;
+
+            $model->setAttribute('valorDesconto', $desconto);
+            
+            $model->save();
+            
+            $item->delete();
 
             $itens = new itensorcamento;   
 
@@ -268,7 +354,7 @@ class OrcamentosController extends Controller
                         'valorUnitario'=>$produto->valorAvista,
                         'valorDesconto'=>0,
                         'valorTotalLiquido'=>1 * $produto->valorAvista,
-                        'valorTotalPrazo'=>1 * $produto->valorAprazo, 
+                        'valorTotalPrazo'=>1 * $produto->valorAvista, 
                     ));
                     
                     $json = CJSON::encode($item);

@@ -8,11 +8,13 @@
  * @property string $valor
  * @property integer $parcelas
  * @property string $vencimento
- * @property integer $orcamentosId
+ * @property integer $itensorcamentoId
  * @property integer $produtosId
+ * @property float $valorParcela
  */
 class titulos extends CActiveRecord
 {
+       public $_orcamentosId;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -29,12 +31,12 @@ class titulos extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('valor, parcelas, vencimento, orcamentosId, produtosId', 'required'),
-			array('parcelas, orcamentosId, produtosId', 'numerical', 'integerOnly'=>true),
+			array('valor, parcelas, vencimento, itensorcamentoId, produtosId, valorParcela', 'required'),
+			array('parcelas, itensorcamentoId, produtosId', 'numerical', 'integerOnly'=>true),
 			array('valor', 'length', 'max'=>11),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('titulosId, valor, parcelas, vencimento, orcamentosId, produtosId', 'safe', 'on'=>'search'),
+			array('titulosId, valor, parcelas, vencimento, itensorcamentoId, produtosId, valorParcela', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -46,8 +48,8 @@ class titulos extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'produtos' => array(self::BELONGS_TO, 'ProdutoServico', 'produtosId'),
-			'orcamentos' => array(self::BELONGS_TO, 'Orcamentos', 'orcamentosId'),
+			'produtos' => array(self::BELONGS_TO, 'produto_servico', 'produtosId'),
+			'itens' => array(self::BELONGS_TO, 'itensorcamento', 'itensorcamentoId'),
 		);
 	}
 
@@ -61,8 +63,10 @@ class titulos extends CActiveRecord
 			'valor' => 'Valor',
 			'parcelas' => 'Parcelas',
 			'vencimento' => 'Vencimento',
-			'orcamentosId' => 'Orcamentos',
+			'itensorcamentoId' => 'Item',
 			'produtosId' => 'Produtos',
+                        'valorParcela' => 'Valor Parcela',
+                        'itens.modalidades.nome' => 'Modalidade',
 		);
 	}
 
@@ -92,9 +96,12 @@ class titulos extends CActiveRecord
 
 		$criteria->compare('vencimento',$this->vencimento,true);
 
-		$criteria->compare('orcamentosId',$this->orcamentosId);
+		$criteria->compare('itensorcamentoId',$this->itensorcamentoId);
 
 		$criteria->compare('produtosId',$this->produtosId);
+                
+                $criteria->with = array('itens');
+                $criteria->compare( 'itens.orcamentosId', $this->_orcamentosId);
 
 		return new CActiveDataProvider('titulos', array(
 			'criteria'=>$criteria,

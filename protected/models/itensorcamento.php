@@ -64,7 +64,7 @@ class itensorcamento extends CActiveRecord
 			'itensId' => 'Itens',
 			'orcamentosId' => 'Orcamentos',
 			'produtosId' => 'Cód. Produto/Serviço',
-			'quantidade' => 'Quantidade',
+			'quantidade' => 'Qtde.',
 			'valorUnitario' => 'Valor Unitario',
 			'valorDesconto' => 'Desconto (%)',
 			'valorTotalLiquido' => 'Total Liquido',
