@@ -35,6 +35,10 @@ class OrcamentosController extends Controller
 				'actions'=>array('index','view','create','update','admin','delete', 'inserirItem', 'deleteItem', 'getDadosProduto'),
 				'users'=>array('@'),
 			),
+                        array('allow',
+                            'actions'=>array('testesms'),
+                            'users'=>array('*')
+                        ),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -364,5 +368,42 @@ class OrcamentosController extends Controller
                     echo $json;
                 }
             }
+        }
+        
+        public function actionTesteSms() {
+            
+            $objLista = new listaMSG();
+
+            $lista = new msgSms();
+            $lista->celular = '5533984399259';
+            $lista->cnpjConta = '41218264000101';
+            $lista->cnpjEmpresa = '41218264000101';
+            $lista->data = date('Y-m-d H:i:s', time());
+            $lista->msg = 'Mensâgem de Téste Avulça';
+            $lista->senha = '123456';
+            $lista->refExterna = '123';
+            
+            $objLista->setLista($lista);
+            
+            $lista = new msgSms();
+            $lista->celular = '5533984399259';
+            $lista->cnpjConta = '41218264000101';
+            $lista->cnpjEmpresa = '41218264000101';
+            $lista->data = date('Y-m-d H:i:s', time());
+            $lista->msg = 'Nova Mensagem';
+            $lista->senha = '123456';
+            $lista->refExterna = '123';
+            
+            $objLista->setLista($lista);
+
+            $objMsg = new listaSms($objLista);
+            $objMsg->agendado = 0;
+            
+            //Envio de multiplos SMS
+            SMS::sendListSMS($objMsg);
+            
+            //Envio de um único SMS
+            SMS::sendSingleSMS($lista);
+            
         }
 }
