@@ -400,10 +400,20 @@ class OrcamentosController extends Controller
             $objMsg->agendado = 0;
             
             //Envio de multiplos SMS
-            SMS::sendListSMS($objMsg);
+            //SMS::sendListSMS($objMsg);
             
             //Envio de um único SMS
-            SMS::sendSingleSMS($lista);
+            //SMS::sendSingleSMS($lista);
+            
+            $email = new Email();
+            
+            $email->para = 'lucas_development@outlook.com';
+            $email->assunto =  'Teste de Envio de Email';
+            $email->mensagem = 'Mensagem de Teste';
+            $email->nomeRemetente = 'CFC California';
+            $email->emailRemetente = 'contato@cfccalifornia.xyz';
+            
+            $email->send();
             
         }
 }
