@@ -3,6 +3,21 @@
     Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/orcamentos.js', CClientScript::POS_END);
     Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/dist/css/skins/_all-skins.min.css', CClientScript::POS_HEAD);
 ?>
+<style type="text/css">
+    .looad {
+        border: 10px solid #f3f3f3; /* Light grey */
+        border-top: 10px solid #3498db; /* Blue */
+        border-radius: 50%;
+        width: 1px;
+        height: 1px;
+        animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
 <section class="content">
     <div class="row">
         <div class="col-md-12">
@@ -19,6 +34,7 @@
                     ));
                     ?>
                         <?php echo $form->errorSummary($model); ?>
+                        <?php echo $form->hiddenField($model, 'orcamentosId'); ?>
                     <div class="box-body">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -61,9 +77,10 @@
                         </div>
                         
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="form-group"  id="tel">
                                 <?php echo $form->labelEx($cliente, 'telefone'); ?>
                                 <?php echo $form->textField($cliente, 'telefone', array('size' => 20, 'maxlength' => 20, 'class'=>'form-control', 'data-inputmask'=>'\"mask\": \"\(999\) 999\-9999\"')); ?>
+                                <?php echo CHtml::label('', 'telefone', array('id'=>'validation', 'style'=>'display: none')); ?>
                             </div> 
                         </div>  
                         
@@ -113,6 +130,17 @@
                     </div>
                     <div class="box-footer">                        
                         <?php echo CHtml::link('Cancelar', Yii::app()->createUrl('orcamentos/admin'), array('class'=>'btn btn-default')) ?>
+                        <?php   if (!$model->isNewRecord) { 
+                                    echo CHtml::ajaxLink('Enviar Notificação <span class="label label-primary" id="info" style="display: none"><div id="hide" class="looad"></div></span>', 
+                                                       Yii::app()->createUrl('orcamentos/sendnotify'), 
+                                                       array('type'=>'POST', 
+                                                             //'data'=> "js:$('#orcamentos-form').serialize()",
+                                                             'dataType'=>'json',
+                                                             'success'=>'confirmation', 
+                                                             'url' => '#'), 
+                                                             array('class'=>'btn btn-default', 'onclick'=>'sendNotify()', 'id'=>'btn-notify')); 
+                                }
+                        ?>                        
                         <?php echo CHtml::submitButton('Salvar Cabeçalho', array('class'=>'btn btn-info pull-right')); ?>
                     </div>
 
@@ -348,5 +376,32 @@ function calculaValorParcela() {
     var liq = document.getElementById('itensorcamento_valorTotalLiquido');
     
     valorParcela.value = liq.value / qtdParcelas.value;
+}
+
+function confirmation(data) {
+    var info = document.getElementById('info');
+    
+    info.removeChild(info.childNodes[0]);
+    info.innerHTML = data.msg;
+    
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function sendNotify(){
+    var info = document.getElementById('info');
+    var tel = document.getElementById('clientes_telefone');
+    var label = document.getElementById('tel');
+    var validator = document.getElementById('validation');
+    
+    if (tel.value == '') {
+        label.classList.add('has-error');
+        validator.style.display = 'block';
+        validator.innerHTML = 'Telefone não configurado para envio de SMS!';
+    }
+    
+    info.style.display = 'block';
 }
 </script>

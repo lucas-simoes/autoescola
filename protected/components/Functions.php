@@ -47,7 +47,18 @@ class Functions extends CApplicationComponent {
         );
 
         return strtr($param, $characteres);
-    }    
+    }  
+    
+    public static function removeMascara($string) {
+        
+        $string = str_replace('(', '', $string);
+        $string = str_replace(')', '', $string);
+        $string = str_replace('-', '', $string);
+        $string = str_replace('_', '', $string);
+        $string = str_replace(' ', '', $string);
+        
+        return $string;
+    }
     
     
 }

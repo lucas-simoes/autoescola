@@ -87,6 +87,8 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'lucas_development@outlook.com',
+                'cnpjSMS'=>'41218264000101',
+                'senhaSMS'=>'123456',
 	),
         
         'sourceLanguage'=>'pt_br',

@@ -32,12 +32,12 @@ class OrcamentosController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','create','update','admin','delete', 'inserirItem', 'deleteItem', 'getDadosProduto'),
+				'actions'=>array('index','view','create','update','admin','delete', 'inserirItem', 'deleteItem', 'getDadosProduto', 'sendnotify'),
 				'users'=>array('@'),
 			),
                         array('allow',
                             'actions'=>array('testesms'),
-                            'users'=>array('*')
+                            'users'=>array('@')
                         ),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -370,6 +370,8 @@ class OrcamentosController extends Controller
             }
         }
         
+        
+        
         public function actionTesteSms() {
             
             $objLista = new listaMSG();
@@ -416,4 +418,54 @@ class OrcamentosController extends Controller
             $email->send();
             
         }
+        
+        public function actionSendNotify() {
+            
+            if (isset($_POST['orcamentos'])) {                
+                $cliente = clientes::model()->findByPk($_POST['orcamentos']['clientesId']);
+                
+                try {
+                    
+                    $msgSMS = 'CFC California: Orcamento Valor ' . $_POST['orcamentos']['valorLiquido']; 
+                    $msgSMS .= ' Data ' . date('d/m/Y', strtotime($_POST['orcamentos']['data']));
+                    $msgSMS .= ' Validade ' . date('d/m/Y', strtotime($_POST['orcamentos']['validade']));
+                    
+                    if ($_POST['clientes']['telefone']) {
+
+                        $telefone = Functions::removeMascara($_POST['clientes']['telefone']);                        
+
+                        $lista = new msgSms();
+                        $lista->celular = '55' . $telefone;
+                        $lista->cnpjConta = Yii::app()->params['cnpjSMS'];
+                        $lista->cnpjEmpresa = Yii::app()->params['cnpjSMS'];
+                        $lista->data = date('Y-m-d H:i:s', time());
+                        $lista->msg = $msgSMS;
+                        $lista->senha = Yii::app()->params['senhaSMS'];
+                        $lista->refExterna = $_POST['orcamentos']['orcamentosId'];
+
+                        SMS::sendSingleSMS($lista);
+                    }
+                    
+                    $email = new Email();
+            
+                    $email->para = $cliente->email;
+                    $email->assunto =  'Informativo CFC Califórnia';
+                    $email->mensagem = $msgSMS;
+                    $email->nomeRemetente = 'CFC California';
+                    $email->emailRemetente = 'contato@cfccalifornia.xyz';
+
+                    if (!@$email->send()) {
+                        throw new Exception();
+                    }
+
+                    $msg = 'Notificação Enviada com Sucesso';
+                    
+                } catch (Exception $exc) {
+                    $msg = 'Falha ao enviar notificação';
+                } finally {
+                    echo CJSON::encode(array('msg'=>$msg));
+                }
+            }
+        }
 }
+

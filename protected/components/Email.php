@@ -73,7 +73,7 @@ class Email {
                 'Reply-To: no-reply@cfcalifornia.xyz' . "\r\n" .
                 'X-Mailer: PHP/' . phpversion();
         
-        $teste = mail(utf8_decode($to), '=?utf-8?B?'.base64_encode($subject).'?=', utf8_decode($mensagem), utf8_decode($headers));
+        return $teste = mail(utf8_decode($to), '=?utf-8?B?'.base64_encode($subject).'?=', utf8_decode($mensagem), utf8_decode($headers));
         
     }
 }
