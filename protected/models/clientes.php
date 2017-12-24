@@ -15,6 +15,10 @@
  * @property integer $cidadeId
  * @property string $cep
  * @property string $email
+ * @property string $nacionalidade
+ * @property string $estadoCivil
+ * @property string $profissao
+ * @property string $identidade
  * @property integer $empresasId
  */
 class clientes extends CActiveRecord
@@ -40,14 +44,14 @@ class clientes extends CActiveRecord
 			array('nome', 'length', 'max'=>150),
                         array('cpfCnpj, telefone', 'length', 'max'=>20),
 			array('endereco', 'length', 'max'=>80),
-                        array('bairro', 'length', 'max'=>40),
+                        array('bairro, nacionalidade, estadoCivil, profissao, identidade', 'length', 'max'=>40),
 			array('uf', 'length', 'max'=>2),
                         array('cep', 'length', 'max'=>10),
 			array('email', 'length', 'max'=>100),
 			array('nascimento', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, nome, cpfCnpj, nascimento, fixo, celular, endereco, numero, bairro, uf, cidadeId, cep, email, empresasId', 'safe', 'on'=>'search'),
+			array('id, nome, cpfCnpj, nascimento, fixo, celular, endereco, numero, bairro, uf, cidadeId, cep, email, nacionalidade, estadoCivil, profissao, identidade, empresasId', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -78,6 +82,10 @@ class clientes extends CActiveRecord
 			'telefone' => 'Telefone',
 			'endereco' => 'Endereco',
 			'bairro' => 'Bairro',
+                        'nacionalidade' => 'Nacionalidade',
+                        'estadoCivil' => 'Estado Civil',
+                        'profissao' => 'Profissão',
+                        'identidade' => 'RG',
 			'uf' => 'UF',
 			'cidadeId' => 'Cidade',
                         'cidade.nome' => 'Cidade',
@@ -119,7 +127,15 @@ class clientes extends CActiveRecord
 		$criteria->compare('endereco',$this->endereco,true);
 
 		$criteria->compare('bairro',$this->bairro,true);
-
+                
+                $criteria->compare('nacionalidade',$this->nacionalidade,true);
+                
+                $criteria->compare('estadoCivil',$this->estadoCivil,true);
+                
+                $criteria->compare('profissao',$this->profissao,true);
+                
+                $criteria->compare('identidade',$this->identidade,true);
+                
 		$criteria->compare('uf',$this->uf,true);
 
 		$criteria->compare('cidadeId',$this->cidadeId);

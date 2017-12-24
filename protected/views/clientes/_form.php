@@ -90,6 +90,39 @@
                             </div> 
                         </div>
                         
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <?php echo $form->labelEx($model,'nacionalidade'); ?>
+                                <?php echo $form->textField($model,'nacionalidade',array('size'=>40,'maxlength'=>40, 'class'=>'form-control')); ?>
+                                <?php echo $form->error($model,'nacionalidade'); ?>
+                            </div> 
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <?php echo $form->labelEx($model,'estadoCivil'); ?>
+                                <?php echo $form->dropDownList($model,'estadoCivil',array('Solteiro(a)' => 'Solteiro(a)', 'Casado(a)' => 'Casado(a)', 'Divorciado(a)' => 'Divorciado(a)', 'Viúvo(a)' => 'Viúvo(a)'), array('class'=>'form-control select2')); ?>
+                                <?php //echo $form->textField($model,'estadoCivil',array('size'=>40,'maxlength'=>40, 'class'=>'form-control')); ?>
+                                <?php echo $form->error($model,'estadoCivil'); ?>
+                            </div> 
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <?php echo $form->labelEx($model,'profissao'); ?>
+                                <?php echo $form->textField($model,'profissao',array('size'=>40,'maxlength'=>40, 'class'=>'form-control')); ?>
+                                <?php echo $form->error($model,'profissao'); ?>
+                            </div> 
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <?php echo $form->labelEx($model,'identidade'); ?>
+                                <?php echo $form->textField($model,'identidade',array('size'=>40,'maxlength'=>40, 'class'=>'form-control')); ?>
+                                <?php echo $form->error($model,'identidade'); ?>
+                            </div> 
+                        </div>
+                        
                         <?php if (Yii::app()->user->isAdmin){  ?>
                         <div class="col-md-6">
                             <div class="form-group">
