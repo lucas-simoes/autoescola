@@ -30,6 +30,15 @@
                     <div class="box-body">
                         <div class="col-md-12">
                             <div class="form-group">
+                                <?php echo CHtml::button("CFC",array('class'=>'btn btn-info pull-left', 'id'=>'cfc', 'onclick'=>'alerta("vou comer uma buceta");')); ?>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="box-body">
+                        <div class="col-md-12">
+                            <div class="form-group">
                                 <?php echo $form->labelEx($model,'texto'); ?>
                                 <?php echo $form->textArea($model,'texto',array('id'=>'texto', 'rows'=>6, 'cols'=>50, 'class'=>'form-control')); ?>
                                 <?php echo $form->error($model,'texto'); ?>
@@ -38,7 +47,15 @@
                     </div>    
                     
                     <script type="text/javascript">
-                        CKEDITOR.replace('texto');
+                       CKEDITOR.replace('texto');                        
+                    </script>
+                    
+                    <script type="text/javascript">
+                        
+                        function alerta(valor){                                                                               
+                          CKEDITOR.instances['texto'].insertText("#" + valor + "#");                                              
+                        }                                            
+                        
                     </script>
 
                     <div class="box-body">
@@ -52,7 +69,7 @@
                     </div>
 
                     <div class="box-footer"> 
-                    <?php echo CHtml::submitButton($model->isNewRecord ? 'Salvar' : 'Atualizar', array('class'=>'btn btn-info pull-right', 'onclick'=>'loading()')); ?>
+                    <?php echo CHtml::submitButton($model->isNewRecord ? 'Salvar' : 'Atualizar', array('class'=>'btn btn-info pull-right')); ?>
                     </div>                    
                     
                     <?php $this->endWidget(); ?>

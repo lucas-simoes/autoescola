@@ -13,7 +13,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('categoria')); ?>:</b>
-	<?php echo CHtml::encode($data->categoria); ?>
+	<?php echo CHtml::encode($data); ?>
 	<br />
 
 

@@ -18,14 +18,9 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-
-
 <div class="box">
     <div class="box-header">
-                        <h2>Cidades</h2>
-
-
-
+                        <h2>Contratos</h2>
         <div class="search-form">
             <?php $this->renderPartial('_search',array(
                 'model'=>$model,
@@ -38,7 +33,7 @@ $('.search-form form').submit(function(){
                     'columns'=>array(
                             'id',
                             'nome',                            
-                            'categoria',
+                            'categoria0.nome',
                             array(
                                     'class'=>'CButtonColumn',
                                     'template'=>'{update}{deletar}',
@@ -50,11 +45,11 @@ $('.search-form form').submit(function(){
                                         'update' => array(
                                             'options'=>array('title'=>'Ver Cadastro', 'class'=>'btn btn-default' ),
                                             'label'=>'<i class="fa fa-eye"></i>',
-                                            'url'=>'Yii::app()->createUrl("cidades/update", array("id"=>"$data->id"))',
+                                            'url'=>'Yii::app()->createUrl("contratos/update", array("id"=>"$data->id"))',
                                         ),
                                         'deletar' => array(
                                             'label'=>'<i class="fa fa-trash"></i>',
-                                            'url'=>'Yii::app()->createUrl("cidades/delete", array("id"=>"$data->id"))',
+                                            'url'=>'Yii::app()->createUrl("contratos/delete", array("id"=>"$data->id"))',
                                             'options'=>array('title'=>'Excluir', 'class'=>'btn btn-default' ),
                                         ),
                                     ),

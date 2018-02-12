@@ -43,8 +43,8 @@ class categorias extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-                    'itenscategoria' => array(self::HAS_MANY, 'itenscategoria', 'categoriasId'),
-                    'empresas' => array(self::BELONGS_TO, 'empresas', 'empresasId'),
+			'contratoses' => array(self::HAS_MANY, 'Contratos', 'categoria'),
+			'itenscategorias' => array(self::HAS_MANY, 'Itenscategoria', 'categoriasId'),
 		);
 	}
 
@@ -55,9 +55,8 @@ class categorias extends CActiveRecord
 	{
 		return array(
 			'id' => 'Id',
-			'nome' => 'Categoria',
-			'empresasId' => 'Empresa',
-                        'empresas.nome' => 'Empresa'
+			'nome' => 'Nome',
+			'empresasId' => 'Empresas',
 		);
 	}
 

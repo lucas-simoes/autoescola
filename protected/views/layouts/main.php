@@ -219,15 +219,31 @@
         <?php if (Yii::app()->user->isAdmin){  ?>
         <li class="treeview">        
           <a href="#">
-            <i class="fa fa-user"></i>
-            <span>Usuários</span>            
+            <i class="fa fa-briefcase"></i>
+            <span>Empresas</span>            
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo Yii::app()->createUrl('usuarios/create') ?>"><i class="fa fa-plus-circle"></i> Novo Usuário</a></li>
-            <li><a href="<?php echo Yii::app()->createUrl('usuarios/admin') ?>"><i class="fa fa fa-list"></i> Lista de Usuários</a></li>
+            <li><a href="<?php echo Yii::app()->createUrl('empresas/create') ?>"><i class="fa fa-plus-circle"></i> Nova Empresa</a></li>
+            <li><a href="<?php echo Yii::app()->createUrl('empresas/admin') ?>"><i class="fa fa fa-list"></i> Lista de Empresas</a></li>
+          </ul>
+        </li>
+        <?php }  ?> 
+        
+        <?php if (Yii::app()->user->isAdmin){  ?>
+        <li class="treeview">        
+          <a href="#">
+            <i class="fa fa-user"></i>
+            <span>Contratos</span>            
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo Yii::app()->createUrl('contratos/create') ?>"><i class="fa fa-plus-circle"></i> Novo Contrato</a></li>
+            <li><a href="<?php echo Yii::app()->createUrl('contratos/admin') ?>"><i class="fa fa fa-list"></i> Lista de Contratos</a></li>
           </ul>
         </li>
         <?php }  ?> 

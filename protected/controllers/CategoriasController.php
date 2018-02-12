@@ -32,8 +32,16 @@ class CategoriasController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','create','update','admin','delete', 'inserirItem', 'deleteItem', 'getDadosProduto'),
+				'actions'=>array('index','view'),
+				'users'=>array('*'),
+			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('create','update'),
 				'users'=>array('@'),
+			),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin','delete'),
+				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -61,19 +69,16 @@ class CategoriasController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-                
-                $itens = new itenscategoria();
 
 		if(isset($_POST['categorias']))
 		{
 			$model->attributes=$_POST['categorias'];
 			if($model->save())
-				$this->redirect(array('update','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
-                        'itens'=>$itens,
 		));
 	}
 
@@ -87,21 +92,16 @@ class CategoriasController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-                
-                $itens = new itenscategoria;   
-                
-                $itens->setAttribute('categoriasId', $model->id);
 
 		if(isset($_POST['categorias']))
 		{
 			$model->attributes=$_POST['categorias'];
 			if($model->save())
-				$this->redirect(array('update','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
-                        'itens'=>$itens,
 		));
 	}
 
@@ -111,14 +111,14 @@ class CategoriasController extends Controller
 	 */
 	public function actionDelete()
 	{
-		if(!Yii::app()->request->isPostRequest)
+		if(Yii::app()->request->isPostRequest)
 		{
 			// we only allow deletion via POST request
 			$this->loadModel()->delete();
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))
-				$this->redirect(array('admin'));
+				$this->redirect(array('index'));
 		}
 		else
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
@@ -178,71 +178,4 @@ class CategoriasController extends Controller
 			Yii::app()->end();
 		}
 	}
-        
-        public function actionInserirItem() {
-            
-            if (isset($_POST['itenscategoria'])) {
-                
-                $model = categorias::model()->findByPk($_POST['itenscategoria']['categoriasId']);               
-                                
-                $itens = new itenscategoria;   
-                
-                $itens->setAttribute('categoriasId', $model->id);
-                
-                $itens = new itenscategoria();
-                
-                $itens->attributes = $_POST['itenscategoria'];
-                
-                if ($itens->save()) {
-                    $this->redirect(array('update','id'=>$model->id));
-                } else {
-                    $this->render('update',array(
-			'model'=>$model,
-                        'itens'=>$itens,
-                    ));
-                }
-            }
-        }
-        
-        public function actionDeleteItem() {
-            
-            $item = itenscategoria::model()->findByPk($_GET['id']);
-            
-            $categoriasId = $item->categoriasId;
-            
-            $item->delete();
-            
-            $model = categorias::model()->findByPk($categoriasId);
-                
-            $itens = new itenscategoria;   
-
-            $itens->setAttribute('categoriasId', $model->id);
-
-            $this->redirect(array('update', 'id'=>$model->id));
-        }
-        
-        public function actionGetDadosProduto() {
-            
-            if (isset($_POST['itenscategoria']['produtosId'])) {
-            
-                $produto = produto_servico::model()->findByPk($_POST['itenscategoria']['produtosId']);
-
-                if (isset($produto)) {
-
-                    $item = new itenscategoria();
-
-                    $item->setAttributes(array(
-                        'quantidade'=>1,
-                        'valorUnitario'=>$produto->valorAvista,
-                        'valorDesconto'=>0,
-                        'valorTotalLiquido'=>1 * $produto->valorAvista,
-                        'valorTotalPrazo'=>1 * $produto->valorAprazo, 
-                    ));
-                    
-                    $json = CJSON::encode($item);
-
-                    echo $json;
-                }
-            }
-        }
 }
