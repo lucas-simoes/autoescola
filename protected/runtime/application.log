@@ -7168,3 +7168,460 @@ Stack trace:
 REQUEST_URI=/autoescola/index.php/contratos/delete/1
 HTTP_REFERER=http://localhost:84/autoescola/index.php/contratos/admin
 ---
+2018/02/17 19:25:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "chowcontract" solicitada.' in D:\xampp\htdocs\autoescola\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(270): CController->missingAction('chowcontract')
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('chowcontract')
+#2 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/chow...')
+#3 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/autoescola/index.php/orcamentos/chowcontract
+HTTP_REFERER=http://localhost:84/autoescola/index.php/orcamentos/update/18
+---
+2018/02/17 19:25:35 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Você não está autorizado a realizar essa operação.' in D:\xampp\htdocs\autoescola\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'Voc\xC3\xAA n\xC3\xA3o est\xC3...')
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('showcontract')
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/show...')
+#9 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/autoescola/index.php/orcamentos/showcontract
+---
+2018/02/17 19:26:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "show_contract" solicitada.' in D:\xampp\htdocs\autoescola\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(270): CController->missingAction('show_contract')
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('show_contract')
+#2 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/show...')
+#3 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/autoescola/index.php/orcamentos/show_contract
+---
+2018/02/17 19:27:26 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Você não está autorizado a realizar essa operação.' in D:\xampp\htdocs\autoescola\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'Voc\xC3\xAA n\xC3\xA3o est\xC3...')
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('show_contract')
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/show...')
+#9 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/autoescola/index.php/orcamentos/show_contract
+---
+2018/02/17 19:30:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Você não está autorizado a realizar essa operação.' in D:\xampp\htdocs\autoescola\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'Voc\xC3\xAA n\xC3\xA3o est\xC3...')
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('show_contract')
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/show...')
+#9 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/autoescola/index.php/orcamentos/show_contract
+---
+2018/02/17 19:30:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Você não está autorizado a realizar essa operação.' in D:\xampp\htdocs\autoescola\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'Voc\xC3\xAA n\xC3\xA3o est\xC3...')
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('show_contract')
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/show...')
+#9 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/autoescola/index.php/orcamentos/show_contract
+---
+2018/02/17 19:30:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "show_contract" solicitada.' in D:\xampp\htdocs\autoescola\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(270): CController->missingAction('show_contract')
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('show_contract')
+#2 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/show...')
+#3 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/autoescola/index.php/orcamentos/show_contract
+---
+2018/02/18 15:26:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "show_contract" solicitada.' in D:\xampp\htdocs\autoescola\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(270): CController->missingAction('show_contract')
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('show_contract')
+#2 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/show...')
+#3 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/autoescola/index.php/orcamentos/show_contract
+---
+2018/02/18 15:28:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "show_contract" solicitada.' in D:\xampp\htdocs\autoescola\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(270): CController->missingAction('show_contract')
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('show_contract')
+#2 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/show...')
+#3 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/autoescola/index.php/orcamentos/show_contract
+---
+2018/02/18 15:28:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "show_contract" solicitada.' in D:\xampp\htdocs\autoescola\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(270): CController->missingAction('show_contract')
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('show_contract')
+#2 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/show...')
+#3 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/autoescola/index.php/orcamentos/show_contract
+---
+2018/02/18 15:28:45 [error] [php] strpos() expects parameter 1 to be string, array given (D:\xampp\htdocs\autoescola\yii\framework\web\CController.php:706)
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(867): OrcamentosController->getViewFile()
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(782): OrcamentosController->renderPartial()
+#2 D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php(472): OrcamentosController->render()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): OrcamentosController->actionShowContract()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#13 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/index.php/orcamentos/showcontract
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (472)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 15:28:55 [error] [php] strpos() expects parameter 1 to be string, array given (D:\xampp\htdocs\autoescola\yii\framework\web\CController.php:706)
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(867): OrcamentosController->getViewFile()
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(782): OrcamentosController->renderPartial()
+#2 D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php(472): OrcamentosController->render()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): OrcamentosController->actionShowContract()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#13 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/index.php/orcamentos/showcontract
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (472)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 15:34:30 [error] [php] strpos() expects parameter 1 to be string, array given (D:\xampp\htdocs\autoescola\yii\framework\web\CController.php:706)
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(867): OrcamentosController->getViewFile()
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(782): OrcamentosController->renderPartial()
+#2 D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php(472): OrcamentosController->render()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): OrcamentosController->actionShowContract()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#13 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/index.php/orcamentos/showcontract
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (472)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 15:52:07 [error] [php] Object of class contratos could not be converted to string (D:\xampp\htdocs\autoescola\protected\views\orcamentos\showcontract.php:6)
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(869): OrcamentosController->renderFile()
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(782): OrcamentosController->renderPartial()
+#2 D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php(474): OrcamentosController->render()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): OrcamentosController->actionShowContract()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#13 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/index.php/orcamentos/showcontract
+in D:\xampp\htdocs\autoescola\protected\views\orcamentos\showcontract.php (6)
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (474)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 15:57:28 [error] [php] Undefined variable: model (D:\xampp\htdocs\autoescola\protected\views\orcamentos\showcontract.php:6)
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(869): OrcamentosController->renderFile()
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(782): OrcamentosController->renderPartial()
+#2 D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php(474): OrcamentosController->render()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): OrcamentosController->actionShowContract()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#13 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/index.php/orcamentos/showcontract
+in D:\xampp\htdocs\autoescola\protected\views\orcamentos\showcontract.php (6)
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (474)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 16:00:49 [error] [php] Undefined variable: content (D:\xampp\htdocs\autoescola\protected\views\orcamentos\showcontract.php:6)
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(869): OrcamentosController->renderFile()
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(782): OrcamentosController->renderPartial()
+#2 D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php(474): OrcamentosController->render()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): OrcamentosController->actionShowContract()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#13 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/index.php/orcamentos/showcontract
+in D:\xampp\htdocs\autoescola\protected\views\orcamentos\showcontract.php (6)
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (474)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 16:22:49 [error] [php] Undefined variable: form (D:\xampp\htdocs\autoescola\protected\views\orcamentos\showcontract.php:6)
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(869): OrcamentosController->renderFile()
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(782): OrcamentosController->renderPartial()
+#2 D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php(476): OrcamentosController->render()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): OrcamentosController->actionShowContract()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#13 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/index.php/orcamentos/showcontract
+in D:\xampp\htdocs\autoescola\protected\views\orcamentos\showcontract.php (6)
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (476)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 16:23:15 [error] [php] Undefined variable: form (D:\xampp\htdocs\autoescola\protected\views\orcamentos\showcontract.php:6)
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(869): OrcamentosController->renderFile()
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(782): OrcamentosController->renderPartial()
+#2 D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php(476): OrcamentosController->render()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): OrcamentosController->actionShowContract()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#13 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/index.php/orcamentos/showcontract
+in D:\xampp\htdocs\autoescola\protected\views\orcamentos\showcontract.php (6)
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (476)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 21:14:17 [error] [php] Undefined variable: form (D:\xampp\htdocs\autoescola\protected\views\orcamentos\showcontract.php:6)
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(869): OrcamentosController->renderFile()
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(782): OrcamentosController->renderPartial()
+#2 D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php(476): OrcamentosController->render()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): OrcamentosController->actionShowContract()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#13 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/index.php/orcamentos/showcontract
+in D:\xampp\htdocs\autoescola\protected\views\orcamentos\showcontract.php (6)
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (476)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 21:33:29 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (D:\xampp\htdocs\autoescola\yii\framework\web\helpers\CHtml.php:108)
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\protected\views\orcamentos\showcontract.php(8): textArea()
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\CBaseController.php(126): require()
+#2 D:\xampp\htdocs\autoescola\yii\framework\web\CBaseController.php(95): OrcamentosController->renderInternal()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(869): OrcamentosController->renderFile()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(782): OrcamentosController->renderPartial()
+#5 D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php(476): OrcamentosController->render()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): OrcamentosController->actionShowContract()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#13 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#14 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#15 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#16 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#17 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#18 D:\xampp\htdocs\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/index.php/orcamentos/showcontract
+in D:\xampp\htdocs\autoescola\protected\views\orcamentos\showcontract.php (8)
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (476)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 22:36:00 [error] [php] Illegal string offset 'type' (D:\xampp\htdocs\autoescola\yii\framework\web\helpers\CHtml.php:514)
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\CBaseController.php(95): OrcamentosController->renderInternal()
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(869): OrcamentosController->renderFile()
+#2 D:\xampp\htdocs\autoescola\protected\views\orcamentos\update.php(11): OrcamentosController->renderPartial()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\CBaseController.php(126): require()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\CBaseController.php(95): OrcamentosController->renderInternal()
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(869): OrcamentosController->renderFile()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(782): OrcamentosController->renderPartial()
+#7 D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php(185): OrcamentosController->render()
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): OrcamentosController->actionUpdate()
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#14 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#17 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#18 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#20 D:\xampp\htdocs\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/index.php/orcamentos/update/1
+in D:\xampp\htdocs\autoescola\protected\views\orcamentos\_form.php (144)
+in D:\xampp\htdocs\autoescola\protected\views\orcamentos\update.php (11)
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (185)
+2018/02/18 22:36:35 [warning] [application] Failed to set unsafe attribute "orcamentosId" of "orcamentos".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (175)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 22:36:37 [warning] [application] Failed to set unsafe attribute "orcamentosId" of "orcamentos".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (175)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 22:45:04 [warning] [application] Failed to set unsafe attribute "orcamentosId" of "orcamentos".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (175)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 22:45:25 [warning] [application] Failed to set unsafe attribute "orcamentosId" of "orcamentos".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (175)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 22:46:40 [warning] [application] Failed to set unsafe attribute "orcamentosId" of "orcamentos".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (175)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 22:46:42 [warning] [application] Failed to set unsafe attribute "orcamentosId" of "orcamentos".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (175)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 22:46:49 [error] [php] Division by zero (D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php:281)
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/index.php/orcamentos/inserirItem
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (281)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 22:54:43 [warning] [application] Failed to set unsafe attribute "orcamentosId" of "orcamentos".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (175)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 22:54:47 [warning] [application] Failed to set unsafe attribute "orcamentosId" of "orcamentos".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (175)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 22:56:28 [warning] [application] Failed to set unsafe attribute "orcamentosId" of "orcamentos".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (175)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 23:00:44 [error] [php] Illegal string offset 'type' (D:\xampp\htdocs\autoescola\yii\framework\web\helpers\CHtml.php:514)
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\CBaseController.php(95): OrcamentosController->renderInternal()
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(869): OrcamentosController->renderFile()
+#2 D:\xampp\htdocs\autoescola\protected\views\orcamentos\update.php(11): OrcamentosController->renderPartial()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\CBaseController.php(126): require()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\CBaseController.php(95): OrcamentosController->renderInternal()
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(869): OrcamentosController->renderFile()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(782): OrcamentosController->renderPartial()
+#7 D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php(185): OrcamentosController->render()
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): OrcamentosController->actionUpdate()
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#14 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#17 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#18 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#20 D:\xampp\htdocs\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/index.php/orcamentos/update/1
+in D:\xampp\htdocs\autoescola\protected\views\orcamentos\_form.php (144)
+in D:\xampp\htdocs\autoescola\protected\views\orcamentos\update.php (11)
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (185)
+2018/02/18 23:01:00 [warning] [application] Failed to set unsafe attribute "orcamentosId" of "orcamentos".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (175)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 23:01:57 [warning] [application] Failed to set unsafe attribute "orcamentosId" of "orcamentos".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (175)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 23:02:00 [warning] [application] Failed to set unsafe attribute "orcamentosId" of "orcamentos".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (175)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 23:02:13 [warning] [application] Failed to set unsafe attribute "orcamentosId" of "orcamentos".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (175)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/18 23:02:43 [warning] [application] Failed to set unsafe attribute "orcamentosId" of "orcamentos".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (175)
+in D:\xampp\htdocs\autoescola\index.php (13)

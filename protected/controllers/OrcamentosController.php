@@ -32,7 +32,7 @@ class OrcamentosController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','create','update','admin','delete', 'inserirItem', 'deleteItem', 'getDadosProduto', 'sendnotify'),
+				'actions'=>array('index','view','create','update','admin','delete', 'inserirItem', 'deleteItem', 'getDadosProduto', 'sendnotify', 'showcontract'),
 				'users'=>array('@'),
 			),
                         array('allow',
@@ -466,6 +466,14 @@ class OrcamentosController extends Controller
                     echo CJSON::encode(array('msg'=>$msg));
                 }
             }
+        }
+        
+        public function actionShowContract(){
+            $contrato = contratos::model()->findByPk(1);
+            
+            
+            
+            $this->render('showcontract', array('model'=>$contrato->texto));
         }
 }
 

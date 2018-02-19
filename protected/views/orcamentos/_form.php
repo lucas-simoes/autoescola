@@ -140,8 +140,9 @@
                                                              'url' => '#'), 
                                                              array('class'=>'btn btn-default', 'onclick'=>'sendNotify()', 'id'=>'btn-notify')); 
                                 }
-                        ?>                        
+                        ?>                                                                        
                         <?php echo CHtml::submitButton('Salvar Cabeçalho', array('class'=>'btn btn-info pull-right')); ?>
+                        <?php echo CHtml::link('Finalizar', Yii::app()->createUrl('orcamentos/showcontract', ), array('class'=>'btn btn-default')) ?>
                     </div>
 
                     <?php $this->endWidget(); ?>
