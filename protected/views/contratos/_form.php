@@ -30,11 +30,9 @@
                     <div class="box-body">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <?php echo CHtml::button("CFC", array('class' => 'btn btn-info pull-left', 'id' => 'cfc', 'onclick' => 'alerta("vou comer uma buceta");')); ?>
-                                <?php echo CHtml::button("CFC", array('class' => 'btn btn-info pull-left', 'id' => 'cfc2', 'onclick' => 'alerta("vou comer uma buceta");')); ?>
-                                <?php echo CHtml::button("CFC", array('class' => 'btn btn-info pull-left', 'id' => 'cfc3', 'onclick' => 'alerta("vou comer uma buceta");')); ?>
-                                <?php echo CHtml::button("CFC", array('class' => 'btn btn-info pull-left', 'id' => 'cfc4', 'onclick' => 'alerta("vou comer uma buceta");')); ?>                                
-                                <?php echo CHtml::button("CFC", array('class' => 'btn btn-info pull-left', 'id' => 'cfc5', 'onclick' => 'alerta("vou comer uma buceta");')); ?>
+                                <?php echo CHtml::button("CFC", array('class' => 'btn btn-info pull-left', 'id' => 'cfc', 'onclick' => 'alerta("#CFC#");')); ?>
+                                <?php echo CHtml::button("CLIENTE", array('class' => 'btn btn-info pull-left', 'id' => 'cfc2', 'onclick' => 'alerta("#CLIENTE#");')); ?>
+                                <?php echo CHtml::button("ENDEREÇO", array('class' => 'btn btn-info pull-left', 'id' => 'cfc3', 'onclick' => 'alerta("#ENDERECO#");')); ?>                                
                             </div>
                         </div>
                     </div>

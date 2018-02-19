@@ -142,7 +142,11 @@
                                 }
                         ?>                                                                        
                         <?php echo CHtml::submitButton('Salvar Cabeçalho', array('class'=>'btn btn-info pull-right')); ?>
-                        <?php echo CHtml::link('Finalizar', Yii::app()->createUrl('orcamentos/showcontract', ), array('class'=>'btn btn-default')) ?>
+                        <?php
+                        if(isset($model->orcamentosId) && ($model->orcamentosId != '')){
+                                echo CHtml::link('Finalizar', Yii::app()->createUrl('orcamentos/showcontract', array('orcamentosID'=>$model->orcamentosId)), array('class'=>'btn btn-default'));
+                            }
+                        ?>
                     </div>
 
                     <?php $this->endWidget(); ?>
