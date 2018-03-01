@@ -305,6 +305,7 @@ class OrcamentosController extends Controller
                         ));
                     }
                 } else {
+                    $titulos = new titulos();    
                     $this->render('update',array(
 			'model'=>$model,
                         'cliente'=>$cliente,
