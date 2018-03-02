@@ -271,12 +271,8 @@ class OrcamentosController extends Controller
                 
                 $itens->setAttribute('orcamentosId', $model->orcamentosId);
                 
-                $itens->attributes = $_POST['itensorcamento'];
-                
-                if($itens->modalidadesId == ''){
-                    $itens->modalidadesId = 1;
-                }
-                
+                $itens->attributes = $_POST['itensorcamento'];                
+               
                 $model->setAttribute('valorBruto', $model->valorPrazo + $itens->valorTotalPrazo);
                 $model->setAttribute('valorLiquido', $model->valorLiquido + $itens->valorTotalLiquido);
                 $model->setAttribute('valorPrazo', $model->valorPrazo + $itens->valorTotalPrazo);

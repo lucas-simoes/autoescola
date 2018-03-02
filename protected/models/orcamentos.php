@@ -16,6 +16,7 @@
  * @property string $valorPrazo
  * @property string $inclusao
  * @property integer $empresasId
+ * @property integer $categoriaid
  */
 class orcamentos extends CActiveRecord
 {
@@ -36,7 +37,7 @@ class orcamentos extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('data, clientesId, valorBruto, valorDesconto, valorLiquido, status, usuariosId, validade, valorPrazo, inclusao, empresasId', 'required'),
+			array('data, clientesId, valorBruto, valorDesconto, valorLiquido, status, usuariosId, validade, valorPrazo, inclusao, empresasId, categoriaid', 'required'),
 			array('clientesId, status, usuariosId, empresasId', 'numerical', 'integerOnly'=>true),
 			array('valorBruto, valorDesconto, valorLiquido, valorPrazo', 'length', 'max'=>11),
 			// The following rule is used by search().
@@ -58,6 +59,7 @@ class orcamentos extends CActiveRecord
 			'clientes' => array(self::BELONGS_TO, 'clientes', 'clientesId'),
 			'usuarios' => array(self::BELONGS_TO, 'usuarios', 'usuariosId'),
 			'tituloses' => array(self::HAS_MANY, 'titulos', 'orcamentosId'),
+                        'categorias' => array(self::BELONGS_TO, 'categorias', 'categoriaid'),
 		);
 	}
 
@@ -79,7 +81,9 @@ class orcamentos extends CActiveRecord
 			'valorPrazo' => 'Valor Prazo',
 			'inclusao' => 'Inclusao',
 			'empresasId' => 'Empresa',
-                        'statusNome' => 'Status'
+                        'statusNome' => 'Status',
+                        'categoriaid' => 'Categoria',
+                    
 		);
 	}
 
@@ -124,6 +128,8 @@ class orcamentos extends CActiveRecord
 		$criteria->compare('inclusao',$this->inclusao,true);
 
 		$criteria->compare('empresasId',$this->empresasId);
+                
+                $criteria->compare('categoriaid',$this->categoriaid);
 
 		return new CActiveDataProvider('orcamentos', array(
 			'criteria'=>$criteria,

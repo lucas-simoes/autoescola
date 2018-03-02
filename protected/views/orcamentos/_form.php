@@ -102,8 +102,11 @@
                         <?php if ($model->isNewRecord) : ?>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <?php echo CHtml::label('Categoria', 'categoria'); ?>
-                                    <?php echo CHtml::dropDownList('categoria', '', CHtml::listData(categorias::model()->findAll(), 'id', 'nome'), array('class'=>'form-control', 'empty'=>'')); ?>
+                                    
+                                    
+                                    <?php echo $form->labelEx($model, 'categoriaid'); ?>
+                                    <?php echo $form->dropDownList($model, 'categoriaid', CHtml::listData(categorias::model()->findAll(), 'id', 'nome'), array('class'=>'form-control', 'empty'=>'')); ?>
+                                    <?php echo $form->error($model, 'categoriaid') ?>
                                 </div>
                             </div>
                         <?php endif; ?>
