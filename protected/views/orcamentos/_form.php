@@ -111,14 +111,14 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <?php echo $form->labelEx($model,'valorBruto'); ?>
-                                <?php echo $form->textField($model,'valorBruto',array('class'=>'form-control', 'readOnly'=>TRUE)); ?>
+                                <?php echo $form->textField($model,'valorBruto',array('class'=>'form-control', 'readOnly'=>TRUE, 'type' => 'number')); ?>
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
                                 <?php echo $form->labelEx($model,'valorLiquido'); ?>
-                                <?php echo $form->textField($model,'valorLiquido',array('class'=>'form-control', 'readOnly'=>TRUE)); ?>
+                                <?php echo $form->textField($model,'valorLiquido',array('class'=>'form-control', 'readOnly'=>TRUE, 'type' => 'number')); ?>
                             </div>
                         </div>
                             
@@ -200,7 +200,7 @@
                         <div class="col-md-1">
                             <div class="form-group">
                                 <?php echo $formItens->labelEx($itens,'quantidade'); ?>
-                                <?php echo $formItens->textField($itens,'quantidade',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'updateValores()')); ?>
+                                <?php echo $formItens->textField($itens,'quantidade',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'updateValores()', 'onkeypress'=>'return isNumberKey(event)','type' => 'number')); ?>
                                 <?php echo $formItens->error($itens,'quantidade'); ?>
                             </div>
                         </div>
@@ -208,7 +208,7 @@
                         <div class="col-md-2">
                             <div class="form-group">
                                 <?php echo $formItens->labelEx($itens,'valorUnitario'); ?>
-                                <?php echo $formItens->textField($itens,'valorUnitario',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'updateValores()')); ?>
+                                <?php echo $formItens->textField($itens,'valorUnitario',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'updateValores()', 'onkeypress'=>'return isNumberKey(event)','type' => 'number')); ?>
                                 <?php echo $formItens->error($itens,'valorUnitario'); ?>
                             </div>
                         </div>
@@ -216,7 +216,7 @@
                         <div class="col-md-2">
                             <div class="form-group">
                                 <?php echo $formItens->labelEx($itens,'valorDesconto'); ?>
-                                <?php echo $formItens->textField($itens,'valorDesconto',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'updateValores()')); ?>
+                                <?php echo $formItens->textField($itens,'valorDesconto',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'updateValores()', 'onkeypress'=>'return isNumberKey(event)','type' => 'number')); ?>
                                 <?php echo $formItens->error($itens,'valorDesconto'); ?>
                             </div>
                         </div>
@@ -225,7 +225,7 @@
                         <div class="col-md-2">
                             <div class="form-group">
                                 <?php echo $formItens->labelEx($itens,'valorTotalPrazo'); ?>
-                                <?php echo $formItens->textField($itens,'valorTotalPrazo',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'readOnly'=>TRUE)); ?>
+                                <?php echo $formItens->textField($itens,'valorTotalPrazo',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'readOnly'=>TRUE, 'onkeypress'=>'return isNumberKey(event)', 'type' => 'number')); ?>
                                 <?php echo $formItens->error($itens,'valorTotalPrazo'); ?>
                             </div>
                         </div>                        
@@ -235,7 +235,7 @@
                         <div class="col-md-2">
                             <div class="form-group">
                                 <?php echo $formItens->labelEx($itens,'valorTotalLiquido'); ?>
-                                <?php echo $formItens->textField($itens,'valorTotalLiquido',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'calculaDesconto()', 'readOnly'=>TRUE)); ?>
+                                <?php echo $formItens->textField($itens,'valorTotalLiquido',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'calculaDesconto()', 'readOnly'=>TRUE, 'onkeypress'=>'return isNumberKey(event)','type' => 'number')); ?>
                                 <?php echo $formItens->error($itens,'valorTotalLiquido'); ?>
                             </div>
                         </div>
@@ -244,8 +244,8 @@
                         
                         <div class="col-md-2">
                             <div class="form-group">
-                                <?php echo $formItens->labelEx($itens,'modalidadesId'); ?>
-                                <?php echo $formItens->dropDownList($itens,'modalidadesId', CHtml::listData(modalidades::model()->findAll(), 'modalidadesId', 'nome'), array('class'=>'form-control select2', 'empty'=>'')); ?>
+                                <?php echo $formItens->labelEx($itens,'modalidadesId'); ?>                                                              
+                                <?php echo $formItens->dropDownList($itens,'modalidadesId', CHtml::listData(modalidades::model()->findAll(), 'modalidadesId', 'nome'), array('class'=>'form-control select2', 'selected'=>true, 'empty'=>'')); ?>
                                 <?php echo $formItens->error($itens,'modalidadesId'); ?>
                             </div>
                         </div>
@@ -261,7 +261,7 @@
                         <div class="col-md-2">
                             <div class="form-group">
                                 <?php echo $formItens->labelEx($titulos, 'valorParcela'); ?>
-                                <?php echo $formItens->numberField($titulos, 'valorParcela', array('class'=>'form-control', 'readOnly'=>TRUE));?>
+                                <?php echo $formItens->numberField($titulos, 'valorParcela', array('class'=>'form-control', 'readOnly'=>TRUE, 'type' => 'number'));?>
                                 <?php echo $formItens->error($titulos, 'valorParcela'); ?>
                             </div>
                         </div>
@@ -408,5 +408,10 @@ function sendNotify(){
     }
     
     info.style.display = 'block';
+}
+
+function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : evt.keyCode
+    return !(charCode > 31 && (charCode < 48 || charCode > 57));
 }
 </script>

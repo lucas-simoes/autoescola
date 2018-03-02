@@ -155,8 +155,8 @@ class OrcamentosController extends Controller
 	 */
 	public function actionUpdate()
 	{
-		$model=$this->loadModel();
-                
+		$model=$this->loadModel();              
+                                
                 $cliente = clientes::model()->findByPk($model->clientesId);
                 
                 $itens = new itensorcamento();
@@ -272,6 +272,10 @@ class OrcamentosController extends Controller
                 $itens->setAttribute('orcamentosId', $model->orcamentosId);
                 
                 $itens->attributes = $_POST['itensorcamento'];
+                
+                if($itens->modalidadesId == ''){
+                    $itens->modalidadesId = 1;
+                }
                 
                 $model->setAttribute('valorBruto', $model->valorPrazo + $itens->valorTotalPrazo);
                 $model->setAttribute('valorLiquido', $model->valorLiquido + $itens->valorTotalLiquido);
@@ -469,11 +473,25 @@ class OrcamentosController extends Controller
         }
         
         public function actionShowContract(){
-            $contrato = contratos::model()->findByPk(1);
             
+            if (isset($_GET['orcamentosID'])) {
+                $orcamentosID = $_GET['orcamentosID']; 
+                
+                $orcamento = orcamentos::model()->findByPk($orcamentosID);
+                
+                $cliente = clientes::model()->findByPk($orcamento->clientesId);
+                
+                $empresa = empresas::model()->findByPk($orcamento->empresasId);
+                
+                
+                
+                $contrato = contratos::model()->findByPk($orcamentosID);
+                
+                
+                
+                $this->render('showcontract', array('model'=>$contrato->texto));
+            }                              
             
-            
-            $this->render('showcontract', array('model'=>$contrato->texto));
         }
 }
 

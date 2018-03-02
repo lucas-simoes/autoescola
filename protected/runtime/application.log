@@ -7625,3 +7625,413 @@ in D:\xampp\htdocs\autoescola\index.php (13)
 2018/02/18 23:02:43 [warning] [application] Failed to set unsafe attribute "orcamentosId" of "orcamentos".
 in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (175)
 in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/23 04:11:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'u105903125_main'@'localhost' (using password: YES)' in D:\xampp\htdocs\autoescola\yii\framework\db\CDbConnection.php:399
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 D:\xampp\htdocs\autoescola\yii\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 D:\xampp\htdocs\autoescola\yii\framework\base\CModule.php(394): CDbConnection->init()
+#3 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(459): CModule->getComponent('db')
+#4 D:\xampp\htdocs\autoescola\yii\framework\db\ar\CActiveRecord.php(637): CApplication->getDb()
+#5 D:\xampp\htdocs\autoescola\yii\framework\db\ar\CActiveRecord.php(670): CActiveRecord->getDbConnection()
+#6 D:\xampp\htdocs\autoescola\yii\framework\db\ar\CActiveRecord.php(1460): CActiveRecord->getCommandBuilder()
+#7 D:\xampp\htdocs\autoescola\protected\components\WebUser.php(77): CActiveRecord->find(Object(CDbCriteria))
+#8 D:\xampp\htdocs\autoescola\protected\components\WebUser.php(40): WebUser->loadUser('admin')
+#9 D:\xampp\htdocs\autoescola\yii\framework\base\CComponent.php(111): WebUser->getNome()
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\auth\CWebUser.php(146): CComponent->__get('Nome')
+#11 D:\xampp\htdocs\autoescola\protected\views\layouts\main.php(67): CWebUser->__get('Nome')
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#13 D:\xampp\htdocs\autoescola\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#14 D:\xampp\htdocs\autoescola\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#15 D:\xampp\htdocs\autoescola\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#16 D:\xampp\htdocs\autoescola\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#17 D:\xampp\htdocs\autoescola\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
+#18 D:\xampp\htdocs\autoescola\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#19 D:\xampp\htdocs\autoescola\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#20 D:\xampp\htdocs\autoescola\yii\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#21 D:\xampp\htdocs\autoescola\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#22 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(784): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#23 D:\xampp\htdocs\autoescola\protected\controllers\SiteController.php(35): CController->render('index')
+#24 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#25 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#26 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#27 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('')
+#29 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#30 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#31 D:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/autoescola/index.php/
+---
+2018/02/23 04:12:40 [error] [php] Undefined variable: itens (D:\xampp\htdocs\autoescola\protected\views\categorias\update.php:11)
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(869): CategoriasController->renderFile()
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(782): CategoriasController->renderPartial()
+#2 D:\xampp\htdocs\autoescola\protected\controllers\CategoriasController.php(105): CategoriasController->render()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): CategoriasController->actionUpdate()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): CategoriasController->runAction()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CategoriasController->filterAccessControl()
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): CategoriasController->runActionWithFilters()
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CategoriasController->run()
+#13 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/index.php/categorias/update/5
+in D:\xampp\htdocs\autoescola\protected\views\categorias\update.php (11)
+in D:\xampp\htdocs\autoescola\protected\controllers\CategoriasController.php (105)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/25 19:20:36 [warning] [application] Failed to set unsafe attribute "orcamentosId" of "orcamentos".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (94)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/25 19:21:04 [error] [php] Undefined variable: titulos (D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php:312)
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/index.php/orcamentos/inserirItem
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (312)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/25 19:21:15 [error] [php] Undefined variable: titulos (D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php:312)
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/index.php/orcamentos/inserirItem
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (312)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/25 19:23:54 [error] [php] Undefined variable: titulos (D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php:312)
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/index.php/orcamentos/inserirItem
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (312)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/25 19:24:10 [warning] [application] Failed to set unsafe attribute "orcamentosId" of "orcamentos".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (175)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/25 19:24:17 [error] [php] Undefined variable: titulos (D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php:312)
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/index.php/orcamentos/inserirItem
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (312)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/25 19:30:40 [warning] [application] Failed to set unsafe attribute "orcamentosId" of "orcamentos".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (94)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/25 19:30:40 [warning] [application] Failed to set unsafe attribute "itensId" of "itensorcamento".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (104)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/25 19:30:40 [warning] [application] Failed to set unsafe attribute "categoriasId" of "itensorcamento".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (104)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/25 19:30:40 [warning] [application] Failed to set unsafe attribute "itensId" of "itensorcamento".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (104)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/25 19:30:40 [warning] [application] Failed to set unsafe attribute "categoriasId" of "itensorcamento".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (104)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/25 19:31:44 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`autoescola`.`contratos`, CONSTRAINT `fk_Categoria` FOREIGN KEY (`categoria`) REFERENCES `categorias` (`id`)). A declaração SQL executada foi: DELETE FROM `categorias` WHERE `categorias`.`id`=5.
+in D:\xampp\htdocs\autoescola\protected\controllers\CategoriasController.php (117)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/25 19:31:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`autoescola`.`contratos`, CONSTRAINT `fk_Categoria` FOREIGN KEY (`categoria`) REFERENCES `categorias` (`id`)). The SQL statement executed was: DELETE FROM `categorias` WHERE `categorias`.`id`=5' in D:\xampp\htdocs\autoescola\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\db\ar\CActiveRecord.php(1807): CDbCommand->execute()
+#1 D:\xampp\htdocs\autoescola\yii\framework\db\ar\CActiveRecord.php(1227): CActiveRecord->deleteByPk('5')
+#2 D:\xampp\htdocs\autoescola\protected\controllers\CategoriasController.php(117): CActiveRecord->delete()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): CategoriasController->actionDelete()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#13 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('categorias/dele...')
+#14 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/autoescola/index.php/categorias/delete/5
+HTTP_REFERER=http://localhost:84/autoescola/index.php/categorias/admin
+---
+2018/02/25 19:32:34 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`autoescola`.`orcamentos`, CONSTRAINT `orcamentos_ibfk_1` FOREIGN KEY (`clientesId`) REFERENCES `clientes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). A declaração SQL executada foi: DELETE FROM `clientes` WHERE `clientes`.`id`=5.
+in D:\xampp\htdocs\autoescola\protected\controllers\ClientesController.php (119)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/25 19:32:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`autoescola`.`orcamentos`, CONSTRAINT `orcamentos_ibfk_1` FOREIGN KEY (`clientesId`) REFERENCES `clientes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `clientes` WHERE `clientes`.`id`=5' in D:\xampp\htdocs\autoescola\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\db\ar\CActiveRecord.php(1807): CDbCommand->execute()
+#1 D:\xampp\htdocs\autoescola\yii\framework\db\ar\CActiveRecord.php(1227): CActiveRecord->deleteByPk('5')
+#2 D:\xampp\htdocs\autoescola\protected\controllers\ClientesController.php(119): CActiveRecord->delete()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): ClientesController->actionDelete()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#13 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes/delete')
+#14 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/autoescola/index.php/clientes/delete/5
+HTTP_REFERER=http://localhost:84/autoescola/index.php/clientes/admin
+---
+2018/02/25 19:33:08 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`autoescola`.`itenscategoria`, CONSTRAINT `itenscategoria_ibfk_3` FOREIGN KEY (`modalidadesId`) REFERENCES `modalidades` (`modalidadesId`) ON DELETE NO ACTION ON UPDATE NO ACTION). A declaração SQL executada foi: DELETE FROM `modalidades` WHERE `modalidades`.`modalidadesId`=1.
+in D:\xampp\htdocs\autoescola\protected\controllers\ModalidadesController.php (109)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/25 19:33:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`autoescola`.`itenscategoria`, CONSTRAINT `itenscategoria_ibfk_3` FOREIGN KEY (`modalidadesId`) REFERENCES `modalidades` (`modalidadesId`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `modalidades` WHERE `modalidades`.`modalidadesId`=1' in D:\xampp\htdocs\autoescola\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\db\ar\CActiveRecord.php(1807): CDbCommand->execute()
+#1 D:\xampp\htdocs\autoescola\yii\framework\db\ar\CActiveRecord.php(1227): CActiveRecord->deleteByPk('1')
+#2 D:\xampp\htdocs\autoescola\protected\controllers\ModalidadesController.php(109): CActiveRecord->delete()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): ModalidadesController->actionDelete()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#13 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('modalidades/del...')
+#14 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/autoescola/index.php/modalidades/delete/1
+HTTP_REFERER=http://localhost:84/autoescola/index.php/modalidades/admin
+---
+2018/02/25 19:33:55 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`autoescola`.`clientes`, CONSTRAINT `clientes_ibfk_2` FOREIGN KEY (`cidadeId`) REFERENCES `cidades` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). A declaração SQL executada foi: DELETE FROM `cidades` WHERE `cidades`.`id`=1.
+in D:\xampp\htdocs\autoescola\protected\controllers\CidadesController.php (109)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/25 19:33:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`autoescola`.`clientes`, CONSTRAINT `clientes_ibfk_2` FOREIGN KEY (`cidadeId`) REFERENCES `cidades` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `cidades` WHERE `cidades`.`id`=1' in D:\xampp\htdocs\autoescola\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\db\ar\CActiveRecord.php(1807): CDbCommand->execute()
+#1 D:\xampp\htdocs\autoescola\yii\framework\db\ar\CActiveRecord.php(1227): CActiveRecord->deleteByPk('1')
+#2 D:\xampp\htdocs\autoescola\protected\controllers\CidadesController.php(109): CActiveRecord->delete()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): CidadesController->actionDelete()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#13 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cidades/delete')
+#14 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/autoescola/index.php/cidades/delete/1
+HTTP_REFERER=http://localhost:84/autoescola/index.php/cidades/admin
+---
+2018/02/25 19:34:32 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`autoescola`.`itenscategoria`, CONSTRAINT `itenscategoria_ibfk_2` FOREIGN KEY (`produtosId`) REFERENCES `produto_servico` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). A declaração SQL executada foi: DELETE FROM `produto_servico` WHERE `produto_servico`.`id`=1.
+in D:\xampp\htdocs\autoescola\protected\controllers\Produto_servicoController.php (109)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/25 19:34:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`autoescola`.`itenscategoria`, CONSTRAINT `itenscategoria_ibfk_2` FOREIGN KEY (`produtosId`) REFERENCES `produto_servico` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `produto_servico` WHERE `produto_servico`.`id`=1' in D:\xampp\htdocs\autoescola\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\db\ar\CActiveRecord.php(1807): CDbCommand->execute()
+#1 D:\xampp\htdocs\autoescola\yii\framework\db\ar\CActiveRecord.php(1227): CActiveRecord->deleteByPk('1')
+#2 D:\xampp\htdocs\autoescola\protected\controllers\Produto_servicoController.php(109): CActiveRecord->delete()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): Produto_servicoController->actionDelete()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#13 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('produto_servico...')
+#14 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/autoescola/index.php/produto_servico/delete/1
+HTTP_REFERER=http://localhost:84/autoescola/index.php/produto_servico/admin
+---
+2018/02/25 19:35:50 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`autoescola`.`clientes`, CONSTRAINT `clientes_ibfk_3` FOREIGN KEY (`empresasId`) REFERENCES `empresas` (`empresasId`) ON DELETE NO ACTION ON UPDATE NO ACTION). A declaração SQL executada foi: DELETE FROM `empresas` WHERE `empresas`.`empresasId`=1.
+in D:\xampp\htdocs\autoescola\protected\controllers\EmpresasController.php (115)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/25 19:35:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`autoescola`.`clientes`, CONSTRAINT `clientes_ibfk_3` FOREIGN KEY (`empresasId`) REFERENCES `empresas` (`empresasId`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `empresas` WHERE `empresas`.`empresasId`=1' in D:\xampp\htdocs\autoescola\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\db\ar\CActiveRecord.php(1807): CDbCommand->execute()
+#1 D:\xampp\htdocs\autoescola\yii\framework\db\ar\CActiveRecord.php(1227): CActiveRecord->deleteByPk('1')
+#2 D:\xampp\htdocs\autoescola\protected\controllers\EmpresasController.php(115): CActiveRecord->delete()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): EmpresasController->actionDelete()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#13 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('empresas/delete')
+#14 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/autoescola/index.php/empresas/delete/1
+HTTP_REFERER=http://localhost:84/autoescola/index.php/empresas/admin
+---
+2018/02/25 19:36:51 [warning] [application] Failed to set unsafe attribute "orcamentosId" of "orcamentos".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (94)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/25 19:36:51 [warning] [application] Failed to set unsafe attribute "itensId" of "itensorcamento".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (104)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/02/25 19:36:51 [warning] [application] Failed to set unsafe attribute "categoriasId" of "itensorcamento".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (104)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/03/01 03:15:39 [warning] [application] Failed to set unsafe attribute "orcamentosId" of "orcamentos".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (94)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/03/01 03:15:39 [warning] [application] Failed to set unsafe attribute "itensId" of "itensorcamento".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (104)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/03/01 03:15:39 [warning] [application] Failed to set unsafe attribute "categoriasId" of "itensorcamento".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (104)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/03/01 03:15:39 [warning] [application] Failed to set unsafe attribute "itensId" of "itensorcamento".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (104)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/03/01 03:15:39 [warning] [application] Failed to set unsafe attribute "categoriasId" of "itensorcamento".
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (104)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/03/01 03:25:53 [error] [php] Undefined variable: titulos (D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php:312)
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/index.php/orcamentos/inserirItem
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (312)
+in D:\xampp\htdocs\autoescola\index.php (13)
+2018/03/01 03:45:28 [error] [exception.CException] exception 'CException' with message 'A propriedade "orcamentos.modalidadesID" não está definida.' in D:\xampp\htdocs\autoescola\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\db\ar\CActiveRecord.php(161): CComponent->__set('modalidadesID', 1)
+#1 D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php(160): CActiveRecord->__set('modalidadesID', 1)
+#2 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): OrcamentosController->actionUpdate()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/upda...')
+#13 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/autoescola/index.php/orcamentos/update/22
+---
+2018/03/01 03:45:54 [error] [exception.CException] exception 'CException' with message 'A propriedade "orcamentos.modalidadesId" não está definida.' in D:\xampp\htdocs\autoescola\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\db\ar\CActiveRecord.php(161): CComponent->__set('modalidadesId', 1)
+#1 D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php(160): CActiveRecord->__set('modalidadesId', 1)
+#2 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): OrcamentosController->actionUpdate()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/upda...')
+#13 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/autoescola/index.php/orcamentos/update/22
+---
+2018/03/01 03:46:18 [error] [exception.CException] exception 'CException' with message 'A propriedade "orcamentos.orcamentosID" não está definida.' in D:\xampp\htdocs\autoescola\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\db\ar\CActiveRecord.php(161): CComponent->__set('orcamentosID', 1)
+#1 D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php(160): CActiveRecord->__set('orcamentosID', 1)
+#2 D:\xampp\htdocs\autoescola\yii\framework\web\actions\CInlineAction.php(49): OrcamentosController->actionUpdate()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#12 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/upda...')
+#13 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\autoescola\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/autoescola/index.php/orcamentos/update/22
+---
+2018/03/01 03:49:39 [error] [php] Undefined variable: titulos (D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php:314)
+Stack trace:
+#0 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#1 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#4 D:\xampp\htdocs\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#7 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#8 D:\xampp\htdocs\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/index.php/orcamentos/inserirItem
+in D:\xampp\htdocs\autoescola\protected\controllers\OrcamentosController.php (314)
+in D:\xampp\htdocs\autoescola\index.php (13)
