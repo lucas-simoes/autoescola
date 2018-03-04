@@ -74,6 +74,22 @@
                                 <?php echo $form->error($model,'telefone'); ?>
                             </div> 
                         </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <?php echo $form->labelEx($model,'celular'); ?>
+                                <?php echo $form->textField($model,'celular',array('size'=>20,'maxlength'=>20, 'class'=>'form-control fixo_cel')); ?>
+                                <?php echo $form->error($model,'celular'); ?>
+                            </div> 
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <?php echo $form->labelEx($model,'telefone1'); ?>
+                                <?php echo $form->textField($model,'telefone1',array('size'=>20,'maxlength'=>20, 'class'=>'form-control fixo_cel')); ?>
+                                <?php echo $form->error($model,'telefone1'); ?>
+                            </div> 
+                        </div>
                         
                         <div class="col-md-3">
                             <div class="form-group">
@@ -83,9 +99,9 @@
                             </div> 
                         </div>
                         
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-group">
-                                <?php echo $form->labelEx($model,'email', array('class'=>'col-sm-2 control-label')); ?>
+                                <?php echo $form->labelEx($model,'email'); ?>
                                 <?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>80, 'class'=>'form-control')); ?>
                                 <?php echo $form->error($model,'email'); ?>
                             </div> 

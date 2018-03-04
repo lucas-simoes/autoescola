@@ -476,17 +476,50 @@ class OrcamentosController extends Controller
                 
                 $orcamento = orcamentos::model()->findByPk($orcamentosID);
                 
+                $orcamento->status = 2;
+                
+                $orcamento->save();
+                
                 $cliente = clientes::model()->findByPk($orcamento->clientesId);
                 
-                $empresa = empresas::model()->findByPk($orcamento->empresasId);
+                $empresa = empresas::model()->findByPk($orcamento->empresasId);               
                 
+                $cidade = cidades::model()->findByPk($empresa->cidadeId);
                 
+                $cidadeCliente = cidades::model()->findByPk($cliente->cidadeId);
+                                
+                $contrato = contratos::model()->find('categoria=?', array(strtolower($orcamento->categoriaid)));              
                 
-                $contrato = contratos::model()->findByPk($orcamentosID);
+                $texto = $contrato->texto;
                 
+           
+                #CLIENTE#
+                ##CPF#
+                ##IDENTIDADE#
+                ##ENDERECO CLIENTE#
                 
+                //Rua Alcindo Pereira, nº. 38, Bairro – Centro, Guanhães/MG – CEP 39.740-000. 
                 
-                $this->render('showcontract', array('model'=>$contrato->texto));
+                $texto = str_replace('#CFC#', $empresa->nome, $texto);
+                $texto = str_replace('#CNPJ CFC#', $empresa->cnpj, $texto);
+                $texto = str_replace('#NOME FANTASIA#', $empresa->nome, $texto);                
+                $texto = str_replace('#ENDERECO CFC#', $empresa->endereco.", ".$empresa->bairro.", ".$cidade->nome."/".$empresa->uf." - CEP".$empresa->cep, $texto);                
+                
+                //EDILENE PEREIRA DE JESUS, brasileiro (a), divorciada (a), repositora, 
+                
+                $texto = str_replace('#CLIENTE#', $cliente->nome.", ".$cliente->nacionalidade.", ".$cliente->estadoCivil."/".$cliente->profissao, $texto);                
+                
+                $texto = str_replace('#CPF#', $cliente->cpfCnpj, $texto);
+                
+                $texto = str_replace('#IDENTIDADE#', $cliente->identidade, $texto);
+                
+                $texto = str_replace('#ENDERECO CLIENTE#', $cliente->endereco.", ".$cliente->bairro.", ".$cidadeCliente->nome."/".$cliente->uf." - CEP".$cliente->cep, $texto);                              
+                
+                #(Dois mil, trezentos e treze reais e sessenta centavos), 
+                
+                $texto = str_replace("#VALOR CONTRATO#", $orcamento->valorLiquido."(".Functions::extenso($orcamento->valorLiquido).")", $texto);
+                                                
+                $this->render('showcontract', array('model'=>$texto));
             }                              
             
         }

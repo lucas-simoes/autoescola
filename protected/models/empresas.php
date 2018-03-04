@@ -38,11 +38,11 @@ class empresas extends CActiveRecord
 			array('nome, endereco, email', 'length', 'max'=>80),
 			array('bairro', 'length', 'max'=>40),
 			array('cep', 'length', 'max'=>10),
-			array('telefone, cnpj', 'length', 'max'=>20),
+			array('telefone, cnpj, celular, telefone1', 'length', 'max'=>20),
 			array('uf', 'length', 'max'=>2),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('empresasId, nome, endereco, bairro, cidadeId, cep, telefone, cnpj, email, uf', 'safe', 'on'=>'search'),
+			array('telefone1, celular, empresasId, nome, endereco, bairro, cidadeId, cep, telefone, cnpj, email, uf', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -78,6 +78,8 @@ class empresas extends CActiveRecord
 			'cnpj' => 'Cnpj',
 			'email' => 'Email',
 			'uf' => 'Uf',
+                        'celular'=> 'Celular',
+                        'telefone1' => 'Moto Pista'
 		);
 	}
 
@@ -118,6 +120,10 @@ class empresas extends CActiveRecord
 		$criteria->compare('email',$this->email,true);
 
 		$criteria->compare('uf',$this->uf,true);
+                
+                $criteria->compare('celular',$this->uf,true);
+                
+                $criteria->compare('telefone1',$this->telefone1,true);
 
 		return new CActiveDataProvider('empresas', array(
 			'criteria'=>$criteria,

@@ -60,7 +60,7 @@ class Functions extends CApplicationComponent {
         return $string;
     }
 
-    function extenso($valor = 0, $maiusculas = false) {
+    public static function extenso($valor = 0, $maiusculas = false) {
         if (!$maiusculas) {
             $singular = ["centavo", "real", "mil", "milhão", "bilhão", "trilhão", "quatrilhão"];
             $plural = ["centavos", "reais", "mil", "milhões", "bilhões", "trilhões", "quatrilhões"];
@@ -109,12 +109,12 @@ class Functions extends CApplicationComponent {
             $return = $rt ? $rt : "zero";
         } else {
             if ($rt)
-                $rt = ereg_replace(" E ", " e ", ucwords($rt));
+                $rt = str_replace(" E ", " e ", ucwords($rt));
             $return = ($rt) ? ($rt) : "Zero";
         }
 
         if (!$maiusculas) {
-            return ereg_replace(" E ", " e ", ucwords($return));
+            return str_replace(" E ", " e ", ucwords($return));
         } else {
             return strtoupper($return);
         }

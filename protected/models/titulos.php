@@ -31,7 +31,7 @@ class titulos extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('valor, parcelas, vencimento, itensorcamentoId, produtosId, valorParcela', 'required'),
+			array('valor, parcelas, itensorcamentoId, produtosId, valorParcela', 'required'),
 			array('parcelas, itensorcamentoId, produtosId', 'numerical', 'integerOnly'=>true),
 			array('valor', 'length', 'max'=>11),
 			// The following rule is used by search().

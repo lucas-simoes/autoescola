@@ -245,7 +245,7 @@
                         
                         <?php echo $formItens->hiddenField($titulos, 'produtosId'); ?>
                         
-                        <div class="col-md-2">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <?php echo $formItens->labelEx($itens,'modalidadesId'); ?>                                                              
                                 <?php echo $formItens->dropDownList($itens,'modalidadesId', CHtml::listData(modalidades::model()->findAll(), 'modalidadesId', 'nome'), array('class'=>'form-control select2', 'selected'=>true, 'empty'=>'')); ?>
@@ -269,13 +269,13 @@
                             </div>
                         </div>
                         
-                        <div class="col-md-2">
+                        <!--<div class="col-md-2">
                             <div class="form-group">
                                 <?php echo $formItens->labelEx($titulos, 'vencimento'); ?>
                                 <?php echo $formItens->dateField($titulos, 'vencimento', array('class'=>'form-control'));?>
                                 <?php echo $formItens->error($titulos, 'vencimento'); ?>
                             </div>
-                        </div>
+                        </div>-->
                         
                         <div class="col-md-1">
                             <div class="form-group" style="padding-top: 25px">

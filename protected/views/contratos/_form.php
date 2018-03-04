@@ -48,6 +48,14 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="box-body">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <?php echo CHtml::button("VALOR ORÇAMENTO", array('class' => 'btn btn-info pull-left', 'id' => 'cfc', 'onclick' => 'alerta("VALOR CONTRATO");')); ?>                          
+                            </div>
+                        </div>
+                    </div>
 
 
                     <div class="box-body">

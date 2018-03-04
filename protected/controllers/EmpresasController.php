@@ -67,6 +67,8 @@ class EmpresasController extends Controller
 			$model->attributes=$_POST['empresas'];
                         //retira a mascara do telefone antes de salvar
                         $model->telefone = preg_replace("/[^0-9]/", "", $model->telefone);
+                        $model->telefone1 = preg_replace("/[^0-9]/", "", $model->telefone1);
+                        $model->celular = preg_replace("/[^0-9]/", "", $model->celular);
                         $model->cnpj = preg_replace("/[^0-9]/", "", $model->cnpj);
 			if($model->save())
 				$this->redirect(array('admin'));
@@ -93,6 +95,8 @@ class EmpresasController extends Controller
 			$model->attributes=$_POST['empresas'];
                         //retira a mascara do telefone antes de salvar
                         $model->telefone = preg_replace("/[^0-9]/", "", $model->telefone);
+                        $model->telefone1 = preg_replace("/[^0-9]/", "", $model->telefone1);
+                        $model->celular = preg_replace("/[^0-9]/", "", $model->celular);
                         $model->cnpj = preg_replace("/[^0-9]/", "", $model->cnpj);
 			if($model->save())
 				$this->redirect(array('admin'));
