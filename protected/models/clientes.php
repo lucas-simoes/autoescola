@@ -21,150 +21,166 @@
  * @property string $identidade
  * @property integer $empresasId
  */
-class clientes extends CActiveRecord
-{
-	/**
-	 * @return string the associated database table name
-	 */
-	public function tableName()
-	{
-		return 'clientes';
-	}
+class clientes extends CActiveRecord {
 
-	/**
-	 * @return array validation rules for model attributes.
-	 */
-	public function rules()
-	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
-		return array(
-			array('nome, empresasId', 'required'),
-			array('cidadeId, empresasId', 'numerical', 'integerOnly'=>true),
-			array('nome', 'length', 'max'=>150),
-                        array('cpfCnpj, telefone', 'length', 'max'=>20),
-			array('endereco', 'length', 'max'=>80),
-                        array('bairro, nacionalidade, estadoCivil, profissao, identidade', 'length', 'max'=>40),
-			array('uf', 'length', 'max'=>2),
-                        array('cep', 'length', 'max'=>10),
-			array('email', 'length', 'max'=>100),
-			array('nascimento', 'safe'),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
-			array('id, nome, cpfCnpj, nascimento, fixo, celular, endereco, numero, bairro, uf, cidadeId, cep, email, nacionalidade, estadoCivil, profissao, identidade, empresasId', 'safe', 'on'=>'search'),
-		);
-	}
+    /**
+     * @return string the associated database table name
+     */
+    public function tableName() {
+        return 'clientes';
+    }
 
-	/**
-	 * @return array relational rules.
-	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-			'empresas' => array(self::BELONGS_TO, 'Empresas', 'empresasId'),
-			'cidade' => array(self::BELONGS_TO, 'Cidades', 'cidadeId'),
-			'orcamentoses' => array(self::HAS_MANY, 'Orcamentos', 'clientesId'),
-		);
-	}
+    /**
+     * @return array validation rules for model attributes.
+     */
+    public function rules() {
+        // NOTE: you should only define rules for those attributes that
+        // will receive user inputs.
+        return array(
+            array('nome, empresasId', 'required'),
+            array('cidadeId, empresasId', 'numerical', 'integerOnly' => true),
+            array('nome', 'length', 'max' => 150),
+            array('cpfCnpj, telefone', 'length', 'max' => 20),
+            array('endereco', 'length', 'max' => 80),
+            array('bairro, nacionalidade, estadoCivil, profissao, identidade', 'length', 'max' => 40),
+            array('uf', 'length', 'max' => 2),
+            array('cep', 'length', 'max' => 10),
+            array('email', 'length', 'max' => 100),
+            array('nascimento', 'safe'),
+            // The following rule is used by search().
+            // Please remove those attributes that should not be searched.
+            array('id, nome, cpfCnpj, nascimento, fixo, celular, endereco, numero, bairro, uf, cidadeId, cep, email, nacionalidade, estadoCivil, profissao, identidade, empresasId', 'safe', 'on' => 'search'),
+        );
+    }
 
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
-	public function attributeLabels()
-	{
-		return array(
-			'id' => 'Código',
-			'nome' => 'Nome',
-			'cpfCnpj' => 'Cpf/Cnpj',
-			'nascimento' => 'Nascimento',
-			'telefone' => 'Telefone',
-			'endereco' => 'Endereco',
-			'bairro' => 'Bairro',
-                        'nacionalidade' => 'Nacionalidade',
-                        'estadoCivil' => 'Estado Civil',
-                        'profissao' => 'Profissão',
-                        'identidade' => 'RG',
-			'uf' => 'UF',
-			'cidadeId' => 'Cidade',
-                        'cidade.nome' => 'Cidade',
-			'cep' => 'Cep',
-			'email' => 'Email',
-			'empresasId' => 'Empresa',
-                        'empresas.nome' => 'Empresa',
-		);
-	}
+    /**
+     * @return array relational rules.
+     */
+    public function relations() {
+        // NOTE: you may need to adjust the relation name and the related
+        // class name for the relations automatically generated below.
+        return array(
+            'empresas' => array(self::BELONGS_TO, 'Empresas', 'empresasId'),
+            'cidade' => array(self::BELONGS_TO, 'Cidades', 'cidadeId'),
+            'orcamentoses' => array(self::HAS_MANY, 'Orcamentos', 'clientesId'),
+        );
+    }
 
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 *
-	 * Typical usecase:
-	 * - Initialize the model fields with values from filter form.
-	 * - Execute this method to get CActiveDataProvider instance which will filter
-	 * models according to data in model fields.
-	 * - Pass data provider to CGridView, CListView or any similar widget.
-	 *
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
-	 */
-	public function search()
-	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
+    /**
+     * @return array customized attribute labels (name=>label)
+     */
+    public function attributeLabels() {
+        return array(
+            'id' => 'Código',
+            'nome' => 'Nome',
+            'cpfCnpj' => 'Cpf/Cnpj',
+            'nascimento' => 'Nascimento',
+            'telefone' => 'Telefone',
+            'endereco' => 'Endereco',
+            'bairro' => 'Bairro',
+            'nacionalidade' => 'Nacionalidade',
+            'estadoCivil' => 'Estado Civil',
+            'profissao' => 'Profissão',
+            'identidade' => 'RG',
+            'uf' => 'UF',
+            'cidadeId' => 'Cidade',
+            'cidade.nome' => 'Cidade',
+            'cep' => 'Cep',
+            'email' => 'Email',
+            'empresasId' => 'Empresa',
+            'empresas.nome' => 'Empresa',
+        );
+    }
 
-		$criteria=new CDbCriteria;
+    /**
+     * Retrieves a list of models based on the current search/filter conditions.
+     *
+     * Typical usecase:
+     * - Initialize the model fields with values from filter form.
+     * - Execute this method to get CActiveDataProvider instance which will filter
+     * models according to data in model fields.
+     * - Pass data provider to CGridView, CListView or any similar widget.
+     *
+     * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+     */
+    public function search() {
+        // Warning: Please modify the following code to remove attributes that
+        // should not be searched.
 
-		$criteria->compare('id',$this->id);
+        $criteria = new CDbCriteria;
 
-		$criteria->compare('nome',$this->nome,true);
+        $criteria->compare('id', $this->id);
 
-		$criteria->compare('cpfCnpj',$this->cpfCnpj,true);
+        $criteria->compare('nome', $this->nome, true);
 
-		$criteria->compare('nascimento',$this->nascimento,true);
+        $criteria->compare('cpfCnpj', $this->cpfCnpj, true);
 
-		$criteria->compare('telefone',$this->telefone, true);
+        $criteria->compare('nascimento', $this->nascimento, true);
 
-		$criteria->compare('endereco',$this->endereco,true);
+        $criteria->compare('telefone', $this->telefone, true);
 
-		$criteria->compare('bairro',$this->bairro,true);
-                
-                $criteria->compare('nacionalidade',$this->nacionalidade,true);
-                
-                $criteria->compare('estadoCivil',$this->estadoCivil,true);
-                
-                $criteria->compare('profissao',$this->profissao,true);
-                
-                $criteria->compare('identidade',$this->identidade,true);
-                
-		$criteria->compare('uf',$this->uf,true);
+        $criteria->compare('endereco', $this->endereco, true);
 
-		$criteria->compare('cidadeId',$this->cidadeId);
+        $criteria->compare('bairro', $this->bairro, true);
 
-		$criteria->compare('cep',$this->cep, true);
+        $criteria->compare('nacionalidade', $this->nacionalidade, true);
 
-		$criteria->compare('email',$this->email,true);
-                
-                if (Yii::app()->user->isAdmin){
-                    $criteria->compare('empresasId',$this->empresasId);
-                }else{
-                    $criteria->compare('empresasId', Yii::app()->user->Empresa, true);
-                }
-                
-                
-                
-		
+        $criteria->compare('estadoCivil', $this->estadoCivil, true);
 
-		return new CActiveDataProvider('clientes', array(
-			'criteria'=>$criteria,
-		));
-	}
+        $criteria->compare('profissao', $this->profissao, true);
 
-	/**
-	 * Returns the static model of the specified AR class.
-	 * @return clientes the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
+        $criteria->compare('identidade', $this->identidade, true);
+
+        $criteria->compare('uf', $this->uf, true);
+
+        $criteria->compare('cidadeId', $this->cidadeId);
+
+        $criteria->compare('cep', $this->cep, true);
+
+        $criteria->compare('email', $this->email, true);
+
+        if (Yii::app()->user->isAdmin) {
+            $criteria->compare('empresasId', $this->empresasId);
+        } else {
+            $criteria->compare('empresasId', Yii::app()->user->Empresa, true);
+        }
+
+
+
+
+
+        return new CActiveDataProvider('clientes', array(
+            'criteria' => $criteria,
+        ));
+    }
+
+    public function clientIsValid() {
+        if (!isset($this->id) ||
+                !isset($this->nome) ||
+                !isset($this->cpfCnpj) ||
+                !isset($this->nascimento) ||
+                !isset($this->telefone) ||
+                !isset($this->endereco) ||
+                !isset($this->bairro) ||
+                !isset($this->nacionalidade) ||
+                !isset($this->estadoCivil) ||
+                !isset($this->profissao) ||
+                !isset($this->identidade) ||
+                !isset($this->uf) ||
+                !isset($this->cidadeId) ||
+                !isset($this->cep)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    /**
+     * Returns the static model of the specified AR class.
+     * @return clientes the static model class
+     */
+    public static function model($className = __CLASS__) {
+        return parent::model($className);
+    }
+
 }
