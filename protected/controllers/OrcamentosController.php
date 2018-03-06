@@ -288,6 +288,10 @@ class OrcamentosController extends Controller {
                 }
             } else {
                 $titulos = new titulos();
+                $titulos->attributes = $_POST['titulos'];
+                $titulos->setAttribute('valor', $itens->valorTotalLiquido);
+                $titulos->setAttribute('itensorcamentoId', $itens->itensId);
+                $titulos->setAttribute('produtosId', $itens->produtosId);
                 $this->render('update', array(
                     'model' => $model,
                     'cliente' => $cliente,
