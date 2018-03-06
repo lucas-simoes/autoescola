@@ -340,10 +340,10 @@ class OrcamentosController extends Controller {
 
                 $item->setAttributes(array(
                     'quantidade' => 1,
-                    'valorUnitario' => $produto->valorAvista,
+                    'valorUnitario' => number_format($produto->valorAvista, 2, '.', ','),
                     'valorDesconto' => 0,
-                    'valorTotalLiquido' => 1 * $produto->valorAvista,
-                    'valorTotalPrazo' => 1 * $produto->valorAvista,
+                    'valorTotalLiquido' => number_format(1 * $produto->valorAvista, 2, '.', ','),
+                    'valorTotalPrazo' => number_format(1 * $produto->valorAvista, 2, '.', ','),
                 ));
 
                 $json = CJSON::encode($item);
