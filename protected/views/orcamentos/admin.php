@@ -54,12 +54,19 @@ $('.search-form form').submit(function(){
                      */
                     array(
                         'class' => 'CButtonColumn',
-                        'template' => '{update}{deletar}',
+                        'template' => '{view}{update}{deletar}',
                         'updateButtonLabel' => '<i class="fa fa-eye"></i>',
                         'updateButtonImageUrl' => false,
                         'deleteButtonLabel' => '<i class="fa fa-trash"></i>',
                         'deleteButtonImageUrl' => false,
+                        'viewButtonLabel' => '<i class="fa fa-trash"></i>',
+                        'viewButtonImageUrl' => false,
                         'buttons' => array(
+                            'view' => array(
+                                'options' => array('title' => 'Imprimir', 'class' => 'btn btn-default', 'target' => '_new'),
+                                'label' => '<i class="fa fa-print"></i>',
+                                'url' => 'Yii::app()->createUrl("orcamentos/view", array("id"=>"$data->orcamentosId"))',
+                            ),
                             'update' => array(
                                 'options' => array('title' => 'Ver Cadastro', 'class' => 'btn btn-default'),
                                 'label' => '<i class="fa fa-eye"></i>',

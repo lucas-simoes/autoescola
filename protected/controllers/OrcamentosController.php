@@ -50,9 +50,27 @@ class OrcamentosController extends Controller
 	 */
 	public function actionView()
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel(),
+                $model = $this->loadModel();
+            
+                $itens = new itensorcamento();
+                
+                $itens->setAttribute('orcamentosId', $model->orcamentosId);
+                
+                $titulos = new titulos();
+                
+                $titulos->setAttribute('_orcamentosId', $model->orcamentosId);
+                
+                $cs = Yii::app()->clientScript;
+                $cs->registerScript('imprimir', 'window.print();', CClientScript::POS_READY);
+  
+                $this->render('view',array(
+			'model'=>$model,
+                        'itens'=>$itens,
+                        'titulos'=>$titulos,
 		));
+		/*$this->render('view',array(
+			'model'=>$this->loadModel(),
+		));*/
 	}
 
 	/**
