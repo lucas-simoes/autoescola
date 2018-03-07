@@ -1,6 +1,8 @@
 $(function () {
     //Initialize Select2 Elements
-    $('.select2').select2()
+    $('.select2').select2();
+    
+    $('.money').mask('#,##0.00', {reverse: true});
 
     //Datemask dd/mm/yyyy
     $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
@@ -8,6 +10,18 @@ $(function () {
     $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
     //Money Euro
     $('[data-mask]').inputmask()
+    
+    $(".money").mask() .inputmask('decimal', {
+                'alias': 'numeric',
+                'groupSeparator': ',',
+                'autoGroup': true,
+                'digits': 2,
+                'radixPoint': ".",
+                'digitsOptional': false,
+                'allowMinus': false,
+                'prefix': 'R$ ',
+                'placeholder': ''
+    });
 
     //Date range picker
     $('#reservation').daterangepicker()

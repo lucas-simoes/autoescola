@@ -98,7 +98,7 @@ class titulos extends CActiveRecord
 
 		$criteria->compare('itensorcamentoId',$this->itensorcamentoId);
 
-		$criteria->compare('produtosId',$this->produtosId);
+		$criteria->compare('t.produtosId',$this->produtosId);
                 
                 $criteria->with = array('itens');
                 $criteria->compare( 'itens.orcamentosId', $this->_orcamentosId);
