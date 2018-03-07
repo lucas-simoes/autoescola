@@ -150,6 +150,11 @@
                                 echo CHtml::link('Finalizar', Yii::app()->createUrl('orcamentos/showcontract', array('orcamentosID'=>$model->orcamentosId)), array('class'=>'btn btn-default'));
                             }
                         ?>
+                        <?php   if (!$model->isNewRecord) {
+                                    echo CHtml::link('Imprimir', Yii::app()->createUrl("orcamentos/view", array("id"=>"$model->orcamentosId")), array('class'=>'btn btn-default', 'target' => '_new'));
+                                }
+                         ?>   
+                         
                     </div>
 
                     <?php $this->endWidget(); ?>
