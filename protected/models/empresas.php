@@ -150,6 +150,18 @@ class empresas extends CActiveRecord
             }else if (strlen($this->telefone) == 10) {
                 $this->telefone = Yii::app()->functions->mask($this->telefone, '(##) ####-####');
             }
+            
+            if (strlen($this->telefone1) == 11) {
+                $this->telefone1 = Yii::app()->functions->mask($this->telefone1, '(##) #####-####');
+            }else if (strlen($this->telefone1) == 10) {
+                $this->telefone1 = Yii::app()->functions->mask($this->telefone1, '(##) ####-####');
+            }
+            
+            if (strlen($this->celular) == 11) {
+                $this->celular = Yii::app()->functions->mask($this->celular, '(##) #####-####');
+            }else if (strlen($this->celular) == 10) {
+                $this->celular = Yii::app()->functions->mask($this->celular, '(##) ####-####');
+            }
                 
             
             parent::afterFind();

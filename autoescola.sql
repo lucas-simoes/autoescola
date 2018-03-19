@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: 19-Fev-2018 às 11:28
--- Versão do servidor: 10.1.28-MariaDB
--- PHP Version: 5.6.32
+-- Host: localhost:3306
+-- Tempo de geração: 05/03/2018 às 23:50
+-- Versão do servidor: 10.1.31-MariaDB
+-- Versão do PHP: 7.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `autoescola`
+-- Banco de dados: `u105903125_main`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `categorias`
+-- Estrutura para tabela `categorias`
 --
 
 CREATE TABLE `categorias` (
@@ -35,17 +35,18 @@ CREATE TABLE `categorias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `categorias`
+-- Fazendo dump de dados para tabela `categorias`
 --
 
 INSERT INTO `categorias` (`id`, `nome`, `empresasId`) VALUES
 (5, 'A', 2),
-(7, 'B', 1);
+(7, 'B', 1),
+(8, 'D', 1);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `cidades`
+-- Estrutura para tabela `cidades`
 --
 
 CREATE TABLE `cidades` (
@@ -54,17 +55,19 @@ CREATE TABLE `cidades` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `cidades`
+-- Fazendo dump de dados para tabela `cidades`
 --
 
 INSERT INTO `cidades` (`id`, `nome`) VALUES
-(1, 'Guanhães'),
-(2, 'São João Evangelista');
+(1, 'GUANHÃES'),
+(2, 'SÃO JOÃO EVANGELISTA'),
+(3, 'PEÇANHA'),
+(4, 'SÃO JOSÉ DO JACURI');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `clientes`
+-- Estrutura para tabela `clientes`
 --
 
 CREATE TABLE `clientes` (
@@ -87,19 +90,18 @@ CREATE TABLE `clientes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `clientes`
+-- Fazendo dump de dados para tabela `clientes`
 --
 
 INSERT INTO `clientes` (`id`, `nome`, `cpfCnpj`, `nascimento`, `telefone`, `endereco`, `bairro`, `uf`, `cidadeId`, `cep`, `email`, `nacionalidade`, `estadoCivil`, `profissao`, `identidade`, `empresasId`) VALUES
-(1, 'João Victor Silva', '09518888620', '1988-01-08', '33988273723', 'Rua 7, 110', 'Bela Vista', 'MG', 1, '39740000', 'jvictorsilva@outlook.com', NULL, NULL, NULL, NULL, 1),
-(2, 'Natalia Caetano', '12345678920', '1989-09-18', '33988444214', 'Rua 7, 110', 'Bela Vista', 'MG', 2, '39740100', 'natalia@natalia.com', NULL, NULL, NULL, NULL, 2),
-(3, 'teste clientes', '095.485.485-55', '2017-10-26', '16519616516', 'fdafasdfafs', 'asdfa', 'MG', 1, '63165165', '', NULL, NULL, NULL, NULL, 2),
-(4, 'Gustavo Ricardo Danilo Araújo', '774.757.112-77', '1995-12-01', '33999999999', 'Alameda Guadalupe', 'Ponta Negra', 'MG', 1, '39740000', 'ggustavoricardodaniloaraujo@centrooleo.com.br', 'BRASILEIRO', 'Solteiro(a)', 'PADEIRO', '241204021', 1);
+(7, 'DANIELLY LEAL PASCOAL', '111.111.111-11', '2018-03-03', '33999999999', 'ENDEREÇO 1', 'CENTRO', 'MG', 1, '39740000', '', 'BRASILEIRO', 'Solteiro(a)', 'PROFESSOR', '18123456 SSP', 1),
+(8, 'JOYCE', '', '0000-00-00', '', '', '', '', NULL, '', '', '', 'Solteiro(a)', '', '', 1),
+(9, 'JOYCE', '', '0000-00-00', '', '', '', '', NULL, '', '', '', 'Solteiro(a)', '', '', 1);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `contratos`
+-- Estrutura para tabela `contratos`
 --
 
 CREATE TABLE `contratos` (
@@ -110,19 +112,16 @@ CREATE TABLE `contratos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Extraindo dados da tabela `contratos`
+-- Fazendo dump de dados para tabela `contratos`
 --
 
 INSERT INTO `contratos` (`id`, `nome`, `texto`, `categoria`) VALUES
-(1, 'Contrato categoria A', '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong><u>CONTRATO DE PRESTA&Ccedil;&Atilde;O DE SERVI&Ccedil;OS </u></strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>Contratado</strong>: CENTRO DE FORMA&Ccedil;&Atilde;O DE CONDUTORES GUANH&Atilde;ES LTDA, empresa registrada no CNPJ, sob o n&ordm;. <em><u>10.527.902/0001-34</u></em>, com nome fantasia &ldquo;AUTO ESCOLA CALIF&Oacute;RNIA&rdquo;, com endere&ccedil;o a Rua <em><u>Alcindo Pereira</u></em>, n&ordm;. 38, Bairro <em><u>&ndash; Centro, Guanh&atilde;es/MG</u></em> &ndash; CEP <em><u>39.740-000</u></em>. </span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">_____________________________________________________________________________</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>Contratante:</strong> <em><u>EDILENE PEREIRA DE JESUS</u></em>, <em><u>brasileiro (a</u></em>), <em><u>divorciada (a)</u></em>, <em><u>repositora</u></em>, portador (a) do CPF <em><u>065.691.086-03</u></em>, e da Carteira de Identidade <em><u>583.056.866 SP</u></em>, residente e domiciliado (a) &agrave; <em><u>Rua Albertina Braga</u></em>, n&ordm; 174, Bairro <em><u>Nova Uni&atilde;o</u></em>, na cidade <em><u>Guanh&atilde;es/MG</u></em>.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>CL&Aacute;USULA 1&ordf; &ndash; DO OBJETO DO CONTRATO.</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><em><u>Par&aacute;grafo &Uacute;nico: &Eacute; objeto do presente contrato a presta&ccedil;&atilde;o de servi&ccedil;o de: curso, te&oacute;rico-t&eacute;cnico, dire&ccedil;&atilde;o veicular, taxas de expediente, emiss&atilde;o de boletim resumo e marca&ccedil;&otilde;es de exames junto ao DETRAN-MG</u></em></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>CL&Aacute;USULA 2&ordf;. DAS OBRIGA&Ccedil;&Otilde;ES DO (A) CONTRATANTE.</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo Primeiro</u>: O (A), contratante dever&aacute; fornecer &agrave; contratada c&oacute;pia xerogr&aacute;fica de seus documentos pessoais: CPF e RG ou CTPS (com foto) e comprovante de endere&ccedil;o atualizado para abertura do processo de habilita&ccedil;&atilde;o junto ao DETRAN-MG.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo Segundo</u>: cumprir a carga hor&aacute;ria prevista nas resolu&ccedil;&otilde;es do CONTRAN.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo Terceiro:</u> a contratada fica dispensada de enviar ao DETRAN-MG informa&ccedil;&otilde;es sobre curso n&atilde;o conclu&iacute;do pelo (a) contratante.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo Quarto</u>: cumprir os hor&aacute;rios de in&iacute;cio das aulas te&oacute;ricas, n&atilde;o cabendo &agrave; contratada prolongar aulas para repor o tempo relativo ao atraso por parte do (a) contratante.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>CL&Aacute;USULA 3&ordf;. DAS OBRIGA&Ccedil;&Otilde;ES CONTRATADAS</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo Primeiro:</u> a contratada dever&aacute; fornecer ao/a contratante os recibos de pagamento, bem como uma c&oacute;pia do presente contrato.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo Segundo</u>: a contratada se compromete a ministrar o curso dentro das normas estabelecidas pelo C&oacute;digo de Tr&acirc;nsito Brasileiro e pelas resolu&ccedil;&otilde;es do CONTRAN.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo Terceiro</u>: a contratada empresa devidamente credenciada junto ao DETRAN/MG, sob o n&ordm;.1871/01, disp&otilde;e de estrutura f&iacute;sica, ve&iacute;culos e equipamentos de aprendizagem rigorosamente adequados &agrave;s exig&ecirc;ncias legais, especialmente &agrave; disposi&ccedil;&otilde;es contidas nas resolu&ccedil;&otilde;es do CONTRAN, al&eacute;m de corpo docente igualmente qualificado e atendendo &agrave;s referidas exig&ecirc;ncias legais.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>CL&Aacute;USULA 4&ordf;. DOS VALORES E DAS FORMAS DE PAGAMENTO.</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo Primeiro</u>: para os iniciantes, <em><u>categoria &ldquo;A&rdquo;</u></em>, o valor ser&aacute; de <em><u>R$ 2.096,40,00 (Dois mil, noventa e seis reais e quarenta centavos)</u></em>, podendo ser pago a vista e /ou poder&aacute; ser dividido em at&eacute; <em><u>06 (seis) parcelas iguais de R$ 349,40 (trezentos e quarenta e nove reais e quarenta centavos ), sem juros; e/ ou, no valor de R$ 2,313,60 (Dois mil, trezentos e treze reais e sessenta centavos), em at&eacute; 12 (doze) parcelas.</u></em></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo Segundo</u>: as modalidades de pagamento a prazo, somente ser&atilde;o efetivadas mediante (boleto banc&aacute;rio e/ ou cart&atilde;o de cr&eacute;dito).</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>CL&Aacute;USULA 5&ordf;. DO PRAZO DO CONTRATO</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo &Uacute;nico</u>: O contrato ter&aacute; o prazo de um ano, ou seja, 12(doze) meses, ou at&eacute; a aprova&ccedil;&atilde;o do no exame de dire&ccedil;&atilde;o, sempre respeitando os 12 (doze) meses da data da validade do processo de habilita&ccedil;&atilde;o, que ter&aacute; inicio na emiss&atilde;o da taxa de inscri&ccedil;&atilde;o.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>CL&Aacute;USULA 6&ordf;. DO ALVO P&Uacute;BLICO</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo &Uacute;nico: </u>este contrato, <em><u>atinge somente os iniciantes, de categorias &ldquo;A&rdquo; e &ldquo;B&rdquo;.</u></em></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>Cl&aacute;usula 7&ordf;. DOS CUSTOS ADICIONAIS.</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo &Uacute;nico:</u> o referido contrato n&atilde;o sofre nenhum custo adicional.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>CL&Aacute;USULA 8&ordf;. DA FREQUENCIA &Agrave;S AULAS DE LEGISLA&Ccedil;&Atilde;O E DIRE&Ccedil;&Atilde;O, DO INSTRUTOR(A) E DOS VE&Iacute;CULOS, DO N&Uacute;MERO ILIMITADO DE AULAS.</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo Primeiro</u>: as aulas de <strong>legisla&ccedil;&atilde;o</strong>, ser&aacute; ilimitada at&eacute; aprova&ccedil;&atilde;o no exame, mas LIMITANDO-SE em n&uacute;mero de <strong><em><u>02 (duas) ao dia</u></em></strong>, podendo o candidato assistir no hor&aacute;rio que conveniente lhe for, respeitando sempre os hor&aacute;rios de funcionamento do CFC, bem como das aulas j&aacute; agendadas em seu quadro de hor&aacute;rios.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo Segundo</u>:as aulas de <strong>dire&ccedil;&atilde;o</strong>, ser&aacute; ilimitada at&eacute; aprova&ccedil;&atilde;o no exame, mas LIMITANDO-SE, em n&uacute;mero de <strong><em><u>01 (uma) ao dia</u></em></strong><em><u>,</u></em> respeitando o agendamento pr&eacute;vio, que ser&aacute; repassado ao aluno pela CFC.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo Terceiro</u>: n&atilde;o poder&aacute; o aluno escolher o instrutor de sua prefer&ecirc;ncia, a aula se dar&aacute; com aquele instrutor dispon&iacute;vel na data e hora agendada.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo Quarto</u>:quanto aos ve&iacute;culos, os mesmo poder&atilde;o sofrer altera&ccedil;&atilde;o no decorrer das aulas, em caso de manuten&ccedil;&atilde;o e substitui&ccedil;&atilde;o, n&atilde;o ficando portanto, nenhum ve&iacute;culo de uso exclusivo do aluno, ainda que seja de prefer&ecirc;ncia do mesmo, valendo-se para as aulas, bem como no exame de dire&ccedil;&atilde;o.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo Quinto</u>: as aulas s&atilde;o regidas de acordo com o C&oacute;digo de Tr&acirc;nsito Brasileiro, resolu&ccedil;&otilde;es e portarias do DETRAN/CIRETRAN.&nbsp; </span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>CL&Aacute;USULA 8&ordf;. DA MARCA&Ccedil;&Atilde;O DOS EXAMES &ndash; LEGISLA&Ccedil;&Atilde;O/DIRE&Ccedil;&Atilde;O</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo Primeiro</u>: os exames, ser&atilde;o agendados de acordo com a disponibilidade de vagas, liberadas/autorizadas, pelo DETRAN/CIRETRAN, por se tratar as mesmas, LIMITADA.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo Segundo</u>: S&oacute; ser&aacute; marcado o exame, quando o candidato estiver apto, bem como, com o aval do instrutor e diretor, e aprovado nos pr&eacute;-exames, realizados pela CFC, tudo conforme a Lei. 12.302 de 02/08/2010, n&atilde;o podendo o candidato pedir a marca&ccedil;&atilde;o quando bem entender, e sim respeitando sempre sua aptid&atilde;o ap&oacute;s an&aacute;lise do instrutor.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>CL&Aacute;USULA 9&ordf;. DAS TAXAS</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo Primeiro</u>: n&atilde;o ser&aacute; inclusa a taxa de inscri&ccedil;&atilde;o bem como a taxa da cl&iacute;nica m&eacute;dica, devendo estas ser arcadas exclusivamente pelo contratante, ou seja, (aptid&atilde;o f&iacute;sica e mental, m&eacute;dico e psicot&eacute;cnico).</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo Segundo</u>: quanto as demais taxas, de marca&ccedil;&otilde;es de exame de legisla&ccedil;&atilde;o, dire&ccedil;&atilde;o, e Licen&ccedil;a de Aprendizagem Dire&ccedil;&atilde;o Veicular, est&atilde;o inclusa no valor pago neste contrato. </span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>CL&Aacute;USULA 10&ordf;. DA DESISTENCIA DO CONTRATO.</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo Primeiro</u>: se o candidato desistir, o mesmo perder&aacute; todo o valor j&aacute; pago, bem como ser&aacute; cobrado uma multa de 20% sobre o valor do contrato firmado/assinado.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><u>Par&aacute;grafo Segundo</u>: a contratada sob nenhuma hip&oacute;tese far&aacute; devolu&ccedil;&atilde;o das taxas expediente ao/a contratante, devendo apresenta-las paga ao contratante.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>CL&Aacute;USULA 11&ordf;. DO FORO.</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Para dirimir quaisquer controv&eacute;rsias oriundas do presente contrato, as partes elegem o foro da comarca de Guanh&atilde;es/MG.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em><u>Guanh&atilde;es/MG ______/_________/_______.</u></em></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Contratado: _____________________________________________</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CENTRO DE FORMA&Ccedil;&Atilde;O DE CONDUTORES GUANH&Atilde;ES LTDA</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Contratante:_____________________________</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CPF - <em><u>evit&aacute;vel</u></em></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Testemunhas:</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">______________________________________</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">______________________________________</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm\">&nbsp;</p>\r\n', 5),
-(2, 'teste', '<p>teste</p>\r\n', 5),
-(3, 'Contrato categoria b', '<p>teste</p>\r\n', 7),
-(4, 'CATEGORIA A ', '<p>CONTRATO</p>\r\n', 5);
+(5, 'CONTRATO A ', '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong><u>CONTRATO DE PRESTA&Ccedil;&Atilde;O DE SERVI&Ccedil;OS </u></strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong>Contratado</strong>:#CFC#, empresa registrada no CNPJ, sob o n&ordm;. <em><u>#CNPJ CFC#</u></em>, com nome fantasia &ldquo;AUTO ESCOLA CALIF&Oacute;RNIA&rdquo;, com endere&ccedil;o a #ENDERECO CFC#.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">_____________________________________________________________________________</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong>Contratante:</strong> <em><u>#CLIENTE#</u></em>, portador (a) do CPF#CPF#, e da Carteira de Identidade <em><u>#IDENTIDADE#</u></em>, residente e domiciliado (a) &agrave; <em><u>#ENDERECO CLIENTE#</u></em>.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong>CL&Aacute;USULA 1&ordf; &ndash; DO OBJETO DO CONTRATO.</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><em><u>Par&aacute;grafo &Uacute;nico: &Eacute; objeto do presente contrato a presta&ccedil;&atilde;o de servi&ccedil;o de: curso, te&oacute;rico-t&eacute;cnico, dire&ccedil;&atilde;o veicular, taxas de expediente, emiss&atilde;o de boletim resumo e marca&ccedil;&otilde;es de exames junto ao DETRAN-MG</u></em></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong>CL&Aacute;USULA 2&ordf;. DAS OBRIGA&Ccedil;&Otilde;ES DO (A) CONTRATANTE.</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo Primeiro</u>: O (A), contratante dever&aacute; fornecer &agrave; contratada c&oacute;pia xerogr&aacute;fica de seus documentos pessoais: CPF e RG ou CTPS (com foto) e comprovante de endere&ccedil;o atualizado para abertura do processo de habilita&ccedil;&atilde;o junto ao DETRAN-MG.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo Segundo</u>: cumprir a carga hor&aacute;ria prevista nas resolu&ccedil;&otilde;es do CONTRAN.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo Terceiro:</u> a contratada fica dispensada de enviar ao DETRAN-MG informa&ccedil;&otilde;es sobre curso n&atilde;o conclu&iacute;do pelo (a) contratante.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo Quarto</u>: cumprir os hor&aacute;rios de in&iacute;cio das aulas te&oacute;ricas, n&atilde;o cabendo &agrave; contratada prolongar aulas para repor o tempo relativo ao atraso por parte do (a) contratante.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong>CL&Aacute;USULA 3&ordf;. DAS OBRIGA&Ccedil;&Otilde;ES CONTRATADAS</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo Primeiro:</u> a contratada dever&aacute; fornecer ao/a contratante os recibos de pagamento, bem como uma c&oacute;pia do presente contrato.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo Segundo</u>: a contratada se compromete a ministrar o curso dentro das normas estabelecidas pelo C&oacute;digo de Tr&acirc;nsito Brasileiro e pelas resolu&ccedil;&otilde;es do CONTRAN.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo Terceiro</u>: a contratada empresa devidamente credenciada junto ao DETRAN/MG, sob o n&ordm;.1871/01, disp&otilde;e de estrutura f&iacute;sica, ve&iacute;culos e equipamentos de aprendizagem rigorosamente adequados &agrave;s exig&ecirc;ncias legais, especialmente &agrave; disposi&ccedil;&otilde;es contidas nas resolu&ccedil;&otilde;es do CONTRAN, al&eacute;m de corpo docente igualmente qualificado e atendendo &agrave;s referidas exig&ecirc;ncias legais.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong>CL&Aacute;USULA 4&ordf;. DOS VALORES E DAS FORMAS DE PAGAMENTO.</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo Primeiro</u>: para os iniciantes, <em><u>categoria &ldquo;A&rdquo;</u></em>, o valor ser&aacute; de <em><u>#VALOR CONTRATO#.</u></em></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo Segundo</u>: as modalidades de pagamento a prazo, somente ser&atilde;o efetivadas mediante (boleto banc&aacute;rio e/ ou cart&atilde;o de cr&eacute;dito).</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong>CL&Aacute;USULA 5&ordf;. DO PRAZO DO CONTRATO</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo &Uacute;nico</u>: O contrato ter&aacute; o prazo de um ano, ou seja, 12(doze) meses, ou at&eacute; a aprova&ccedil;&atilde;o do no exame de dire&ccedil;&atilde;o, sempre respeitando os 12 (doze) meses da data da validade do processo de habilita&ccedil;&atilde;o, que ter&aacute; inicio na emiss&atilde;o da taxa de inscri&ccedil;&atilde;o.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong>CL&Aacute;USULA 6&ordf;. DO ALVO P&Uacute;BLICO</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo &Uacute;nico: </u>este contrato, <em><u>atinge somente os iniciantes, de categorias &ldquo;A&rdquo; e &ldquo;B&rdquo;.</u></em></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong>Cl&aacute;usula 7&ordf;. DOS CUSTOS ADICIONAIS.</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo &Uacute;nico:</u> o referido contrato n&atilde;o sofre nenhum custo adicional.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong>CL&Aacute;USULA 8&ordf;. DA FREQUENCIA &Agrave;S AULAS DE LEGISLA&Ccedil;&Atilde;O E DIRE&Ccedil;&Atilde;O, DO INSTRUTOR(A) E DOS VE&Iacute;CULOS, DO N&Uacute;MERO ILIMITADO DE AULAS.</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo Primeiro</u>: as aulas de <strong>legisla&ccedil;&atilde;o</strong>, ser&aacute; ilimitada at&eacute; aprova&ccedil;&atilde;o no exame, mas LIMITANDO-SE em n&uacute;mero de <strong><em><u>02 (duas) ao dia</u></em></strong>, podendo o candidato assistir no hor&aacute;rio que conveniente lhe for, respeitando sempre os hor&aacute;rios de funcionamento do CFC, bem como das aulas j&aacute; agendadas em seu quadro de hor&aacute;rios.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo Segundo</u>:as aulas de <strong>dire&ccedil;&atilde;o</strong>, ser&aacute; ilimitada at&eacute; aprova&ccedil;&atilde;o no exame, mas LIMITANDO-SE, em n&uacute;mero de <strong><em><u>01 (uma) ao dia</u></em></strong><em><u>,</u></em> respeitando o agendamento pr&eacute;vio, que ser&aacute; repassado ao aluno pela CFC.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo Terceiro</u>: n&atilde;o poder&aacute; o aluno escolher o instrutor de sua prefer&ecirc;ncia, a aula se dar&aacute; com aquele instrutor dispon&iacute;vel na data e hora agendada.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo Quarto</u>:quanto aos ve&iacute;culos, os mesmo poder&atilde;o sofrer altera&ccedil;&atilde;o no decorrer das aulas, em caso de manuten&ccedil;&atilde;o e substitui&ccedil;&atilde;o, n&atilde;o ficando portanto, nenhum ve&iacute;culo de uso exclusivo do aluno, ainda que seja de prefer&ecirc;ncia do mesmo, valendo-se para as aulas, bem como no exame de dire&ccedil;&atilde;o.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo Quinto</u>: as aulas s&atilde;o regidas de acordo com o C&oacute;digo de Tr&acirc;nsito Brasileiro, resolu&ccedil;&otilde;es e portarias do DETRAN/CIRETRAN.&nbsp; </span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong>CL&Aacute;USULA 8&ordf;. DA MARCA&Ccedil;&Atilde;O DOS EXAMES &ndash; LEGISLA&Ccedil;&Atilde;O/DIRE&Ccedil;&Atilde;O</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo Primeiro</u>: os exames, ser&atilde;o agendados de acordo com a disponibilidade de vagas, liberadas/autorizadas, pelo DETRAN/CIRETRAN, por se tratar as mesmas, LIMITADA.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo Segundo</u>: S&oacute; ser&aacute; marcado o exame, quando o candidato estiver apto, bem como, com o aval do instrutor e diretor, e aprovado nos pr&eacute;-exames, realizados pela CFC, tudo conforme a Lei. 12.302 de 02/08/2010, n&atilde;o podendo o candidato pedir a marca&ccedil;&atilde;o quando bem entender, e sim respeitando sempre sua aptid&atilde;o ap&oacute;s an&aacute;lise do instrutor.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong>CL&Aacute;USULA 9&ordf;. DAS TAXAS</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo Primeiro</u>: n&atilde;o ser&aacute; inclusa a taxa de inscri&ccedil;&atilde;o bem como a taxa da cl&iacute;nica m&eacute;dica, devendo estas ser arcadas exclusivamente pelo contratante, ou seja, (aptid&atilde;o f&iacute;sica e mental, m&eacute;dico e psicot&eacute;cnico).</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo Segundo</u>: quanto as demais taxas, de marca&ccedil;&otilde;es de exame de legisla&ccedil;&atilde;o, dire&ccedil;&atilde;o, e Licen&ccedil;a de Aprendizagem Dire&ccedil;&atilde;o Veicular, est&atilde;o inclusa no valor pago neste contrato.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong>CL&Aacute;USULA 10&ordf;. DA DESISTENCIA DO CONTRATO.</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo Primeiro</u>: se o candidato desistir, o mesmo perder&aacute; todo o valor j&aacute; pago, bem como ser&aacute; cobrado uma multa de 20% sobre o valor do contrato firmado/assinado.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><u>Par&aacute;grafo Segundo</u>: a contratada sob nenhuma hip&oacute;tese far&aacute; devolu&ccedil;&atilde;o das taxas expediente ao/a contratante, devendo apresenta-las paga ao contratante.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong>CL&Aacute;USULA 11&ordf;. DO FORO.</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">Para dirimir quaisquer controv&eacute;rsias oriundas do presente contrato, as partes elegem o foro da comarca de Guanh&atilde;es/MG.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em><u>Guanh&atilde;es/MG ______/_________/_______.</u></em></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">Contratado: _____________________________________________</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#CFC#</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">Contratante:_____________________________</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CPF -#CPF#</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">Testemunhas:</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">______________________________________</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">______________________________________</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm\">&nbsp;</p>\r\n', 5);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `empresas`
+-- Estrutura para tabela `empresas`
 --
 
 CREATE TABLE `empresas` (
@@ -135,24 +134,25 @@ CREATE TABLE `empresas` (
   `telefone` varchar(20) COLLATE utf8_bin NOT NULL,
   `cnpj` varchar(20) COLLATE utf8_bin NOT NULL,
   `email` varchar(80) COLLATE utf8_bin NOT NULL,
-  `uf` varchar(2) COLLATE utf8_bin NOT NULL
+  `uf` varchar(2) COLLATE utf8_bin NOT NULL,
+  `celular` varchar(20) COLLATE utf8_bin DEFAULT NULL,
+  `telefone1` varchar(20) COLLATE utf8_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Extraindo dados da tabela `empresas`
+-- Fazendo dump de dados para tabela `empresas`
 --
 
-INSERT INTO `empresas` (`empresasId`, `nome`, `endereco`, `bairro`, `cidadeId`, `cep`, `telefone`, `cnpj`, `email`, `uf`) VALUES
-(1, 'CFC Califórnia Guanhães', 'Rua Alcindo Pereira', 'Centro', 2, '39740000', '3334214506', '12345678912345', 'teste@teste.com', 'MG'),
-(2, 'CFC Califórnia SJE', 'TGADFASFA', 'ASDFASFA', 1, '39740000', '33988273723', '98749541654984', 'TESTE@TESTE.COM', 'MG'),
-(3, 'CFC Califórnia Sabinopolis', 'Rua Alcindo Pereira', 'Centro', 2, '39740000', '(33) 3421-4506', '12345678901234', 'teste@teste.com', 'MG'),
-(4, 'CFC Califórnia Virginopolis', 'TGADFASFA', 'ASDFASFA', 1, '39740000', '33988273723', '65165165168519', 'TESTE@TESTE.COM', 'MG'),
-(5, 'CFC Califórnia Serro', 'Rua Alcindo Pereira', 'Centro', 2, '39740000', '(33) 3421-4506', '12345678901234', 'teste@teste.com', 'MG');
+INSERT INTO `empresas` (`empresasId`, `nome`, `endereco`, `bairro`, `cidadeId`, `cep`, `telefone`, `cnpj`, `email`, `uf`, `celular`, `telefone1`) VALUES
+(1, 'CFC CALIFÓRNIA GUANHÃES', 'RUA ALCINDO PEREIRA,  38 ', 'CENTRO', 1, '39.740-000', '3334213323', '10527902000134', 'cfccaliforniagh@yahoo.com.br', 'MG', '33988284323', '3334213163'),
+(2, 'CFC CALIFÓRNIA SÃO JOÃO EVANGELISTA', 'RUA BENEDITO VALADARES, 349', 'CENTRO', 2, '39.705-000', '3334121136', '10527902000568', 'cfccaliforniagh@yahoo.com.br', 'MG', NULL, NULL),
+(6, 'CFC CALIFÓRNIA PEÇANHA', 'PRAÇA GETÚLIO VARGAS, 280', 'CENTRO', 3, '39.700-000', '3334111592', '10527902000304', 'cfccaliforniagh@yahoo.com.br', 'MG', NULL, NULL),
+(7, 'CFC CALIFÓRNIA SÃO JOSÉ DO JACURI', 'RUA DR. SIMÃO DA CUNHA, 167', 'CENTRO', 4, '39.707-000', '3334331259', '10527902000649', 'cfccaliforniagh@yahoo.com.br', 'MG', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `itenscategoria`
+-- Estrutura para tabela `itenscategoria`
 --
 
 CREATE TABLE `itenscategoria` (
@@ -168,7 +168,7 @@ CREATE TABLE `itenscategoria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Extraindo dados da tabela `itenscategoria`
+-- Fazendo dump de dados para tabela `itenscategoria`
 --
 
 INSERT INTO `itenscategoria` (`itensId`, `categoriasId`, `produtosId`, `quantidade`, `valorUnitario`, `valorDesconto`, `valorTotalLiquido`, `valorTotalPrazo`, `modalidadesId`) VALUES
@@ -179,7 +179,7 @@ INSERT INTO `itenscategoria` (`itensId`, `categoriasId`, `produtosId`, `quantida
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `itensorcamento`
+-- Estrutura para tabela `itensorcamento`
 --
 
 CREATE TABLE `itensorcamento` (
@@ -195,23 +195,16 @@ CREATE TABLE `itensorcamento` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Extraindo dados da tabela `itensorcamento`
+-- Fazendo dump de dados para tabela `itensorcamento`
 --
 
 INSERT INTO `itensorcamento` (`itensId`, `orcamentosId`, `produtosId`, `quantidade`, `valorUnitario`, `valorDesconto`, `valorTotalLiquido`, `valorTotalPrazo`, `modalidadesId`) VALUES
-(1, 2, 1, '120.00', '100.00', '0.00', '12000.00', '12000.00', 2),
-(2, 2, 2, '1.00', '150.23', '0.00', '150.23', '150.23', 1),
-(3, 5, 3, '2.00', '60.00', '0.00', '160.00', '160.00', 2),
-(4, 6, 2, '1.00', '150.23', '0.00', '150.23', '250.23', 2),
-(5, 7, 1, '1.00', '100.00', '0.00', '100.00', '253.30', 2),
-(18, 18, 2, '10.00', '150.23', '0.00', '1502.30', '1502.30', 2),
-(19, 18, 3, '2.00', '60.00', '0.00', '120.00', '120.00', 2),
-(20, 18, 3, '1.00', '60.00', '0.00', '60.00', '60.00', 1);
+(24, 25, 1, '10.00', '55.00', '0.00', '550.00', '550.00', 2);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `modalidades`
+-- Estrutura para tabela `modalidades`
 --
 
 CREATE TABLE `modalidades` (
@@ -221,17 +214,18 @@ CREATE TABLE `modalidades` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Extraindo dados da tabela `modalidades`
+-- Fazendo dump de dados para tabela `modalidades`
 --
 
 INSERT INTO `modalidades` (`modalidadesId`, `nome`, `prazo`) VALUES
-(1, 'Cartão', 1),
-(2, 'A vista', 0);
+(1, 'CARTÃO', 1),
+(2, 'À VISTA', 0),
+(3, 'BOLETO', 1);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `orcamentos`
+-- Estrutura para tabela `orcamentos`
 --
 
 CREATE TABLE `orcamentos` (
@@ -246,28 +240,22 @@ CREATE TABLE `orcamentos` (
   `validade` date NOT NULL,
   `valorPrazo` decimal(11,2) NOT NULL,
   `inclusao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `empresasId` int(11) NOT NULL
+  `empresasId` int(11) NOT NULL,
+  `categoriaid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Extraindo dados da tabela `orcamentos`
+-- Fazendo dump de dados para tabela `orcamentos`
 --
 
-INSERT INTO `orcamentos` (`orcamentosId`, `data`, `clientesId`, `valorBruto`, `valorDesconto`, `valorLiquido`, `status`, `usuariosId`, `validade`, `valorPrazo`, `inclusao`, `empresasId`) VALUES
-(1, '2017-10-25', 1, '0.00', '0.00', '0.00', 1, 3, '2017-11-24', '0.00', '2017-10-25 02:00:00', 1),
-(2, '2017-11-06', 1, '0.00', '0.00', '0.00', 1, 3, '2017-12-06', '0.00', '2017-11-06 02:00:00', 1),
-(3, '2017-11-20', 1, '0.00', '0.00', '0.00', 1, 3, '2017-12-20', '0.00', '2017-11-20 02:00:00', 1),
-(4, '2017-11-20', 1, '0.00', '0.00', '0.00', 1, 3, '2017-12-20', '0.00', '2017-11-20 02:00:00', 1),
-(5, '2017-11-20', 1, '0.00', '0.00', '0.00', 1, 3, '2017-12-20', '0.00', '2017-11-20 02:00:00', 1),
-(6, '2017-11-20', 2, '0.00', '0.00', '0.00', 1, 4, '2017-12-20', '0.00', '2017-11-20 02:00:00', 1),
-(7, '2017-11-20', 3, '0.00', '0.00', '0.00', 1, 4, '2017-12-20', '0.00', '2017-11-20 02:00:00', 2),
-(8, '2017-11-20', 2, '0.00', '0.00', '0.00', 1, 3, '2017-12-20', '0.00', '2017-11-20 02:00:00', 1),
-(18, '2017-12-09', 1, '1682.30', '0.00', '1682.30', 1, 3, '2018-01-08', '1682.30', '2017-12-09 02:00:00', 1);
+INSERT INTO `orcamentos` (`orcamentosId`, `data`, `clientesId`, `valorBruto`, `valorDesconto`, `valorLiquido`, `status`, `usuariosId`, `validade`, `valorPrazo`, `inclusao`, `empresasId`, `categoriaid`) VALUES
+(25, '2018-03-03', 7, '550.00', '0.00', '550.00', 2, 3, '2018-04-02', '550.00', '2018-03-03 00:00:00', 1, 5),
+(26, '2018-03-03', 9, '0.00', '0.00', '0.00', 2, 3, '2018-04-02', '0.00', '2018-03-03 00:00:00', 1, 5);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `produto_servico`
+-- Estrutura para tabela `produto_servico`
 --
 
 CREATE TABLE `produto_servico` (
@@ -280,18 +268,31 @@ CREATE TABLE `produto_servico` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `produto_servico`
+-- Fazendo dump de dados para tabela `produto_servico`
 --
 
 INSERT INTO `produto_servico` (`id`, `descricao`, `valorAvista`, `valorAprazo`, `produtoAutoEscola`, `empresasId`) VALUES
-(1, 'Aula de Direção', 100, 253.3, 1, 1),
-(2, 'Aula de Legislação', 150.23, 250.23, 1, 2),
-(3, 'Teste serviço', 60, 80, 0, 2);
+(1, 'AULA DE DIREÇÃO CATEGORIA B', 55, 60, 1, 1),
+(2, 'CURSO DE LEGISLAÇÃO', 300, 350, 1, 1),
+(3, 'Teste serviço', 60, 80, 0, 2),
+(6, 'TAXA INSCRIÇÃO/ADIÇÃO/MUDANÇA DE CAT', 65.03, 0, 0, 1),
+(7, 'EXAME MÉDICO', 169.28, 0, 0, 1),
+(8, 'EXAME PSICOTÉCNICO', 169.28, 0, 0, 1),
+(9, 'EXAME TOXICOLÓGICO', 230, 0, 0, 1),
+(10, 'MARCAÇÃO DE LEGISLAÇÃO', 150, 0, 0, 1),
+(11, 'LADV', 110, 0, 0, 1),
+(12, 'AULAS SIMULADOR', 60, 0, 0, 1),
+(13, 'AULAS DE DIREÇÃO CATEGORIA A', 45, 50, 1, 1),
+(14, 'AULAS DE DIREÇÃO CATEGORIA D', 70, 80, 1, 1),
+(15, 'AULAS DE DIREÇÃO CATEGORIA E', 85, 95, 1, 1),
+(16, 'ALUGUEL MOTO PISTA', 230, 0, 1, 1),
+(17, 'MARCAÇÃO DE DIREÇÃO CATEGORIA A/B', 250, 0, 0, 1),
+(18, 'MARCAÇÃO DE DIREÇÃO CATEGORIA D/E', 350, 0, 0, 1);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `titulos`
+-- Estrutura para tabela `titulos`
 --
 
 CREATE TABLE `titulos` (
@@ -305,18 +306,16 @@ CREATE TABLE `titulos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Extraindo dados da tabela `titulos`
+-- Fazendo dump de dados para tabela `titulos`
 --
 
 INSERT INTO `titulos` (`titulosId`, `valor`, `parcelas`, `vencimento`, `itensorcamentoId`, `produtosId`, `valorParcela`) VALUES
-(8, '1502.30', 1, '2017-12-09', 18, 2, '1502.30'),
-(9, '120.00', 1, '2017-12-09', 19, 3, '120.00'),
-(10, '60.00', 1, '2017-12-09', 20, 3, '60.00');
+(14, '550.00', 1, '0000-00-00', 24, 1, '550.00');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuarios`
+-- Estrutura para tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -338,31 +337,31 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `usuarios`
+-- Fazendo dump de dados para tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `cpf`, `nascimento`, `telefone`, `endereco`, `bairro`, `cidadeId`, `cep`, `email`, `empresasId`, `login`, `senha`, `uf`, `admin`) VALUES
 (3, 'Administrador1', '12345678989', '2017-10-21', '33988273723', 'Rua Sete, 110 ', 'Bela Vista', 1, '39740000', 'contato@solucoesquefacilitam.com.br', 1, 'admin', '202cb962ac59075b964b07152d234b70', 'MG', 1),
-(4, 'João Victor Silva', '09218888620', '1988-01-08', '33988273723', 'Rua Sete, 110 ', 'Bela Vista', 2, '39740000', 'jvictorsilva@outlook.com', 2, 'jvictor', '202cb962ac59075b964b07152d234b70', 'MG', 0);
+(5, 'DANIELLY LEAL PASCOAL', '07189557652', '1986-02-23', '33988294593', 'RUA DOZE DE OUTUBRO, 256', 'SANTA TEREZA', 1, '39740000', '', 1, 'DANYLEAL', '9e0dd08fb366a55e53f7f497fa19ebb8', 'MG', 1);
 
 --
--- Indexes for dumped tables
+-- Índices de tabelas apagadas
 --
 
 --
--- Indexes for table `categorias`
+-- Índices de tabela `categorias`
 --
 ALTER TABLE `categorias`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `cidades`
+-- Índices de tabela `cidades`
 --
 ALTER TABLE `cidades`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `clientes`
+-- Índices de tabela `clientes`
 --
 ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id`),
@@ -371,21 +370,21 @@ ALTER TABLE `clientes`
   ADD KEY `empresasId` (`empresasId`);
 
 --
--- Indexes for table `contratos`
+-- Índices de tabela `contratos`
 --
 ALTER TABLE `contratos`
   ADD PRIMARY KEY (`id`),
   ADD KEY `categoria` (`categoria`);
 
 --
--- Indexes for table `empresas`
+-- Índices de tabela `empresas`
 --
 ALTER TABLE `empresas`
   ADD PRIMARY KEY (`empresasId`),
   ADD KEY `cidadeId` (`cidadeId`);
 
 --
--- Indexes for table `itenscategoria`
+-- Índices de tabela `itenscategoria`
 --
 ALTER TABLE `itenscategoria`
   ADD PRIMARY KEY (`itensId`),
@@ -394,7 +393,7 @@ ALTER TABLE `itenscategoria`
   ADD KEY `produtosId` (`produtosId`);
 
 --
--- Indexes for table `itensorcamento`
+-- Índices de tabela `itensorcamento`
 --
 ALTER TABLE `itensorcamento`
   ADD PRIMARY KEY (`itensId`),
@@ -403,28 +402,29 @@ ALTER TABLE `itensorcamento`
   ADD KEY `produtosId` (`produtosId`);
 
 --
--- Indexes for table `modalidades`
+-- Índices de tabela `modalidades`
 --
 ALTER TABLE `modalidades`
   ADD PRIMARY KEY (`modalidadesId`);
 
 --
--- Indexes for table `orcamentos`
+-- Índices de tabela `orcamentos`
 --
 ALTER TABLE `orcamentos`
   ADD PRIMARY KEY (`orcamentosId`),
   ADD KEY `clientesId` (`clientesId`),
   ADD KEY `usuariosId` (`usuariosId`),
-  ADD KEY `empresasId` (`empresasId`);
+  ADD KEY `empresasId` (`empresasId`),
+  ADD KEY `categoriaid` (`categoriaid`);
 
 --
--- Indexes for table `produto_servico`
+-- Índices de tabela `produto_servico`
 --
 ALTER TABLE `produto_servico`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `titulos`
+-- Índices de tabela `titulos`
 --
 ALTER TABLE `titulos`
   ADD PRIMARY KEY (`titulosId`),
@@ -432,7 +432,7 @@ ALTER TABLE `titulos`
   ADD KEY `produtosId` (`produtosId`);
 
 --
--- Indexes for table `usuarios`
+-- Índices de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
@@ -440,106 +440,106 @@ ALTER TABLE `usuarios`
   ADD KEY `empresasId` (`empresasId`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas apagadas
 --
 
 --
--- AUTO_INCREMENT for table `categorias`
+-- AUTO_INCREMENT de tabela `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `cidades`
+-- AUTO_INCREMENT de tabela `cidades`
 --
 ALTER TABLE `cidades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `clientes`
+-- AUTO_INCREMENT de tabela `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `contratos`
+-- AUTO_INCREMENT de tabela `contratos`
 --
 ALTER TABLE `contratos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `empresas`
+-- AUTO_INCREMENT de tabela `empresas`
 --
 ALTER TABLE `empresas`
-  MODIFY `empresasId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `empresasId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `itenscategoria`
+-- AUTO_INCREMENT de tabela `itenscategoria`
 --
 ALTER TABLE `itenscategoria`
   MODIFY `itensId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `itensorcamento`
+-- AUTO_INCREMENT de tabela `itensorcamento`
 --
 ALTER TABLE `itensorcamento`
-  MODIFY `itensId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `itensId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `modalidades`
+-- AUTO_INCREMENT de tabela `modalidades`
 --
 ALTER TABLE `modalidades`
-  MODIFY `modalidadesId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `modalidadesId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `orcamentos`
+-- AUTO_INCREMENT de tabela `orcamentos`
 --
 ALTER TABLE `orcamentos`
-  MODIFY `orcamentosId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `orcamentosId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT for table `produto_servico`
+-- AUTO_INCREMENT de tabela `produto_servico`
 --
 ALTER TABLE `produto_servico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT for table `titulos`
+-- AUTO_INCREMENT de tabela `titulos`
 --
 ALTER TABLE `titulos`
-  MODIFY `titulosId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `titulosId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `usuarios`
+-- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- Constraints for dumped tables
+-- Restrições para dumps de tabelas
 --
 
 --
--- Limitadores para a tabela `clientes`
+-- Restrições para tabelas `clientes`
 --
 ALTER TABLE `clientes`
   ADD CONSTRAINT `clientes_ibfk_2` FOREIGN KEY (`cidadeId`) REFERENCES `cidades` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `clientes_ibfk_3` FOREIGN KEY (`empresasId`) REFERENCES `empresas` (`empresasId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `contratos`
+-- Restrições para tabelas `contratos`
 --
 ALTER TABLE `contratos`
   ADD CONSTRAINT `fk_Categoria` FOREIGN KEY (`categoria`) REFERENCES `categorias` (`id`);
 
 --
--- Limitadores para a tabela `empresas`
+-- Restrições para tabelas `empresas`
 --
 ALTER TABLE `empresas`
   ADD CONSTRAINT `empresas_ibfk_1` FOREIGN KEY (`cidadeId`) REFERENCES `cidades` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `itenscategoria`
+-- Restrições para tabelas `itenscategoria`
 --
 ALTER TABLE `itenscategoria`
   ADD CONSTRAINT `itenscategoria_ibfk_1` FOREIGN KEY (`categoriasId`) REFERENCES `categorias` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -547,7 +547,7 @@ ALTER TABLE `itenscategoria`
   ADD CONSTRAINT `itenscategoria_ibfk_3` FOREIGN KEY (`modalidadesId`) REFERENCES `modalidades` (`modalidadesId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `itensorcamento`
+-- Restrições para tabelas `itensorcamento`
 --
 ALTER TABLE `itensorcamento`
   ADD CONSTRAINT `itensorcamento_ibfk_1` FOREIGN KEY (`orcamentosId`) REFERENCES `orcamentos` (`orcamentosId`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -555,22 +555,23 @@ ALTER TABLE `itensorcamento`
   ADD CONSTRAINT `itensorcamento_ibfk_3` FOREIGN KEY (`modalidadesId`) REFERENCES `modalidades` (`modalidadesId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `orcamentos`
+-- Restrições para tabelas `orcamentos`
 --
 ALTER TABLE `orcamentos`
   ADD CONSTRAINT `orcamentos_ibfk_1` FOREIGN KEY (`clientesId`) REFERENCES `clientes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `orcamentos_ibfk_2` FOREIGN KEY (`usuariosId`) REFERENCES `usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `orcamentos_ibfk_3` FOREIGN KEY (`empresasId`) REFERENCES `empresas` (`empresasId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `orcamentos_ibfk_3` FOREIGN KEY (`empresasId`) REFERENCES `empresas` (`empresasId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `orcamentos_ibfk_4` FOREIGN KEY (`categoriaid`) REFERENCES `categorias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `titulos`
+-- Restrições para tabelas `titulos`
 --
 ALTER TABLE `titulos`
   ADD CONSTRAINT `titulos_ibfk_2` FOREIGN KEY (`produtosId`) REFERENCES `produto_servico` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `titulos_ibfk_3` FOREIGN KEY (`itensorcamentoId`) REFERENCES `itensorcamento` (`itensId`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Limitadores para a tabela `usuarios`
+-- Restrições para tabelas `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `usuarios_ibfk_2` FOREIGN KEY (`empresasId`) REFERENCES `empresas` (`empresasId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
