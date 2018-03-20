@@ -28,7 +28,7 @@ class categorias extends CActiveRecord
 		return array(
 			array('nome, empresasId', 'required'),
 			array('empresasId', 'numerical', 'integerOnly'=>true),
-			array('nome', 'length', 'max'=>10),
+			array('nome', 'length', 'max'=>20),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, nome, empresasId', 'safe', 'on'=>'search'),

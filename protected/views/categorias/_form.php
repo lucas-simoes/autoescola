@@ -25,7 +25,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <?php echo $form->labelEx($model,'nome'); ?>
-                                    <?php echo $form->textField($model,'nome',array('size'=>10,'maxlength'=>10,'class'=>'form-control')); ?>
+                                    <?php echo $form->textField($model,'nome',array('size'=>20,'maxlength'=>20,'class'=>'form-control')); ?>
                                     <?php echo $form->error($model,'nome'); ?>
                                 </div>
                             </div>
