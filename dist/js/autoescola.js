@@ -20,12 +20,14 @@ $( function($){
                 if (novoTamanho !== tamanhoAnterior) {
                     if (novoTamanho === 11) {  
                         $elem.unmask();  
-                        $elem.mask("(99) 99999-9999");  
+                        $elem.mask("(99) 99999-9999");
                     } else if (novoTamanho === 10) {  
                         $elem.unmask();  
-                        $elem.mask("(99) 9999-9999?9");  
+                        $elem.mask("(99) 9999-9999?9"); 
                     }
                 }
+                
+                $elem.focus();
             }, 1);
         });
 	//Fim Mascara Telefone

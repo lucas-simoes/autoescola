@@ -103,9 +103,9 @@ class OrcamentosController extends Controller {
         if (isset($_POST['orcamentos'])) {
             $model->attributes = $_POST['orcamentos'];
             if ($model->save()) {
-                if ((isset($_POST['categoria'])) && ($_POST['categoria'] != '')) {
+                if ((isset($_POST['orcamentos']['categoriaid'])) && ($_POST['orcamentos']['categoriaid'] != '')) {
 
-                    $setItens = itenscategoria::model()->findAllByAttributes(array('categoriasId' => $_POST['categoria']));
+                    $setItens = itenscategoria::model()->findAllByAttributes(array('categoriasId' => $_POST['orcamentos']['categoriaid']));
 
                     foreach ($setItens as $singleItem) {
 
