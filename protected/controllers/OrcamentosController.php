@@ -47,6 +47,7 @@ class OrcamentosController extends Controller {
      * Displays a particular model.
      */
     public function actionView() {
+        require_once "protected/extensions/mpdf60/mpdf.php";  
         $model = $this->loadModel();
             
                 $itens = new itensorcamento();
@@ -57,14 +58,26 @@ class OrcamentosController extends Controller {
                 
                 $titulos->setAttribute('_orcamentosId', $model->orcamentosId);
                 
-                $cs = Yii::app()->clientScript;
-                $cs->registerScript('imprimir', 'window.print();', CClientScript::POS_READY);
+                /*$cs = Yii::app()->clientScript;
+                $cs->registerScript('imprimir', 'window.print();', CClientScript::POS_READY);*/
   
-                $this->render('view',array(
-			'model'=>$model,
-                        'itens'=>$itens,
-                        'titulos'=>$titulos,
-		));
+                
+                
+                $html = $this->renderPartial('view',array(
+                                'model'=>$model,
+                                'itens'=>$itens,
+                                'titulos'=>$titulos,
+                        ), true);
+                                
+                $mpdf = new mpdf('','A5',10,'dejavusans');
+                $mpdf->SetDisplayMode('fullpage');                                
+                $mpdf->SetTitle('Orçamento');
+                $mpdf->SetHeader('');
+                $mpdf->SetFooter('');
+                $mpdf->WriteHTML($html, 2, true);
+                $mpdf->Output($name, 'I');
+                                
+                Yii::app()->end();
     }
 
     /**

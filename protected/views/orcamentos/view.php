@@ -1,29 +1,24 @@
 <?php
-$this->breadcrumbs=array(
+/*$this->breadcrumbs=array(
 	'Orcamentoses'=>array('index'),
 	$model->orcamentosId,
-);
+);*/
 
 ?>
-
-
-<h1><center> Orçamento</center></h1>
-<h4><center><?php echo $model->empresas->nome; ?></center></h4>
+<h3 style="text-align:center">Orçamento</h3>
+<h5 style="text-align:center"><?php echo $model->empresas->nome; ?></h5>
 <hr />
-<br />
-<br />
 <table width="100%" border="0" cellspacing="10" cellpadding="4">
     
     <tr align="center">
-        <td><strong>Data: </strong><?php echo date('d/m/Y', strtotime($model->data)); ?></td>
-        <td><strong>Cliente: </strong><?php echo $model->clientes->nome; ?></td>
-        <td><strong>Validade: </strong><?php echo date('d/m/Y', strtotime($model->validade)); ?></td>
+        <td><font size=2><strong>Data: </strong><?php echo date('d/m/Y', strtotime($model->data)); ?></font></td>
+        <td><font size=2><strong>Cliente: </strong><?php echo $model->clientes->nome; ?></font></td>
+        <td><font size=2><strong>Validade: </strong><?php echo date('d/m/Y', strtotime($model->validade)); ?></font></td>
     </tr>
     
 </table>
-<br />
-<br />
-<h4><center><u>Produtos/Serviços</u></center></h4>
+<h5 style="text-align:center"><u>Produtos/Serviços</u></h5>
+
 <?php $this->widget('zii.widgets.grid.CGridView', array(
                         'id'=>'itensorcamento-grid',
                         'dataProvider'=>$titulos->search(),
@@ -55,20 +50,17 @@ $this->breadcrumbs=array(
                             ),
  )); ?>
 
-<br />
-<br />
 <hr />
 <table width="100%" border="0" cellspacing="10" cellpadding="4">
     
     <tr align="center">
-        <td><strong>Telefone: </strong><?php echo $model->empresas->telefone; ?></td>
+        <td><font size=1><strong>Telefone: </strong><?php echo $model->empresas->telefone; ?></font></td>
         <?php if($model->empresas->celular != ''){ ?>
-        <td><strong>Celular: </strong><?php echo $model->empresas->celular; ?></td>
+        <td><font size=1><strong>Celular: </strong><?php echo $model->empresas->celular; ?></font></td>
         <?php } ?>
         <?php if($model->empresas->telefone1 != ''){ ?>
-        <td><strong>Moto Pista: </strong><?php echo $model->empresas->telefone1; ?></td>
+        <td><font size=1><strong>Moto Pista: </strong><?php echo $model->empresas->telefone1; ?></font></td>
         <?php } ?>
     </tr>
     
 </table>
-
