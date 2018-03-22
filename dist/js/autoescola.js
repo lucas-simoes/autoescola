@@ -12,24 +12,42 @@ $( function($){
 	//Inicio Mascara Telefone para aceitar telefones fixos e celulares com 8 e 9 digitos
 	$('.fixo_cel')  
         .mask("(99) 9999-9999?9")  
-        .keydown(function() {
-            var $elem = $(this);
-            var tamanhoAnterior = this.value.replace(/\D/g, '').length;
-            setTimeout(function() { 
-                var novoTamanho = $elem.val().replace(/\D/g, '').length;
-                if (novoTamanho !== tamanhoAnterior) {
-                    if (novoTamanho === 11) {  
-                        $elem.unmask();  
-                        $elem.mask("(99) 99999-9999");
-                    } else if (novoTamanho === 10) {  
-                        $elem.unmask();  
-                        $elem.mask("(99) 9999-9999?9"); 
-                    }
-                }
-                
-                $elem.focus();
-            }, 1);
-        });
+        .focusout(function (event) {  
+                    var target, phone, element;  
+                    target = (event.currentTarget) ? event.currentTarget : event.srcElement;  
+                    phone = target.value.replace(/\D/g, '');
+                    element = $(target);  
+                    element.unmask();  
+                    if(phone.length > 10) { 
+                        element.unmask();
+                        element.mask("(99) 99999-9999");  
+                    } else {  
+                        element.unmask();
+                        element.mask("(99) 9999-9999?9"); 
+                    }  
+                });
+                /* 
+                 * O evento keydown estava gerando mal funcionamento na máscara,
+                 * por isso foi substituido pelo evento focusout. A função não foi
+                 * deletada para servir de exemplos para outras implementações.
+                 * .keydown(function() {
+                    var $elem = $(this);
+                    var tamanhoAnterior = this.value.replace(/\D/g, '').length;
+                    setTimeout(function() { 
+                        var novoTamanho = $elem.val().replace(/\D/g, '').length;
+                        if (novoTamanho !== tamanhoAnterior) {
+                            if (novoTamanho === 11) {  
+                                $elem.unmask();  
+                                $elem.mask("(99) 99999-9999");
+                            } else if (novoTamanho === 10) {  
+                                $elem.unmask();  
+                                $elem.mask("(99) 9999-9999?9"); 
+                            }
+                        }
+
+                        $elem.focus();
+                    }, 1);
+                });*/
 	//Fim Mascara Telefone
 	
 	$(".cpfCnpj").keydown(function() {
