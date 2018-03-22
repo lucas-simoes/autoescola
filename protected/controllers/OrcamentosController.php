@@ -73,7 +73,7 @@ class OrcamentosController extends Controller {
                 $mpdf->SetDisplayMode('fullpage');                                
                 $mpdf->SetTitle('Orçamento');
                 $mpdf->SetHeader('');
-                $mpdf->SetFooter('');
+                $mpdf->SetFooter('Gerado por Creative Solutions - Sistema para Auto Escolas');
                 $mpdf->WriteHTML($html, 2, true);
                 $mpdf->Output($name, 'I');
                                 

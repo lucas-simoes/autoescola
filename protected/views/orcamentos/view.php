@@ -14,6 +14,7 @@
         <td><font size=2><strong>Data: </strong><?php echo date('d/m/Y', strtotime($model->data)); ?></font></td>
         <td><font size=2><strong>Cliente: </strong><?php echo $model->clientes->nome; ?></font></td>
         <td><font size=2><strong>Validade: </strong><?php echo date('d/m/Y', strtotime($model->validade)); ?></font></td>
+        <td><font size=2><strong>Categoria: </strong><?php echo $model->categorias->nome; ?></font> </td>
     </tr>
     
 </table>
@@ -39,18 +40,12 @@
                                     'name'=>'Total A Prazo',
                                     'value'=>'$data->itens->valorTotalPrazo',
                                 ),
-                                array(
-                                    'name'=>'Forma de Pagamento',
-                                    'value'=>'$data->itens->modalidades->nome',
-                                ),
-                                array(
-                                    'name'=>'Parcelas',
-                                    'value'=>'$data->parcelas',
-                                ),
                             ),
  )); ?>
 
 <hr />
+<p><strong>Valor Total a Vista: R$<?php echo $model->valorLiquido; ?></strong></p>
+<p><strong>Valor Total a Prazo: R$<?php echo $model->valorBruto; ?></strong></p>
 <table width="100%" border="0" cellspacing="10" cellpadding="4">
     
     <tr align="center">
