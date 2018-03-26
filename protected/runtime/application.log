@@ -8579,3 +8579,319 @@ Stack trace:
 REQUEST_URI=/autoescola/index.php/orcamentos/showcontract?orcamentosID=25
 HTTP_REFERER=http://localhost:84/autoescola/index.php/orcamentos/update/25
 ---
+2018/03/23 10:55:10 [error] [exception.MpdfException] exception 'MpdfException' with message 'WriteHTML() requires $html be an integer, float, string, boolean or an object with the __toString() magic method.' in D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\extensions\mpdf60\mpdf.php:15884
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\OrcamentosController.php(77): mPDF->WriteHTML(NULL, 2, true)
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\actions\CInlineAction.php(49): OrcamentosController->actionView()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/view')
+#12 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/autoescola/orcamentos/27
+HTTP_REFERER=http://localhost/autoescola/orcamentos/admin
+---
+2018/03/23 11:05:11 [error] [exception.CException] exception 'CException' with message 'A propriedade "CGridView.ItemStyle" não está definida.' in D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('ItemStyle', Array)
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(OrcamentosController), 'zii.widgets.gri...', Array)
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\views\orcamentos\view.php(50): CBaseController->widget('zii.widgets.gri...', Array)
+#4 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CBaseController.php(126): require('D:\\Automacao\\Pr...')
+#5 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\Automacao\\Pr...', Array, true)
+#6 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\Automacao\\Pr...', Array, true)
+#7 D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\OrcamentosController.php(70): CController->renderPartial('view', Array, true)
+#8 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\actions\CInlineAction.php(49): OrcamentosController->actionView()
+#9 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#18 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/view')
+#19 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#20 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/autoescola/orcamentos/27
+HTTP_REFERER=http://localhost/autoescola/orcamentos/admin
+---
+2018/03/26 10:49:08 [error] [php] Trying to get property of non-object (D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\CofiguracoesController.php:68)
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): CofiguracoesController->runAction()
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CofiguracoesController->filterAccessControl()
+#4 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(265): CofiguracoesController->runActionWithFilters()
+#7 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(282): CofiguracoesController->run()
+#8 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/cofiguracoes/create
+in D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\CofiguracoesController.php (68)
+in D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php (13)
+2018/03/26 10:57:38 [error] [php] Undefined index: cofiguracoes (D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\CofiguracoesController.php:73)
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): CofiguracoesController->runAction()
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CofiguracoesController->filterAccessControl()
+#4 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(265): CofiguracoesController->runActionWithFilters()
+#7 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(282): CofiguracoesController->run()
+#8 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/cofiguracoes/create
+in D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\CofiguracoesController.php (73)
+in D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php (13)
+2018/03/26 11:00:07 [error] [php] Undefined variable: diretorio (D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\CofiguracoesController.php:82)
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): CofiguracoesController->runAction()
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CofiguracoesController->filterAccessControl()
+#4 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(265): CofiguracoesController->runActionWithFilters()
+#7 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(282): CofiguracoesController->run()
+#8 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/cofiguracoes/create
+in D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\CofiguracoesController.php (82)
+in D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php (13)
+2018/03/26 11:07:28 [error] [php] Undefined variable: arquivo (D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\CofiguracoesController.php:76)
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): CofiguracoesController->runAction()
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CofiguracoesController->filterAccessControl()
+#4 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(265): CofiguracoesController->runActionWithFilters()
+#7 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(282): CofiguracoesController->run()
+#8 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/cofiguracoes/create
+in D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\CofiguracoesController.php (76)
+in D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php (13)
+2018/03/26 11:08:02 [error] [php] move_uploaded_file() expects parameter 1 to be string, array given (D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\CofiguracoesController.php:78)
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): CofiguracoesController->runAction()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CofiguracoesController->filterAccessControl()
+#5 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(265): CofiguracoesController->runActionWithFilters()
+#8 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(282): CofiguracoesController->run()
+#9 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/cofiguracoes/create
+in D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\CofiguracoesController.php (78)
+in D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php (13)
+2018/03/26 11:09:03 [error] [php] move_uploaded_file() expects parameter 1 to be string, array given (D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\CofiguracoesController.php:78)
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): CofiguracoesController->runAction()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CofiguracoesController->filterAccessControl()
+#5 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(265): CofiguracoesController->runActionWithFilters()
+#8 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(282): CofiguracoesController->run()
+#9 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/cofiguracoes/create
+in D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\CofiguracoesController.php (78)
+in D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php (13)
+2018/03/26 11:09:20 [error] [php] move_uploaded_file() expects parameter 1 to be string, array given (D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\CofiguracoesController.php:78)
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): CofiguracoesController->runAction()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CofiguracoesController->filterAccessControl()
+#5 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(265): CofiguracoesController->runActionWithFilters()
+#8 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(282): CofiguracoesController->run()
+#9 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/cofiguracoes/create
+in D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\CofiguracoesController.php (78)
+in D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php (13)
+2018/03/26 11:16:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\CofiguracoesController.php:188
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\CofiguracoesController.php(115): CofiguracoesController->loadModel()
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\actions\CInlineAction.php(49): CofiguracoesController->actionUpdate()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#11 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cofiguracoes/up...')
+#12 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/autoescola/cofiguracoes/update
+---
+2018/03/26 11:21:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "img/D:/Automacao/Projetos/Development/Projects/www/autoescola/protected/imgs/29-icone-Frugi-300x300.png".' in D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('img/D:/Automaca...')
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/img/D:/Automacao/Projetos/Development/Projects/www/autoescola/protected/imgs/29-icone-Frugi-300x300.png
+HTTP_REFERER=http://localhost/autoescola/cofiguracoes/create
+---
+2018/03/26 11:23:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "img/29-icone-Frugi-300x300.png".' in D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('img/29-icone-Fr...')
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/img/29-icone-Frugi-300x300.png
+HTTP_REFERER=http://localhost/autoescola/cofiguracoes/create
+---
+2018/03/26 11:24:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "img/29-icone-Frugi-300x300.png".' in D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('img/29-icone-Fr...')
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/img/29-icone-Frugi-300x300.png
+HTTP_REFERER=http://localhost/autoescola/cofiguracoes/create
+---
+2018/03/26 11:31:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "img/29-icone-Frugi-300x300.png".' in D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('img/29-icone-Fr...')
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/img/29-icone-Frugi-300x300.png
+HTTP_REFERER=http://localhost/autoescola/cofiguracoes/create
+---
+2018/03/26 11:31:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "img/29-icone-Frugi-300x300.png".' in D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('img/29-icone-Fr...')
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/img/29-icone-Frugi-300x300.png
+HTTP_REFERER=http://localhost/autoescola/cofiguracoes/create
+---
+2018/03/26 11:31:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "img/29-icone-Frugi-300x300.png".' in D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('img/29-icone-Fr...')
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/img/29-icone-Frugi-300x300.png
+HTTP_REFERER=http://localhost/autoescola/cofiguracoes/create
+---
+2018/03/26 11:37:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "localhost" solicitada.' in D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(270): CController->missingAction('localhost')
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('localhost')
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cofiguracoes/lo...')
+#3 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/autoescola/cofiguracoes/localhost/img/29-icone-Frugi-300x300.png
+HTTP_REFERER=http://localhost/autoescola/cofiguracoes/create
+---
+2018/03/26 11:40:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "img/29-icone-Frugi-300x300.png".' in D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('img/29-icone-Fr...')
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/img/29-icone-Frugi-300x300.png
+HTTP_REFERER=http://localhost/autoescola/cofiguracoes/create
+---
+2018/03/26 11:41:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "img/29-icone-Frugi-300x300.png".' in D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('img/29-icone-Fr...')
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/img/29-icone-Frugi-300x300.png
+HTTP_REFERER=http://localhost/autoescola/cofiguracoes/create
+---
+2018/03/26 11:44:22 [error] [php] Attempt to assign property of non-object (D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\CofiguracoesController.php:87)
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): CofiguracoesController->runAction()
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CofiguracoesController->filterAccessControl()
+#4 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(265): CofiguracoesController->runActionWithFilters()
+#7 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(282): CofiguracoesController->run()
+#8 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/cofiguracoes/create
+in D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\CofiguracoesController.php (87)
+in D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php (13)
+2018/03/26 11:44:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "img/2.jpg".' in D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('img/2.jpg')
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/img/2.jpg
+HTTP_REFERER=http://localhost/autoescola/cofiguracoes/create
+---
+2018/03/26 11:45:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "img/2.jpg".' in D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('img/2.jpg')
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/img/2.jpg
+HTTP_REFERER=http://localhost/autoescola/cofiguracoes/create
+---
+2018/03/26 11:51:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "img/2.jpg".' in D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('img/2.jpg')
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/img/2.jpg
+HTTP_REFERER=http://localhost/autoescola/cofiguracoes/create
+---
+2018/03/26 11:51:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "img/2.jpg".' in D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('img/2.jpg')
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/img/2.jpg
+HTTP_REFERER=http://localhost/autoescola/cofiguracoes/create
+---

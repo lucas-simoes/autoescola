@@ -1,21 +1,22 @@
 <?php
 
 /**
- * This is the model class for table "categorias".
+ * This is the model class for table "cofiguracoes".
  *
- * The followings are the available columns in table 'categorias':
+ * The followings are the available columns in table 'cofiguracoes':
  * @property integer $id
- * @property string $nome
- * @property integer $empresasId
+ * @property string $chave
+ * @property string $valor
+ * @property string $alteracao
  */
-class categorias extends CActiveRecord
+class cofiguracoes extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'categorias';
+		return 'cofiguracoes';
 	}
 
 	/**
@@ -26,12 +27,10 @@ class categorias extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nome, empresasId', 'required'),
-			array('empresasId', 'numerical', 'integerOnly'=>true),
-			array('nome', 'length', 'max'=>80),
+			array('chave, valor', 'required'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, nome, empresasId', 'safe', 'on'=>'search'),
+			array('id, chave, valor, alteracao', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -43,8 +42,6 @@ class categorias extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'contratoses' => array(self::HAS_MANY, 'Contratos', 'categoria'),
-			'itenscategorias' => array(self::HAS_MANY, 'Itenscategoria', 'categoriasId'),
 		);
 	}
 
@@ -55,8 +52,9 @@ class categorias extends CActiveRecord
 	{
 		return array(
 			'id' => 'Id',
-			'nome' => 'Nome',
-			'empresasId' => 'Empresas',
+			'chave' => 'Chave',
+			'valor' => 'Valor',
+			'alteracao' => 'Alteracao',
 		);
 	}
 
@@ -80,18 +78,20 @@ class categorias extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 
-		$criteria->compare('nome',$this->nome,true);
+		$criteria->compare('chave',$this->chave,true);
 
-		$criteria->compare('empresasId',$this->empresasId);
+		$criteria->compare('valor',$this->valor,true);
 
-		return new CActiveDataProvider('categorias', array(
+		$criteria->compare('alteracao',$this->alteracao,true);
+
+		return new CActiveDataProvider('cofiguracoes', array(
 			'criteria'=>$criteria,
 		));
 	}
 
 	/**
 	 * Returns the static model of the specified AR class.
-	 * @return categorias the static model class
+	 * @return cofiguracoes the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

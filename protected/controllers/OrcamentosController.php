@@ -67,7 +67,7 @@ class OrcamentosController extends Controller {
                                 'model'=>$model,
                                 'itens'=>$itens,
                                 'titulos'=>$titulos,
-                        ), true);
+                        ), TRUE);
                                 
                 $mpdf = new mpdf('','A5',10,'dejavusans');
                 $mpdf->SetDisplayMode('fullpage');                                

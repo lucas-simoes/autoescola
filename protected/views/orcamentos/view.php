@@ -1,10 +1,3 @@
-<?php
-/*$this->breadcrumbs=array(
-	'Orcamentoses'=>array('index'),
-	$model->orcamentosId,
-);*/
-
-?>
 <h3 style="text-align:center">Orçamento</h3>
 <h5 style="text-align:center"><?php echo $model->empresas->nome; ?></h5>
 <hr />
@@ -23,24 +16,35 @@
 <?php $this->widget('zii.widgets.grid.CGridView', array(
                         'id'=>'itensorcamento-grid',
                         'dataProvider'=>$titulos->search(),
+                        'summaryText'=>'',
                         'columns'=>array(
                                 array(
-                                    'name'=>'Item',
+                                    'header'=>'<span style="text-align: left">Item</span>',
                                     'value'=>'$data->produtos->descricao',
+                                    'htmlOptions' => array('style' => 'font-size: 10px; text-align: left; border: 1'),
                                 ),
                                 array(
-                                    'name'=>'Quantidade',
+                                    'header'=>'Quant.',
                                     'value'=>'$data->itens->quantidade',
+                                    'htmlOptions' => array('style' => 'font-size: 10px; text-align: right; border: 1'),
                                 ),
                                 array(
                                     'name'=>'Total À Vista',
                                     'value'=>'$data->itens->valorTotalLiquido',
+                                    'htmlOptions' => array('style' => 'font-size: 10px; text-align: right; border: 1'),
                                 ),
                                 array(
                                     'name'=>'Total A Prazo',
                                     'value'=>'$data->itens->valorTotalPrazo',
+                                    'htmlOptions' => array('style' => 'font-size: 10px; text-align: right; border: 1'),
+                                ),
+                                array(
+                                    'name'=>'Forma de Pagamento',
+                                    'value'=>'$data->itens->modalidades->nome',
+                                    'htmlOptions' => array('style' => 'font-size: 8px; text-align: left; border: 1'),
                                 ),
                             ),
+                        'htmlOptions' => array('style' => 'font-size: 8px'),    
  )); ?>
 
 <hr />
@@ -59,3 +63,4 @@
     </tr>
     
 </table>
+
