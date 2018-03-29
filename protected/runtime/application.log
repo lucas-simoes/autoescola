@@ -8895,3 +8895,459 @@ Stack trace:
 REQUEST_URI=/autoescola/img/2.jpg
 HTTP_REFERER=http://localhost/autoescola/cofiguracoes/create
 ---
+2018/03/28 23:45:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "index" solicitada.' in D:\wamp\www\autoescola\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\autoescola\yii\framework\web\CController.php(270): CController->missingAction('')
+#1 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('')
+#2 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cofiguracoes')
+#3 D:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\wamp\www\autoescola\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/autoescola/cofiguracoes
+---
+2018/03/28 23:46:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "update" solicitada.' in D:\wamp\www\autoescola\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\autoescola\yii\framework\web\CController.php(270): CController->missingAction('update')
+#1 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#2 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cofiguracoes/up...')
+#3 D:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\wamp\www\autoescola\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/autoescola/cofiguracoes/update
+---
+2018/03/28 23:46:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "imgs/29-icone-Frugi-300x300.png".' in D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('imgs/29-icone-F...')
+#1 D:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\wamp\www\autoescola\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/imgs/29-icone-Frugi-300x300.png
+HTTP_REFERER=http://localhost/autoescola/cofiguracoes/create
+---
+2018/03/29 00:15:17 [error] [exception.MpdfException] exception 'MpdfException' with message 'WriteHTML() requires $html be an integer, float, string, boolean or an object with the __toString() magic method.' in D:\wamp\www\autoescola\protected\extensions\mpdf60\mpdf.php:15884
+Stack trace:
+#0 D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php(77): mPDF->WriteHTML(NULL, 2, true)
+#1 D:\wamp\www\autoescola\yii\framework\web\actions\CInlineAction.php(49): OrcamentosController->actionView()
+#2 D:\wamp\www\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\wamp\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\wamp\www\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\wamp\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\wamp\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\wamp\www\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/view')
+#12 D:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\wamp\www\autoescola\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/autoescola/orcamentos/40
+HTTP_REFERER=http://localhost/autoescola/orcamentos/admin
+---
+2018/03/29 00:15:35 [error] [exception.MpdfException] exception 'MpdfException' with message 'WriteHTML() requires $html be an integer, float, string, boolean or an object with the __toString() magic method.' in D:\wamp\www\autoescola\protected\extensions\mpdf60\mpdf.php:15884
+Stack trace:
+#0 D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php(77): mPDF->WriteHTML(NULL, 2, true)
+#1 D:\wamp\www\autoescola\yii\framework\web\actions\CInlineAction.php(49): OrcamentosController->actionView()
+#2 D:\wamp\www\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\wamp\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\wamp\www\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\wamp\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\wamp\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\wamp\www\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/view')
+#12 D:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\wamp\www\autoescola\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/autoescola/orcamentos/40
+---
+2018/03/29 00:16:58 [error] [exception.MpdfException] exception 'MpdfException' with message 'WriteHTML() requires $html be an integer, float, string, boolean or an object with the __toString() magic method.' in D:\wamp\www\autoescola\protected\extensions\mpdf60\mpdf.php:15884
+Stack trace:
+#0 D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php(77): mPDF->WriteHTML(NULL, 2, true)
+#1 D:\wamp\www\autoescola\yii\framework\web\actions\CInlineAction.php(49): OrcamentosController->actionView()
+#2 D:\wamp\www\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\wamp\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\wamp\www\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\wamp\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\wamp\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\wamp\www\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/view')
+#12 D:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\wamp\www\autoescola\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/autoescola/orcamentos/40
+HTTP_REFERER=http://localhost/autoescola/orcamentos/admin
+---
+2018/03/29 00:25:34 [error] [php] Undefined variable: logo (D:\wamp\www\autoescola\protected\views\layouts\column1.php:3)
+Stack trace:
+#0 D:\wamp\www\autoescola\yii\framework\web\CController.php(784): SiteController->renderFile()
+#1 D:\wamp\www\autoescola\protected\controllers\SiteController.php(35): SiteController->render()
+#2 D:\wamp\www\autoescola\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#3 D:\wamp\www\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\wamp\www\autoescola\yii\framework\web\CController.php(286): SiteController->runAction()
+#5 D:\wamp\www\autoescola\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#7 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 D:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 D:\wamp\www\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/
+in D:\wamp\www\autoescola\protected\views\layouts\column1.php (3)
+in D:\wamp\www\autoescola\protected\controllers\SiteController.php (35)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 00:29:09 [error] [exception.CException] exception 'CException' with message 'SiteController possui uma chamada endWidget(CContentDecorator) extra em sua visualização.' in D:\wamp\www\autoescola\yii\framework\web\CBaseController.php:218
+Stack trace:
+#0 D:\wamp\www\autoescola\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#1 D:\wamp\www\autoescola\protected\views\layouts\column1.php(5): CBaseController->endContent()
+#2 D:\wamp\www\autoescola\yii\framework\web\CBaseController.php(126): require('D:\\wamp\\www\\aut...')
+#3 D:\wamp\www\autoescola\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\wamp\\www\\aut...', Array, true)
+#4 D:\wamp\www\autoescola\yii\framework\web\CController.php(784): CBaseController->renderFile('D:\\wamp\\www\\aut...', Array, true)
+#5 D:\wamp\www\autoescola\protected\controllers\SiteController.php(35): CController->render('index')
+#6 D:\wamp\www\autoescola\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#7 D:\wamp\www\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\autoescola\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('')
+#11 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#12 D:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\wamp\www\autoescola\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/autoescola/
+---
+2018/03/29 00:44:34 [error] [exception.CException] exception 'CException' with message 'A propriedade "itensorcamento.valorAprazo" não está definida.' in D:\wamp\www\autoescola\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\autoescola\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('valorAprazo')
+#1 D:\wamp\www\autoescola\yii\framework\web\helpers\CHtml.php(2729): CActiveRecord->__get('valorAprazo')
+#2 D:\wamp\www\autoescola\yii\framework\web\helpers\CHtml.php(2452): CHtml::resolveValue(Object(itensorcamento), 'valorAprazo')
+#3 D:\wamp\www\autoescola\yii\framework\web\helpers\CHtml.php(1534): CHtml::activeInputField('text', Object(itensorcamento), 'valorAprazo', Array)
+#4 D:\wamp\www\autoescola\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(itensorcamento), 'valorAprazo', Array)
+#5 D:\wamp\www\autoescola\protected\views\orcamentos\_form.php(227): CActiveForm->textField(Object(itensorcamento), 'valorAprazo', Array)
+#6 D:\wamp\www\autoescola\yii\framework\web\CBaseController.php(126): require('D:\\wamp\\www\\aut...')
+#7 D:\wamp\www\autoescola\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\wamp\\www\\aut...', Array, true)
+#8 D:\wamp\www\autoescola\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\wamp\\www\\aut...', Array, true)
+#9 D:\wamp\www\autoescola\protected\views\orcamentos\update.php(11): CController->renderPartial('_form', Array)
+#10 D:\wamp\www\autoescola\yii\framework\web\CBaseController.php(126): require('D:\\wamp\\www\\aut...')
+#11 D:\wamp\www\autoescola\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\wamp\\www\\aut...', Array, true)
+#12 D:\wamp\www\autoescola\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\wamp\\www\\aut...', Array, true)
+#13 D:\wamp\www\autoescola\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#14 D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php(204): CController->render('update', Array)
+#15 D:\wamp\www\autoescola\yii\framework\web\actions\CInlineAction.php(49): OrcamentosController->actionUpdate()
+#16 D:\wamp\www\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 D:\wamp\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 D:\wamp\www\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 D:\wamp\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 D:\wamp\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 D:\wamp\www\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#25 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orcamentos/upda...')
+#26 D:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#27 D:\wamp\www\autoescola\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/autoescola/orcamentos/update/40
+HTTP_REFERER=http://localhost/autoescola/orcamentos/admin
+---
+2018/03/29 00:53:01 [warning] [application] Failed to set unsafe attribute "valorAprazo" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (380)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 00:53:24 [warning] [application] Failed to set unsafe attribute "valorAprazo" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (380)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 00:53:39 [warning] [application] Failed to set unsafe attribute "valorAprazo" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (380)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:02:14 [warning] [application] Failed to set unsafe attribute "valorAprazo" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (380)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:05:15 [warning] [application] Failed to set unsafe attribute "valorAprazo" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (380)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:07:23 [warning] [application] Failed to set unsafe attribute "valorAprazo" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (284)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:08:50 [warning] [application] Failed to set unsafe attribute "valorAprazo" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (284)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:10:11 [warning] [application] Failed to set unsafe attribute "valorAprazo" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (284)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:01 [warning] [application] Failed to set unsafe attribute "valorAprazo" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (284)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:36 [warning] [application] Failed to set unsafe attribute "orcamentosId" of "orcamentos".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (117)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:36 [warning] [application] Failed to set unsafe attribute "itensId" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (127)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:36 [warning] [application] Failed to set unsafe attribute "categoriasId" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (127)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:36 [warning] [application] Failed to set unsafe attribute "vencimento" of "titulos".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (142)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "itensId" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (127)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "categoriasId" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (127)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "vencimento" of "titulos".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (142)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "itensId" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (127)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "categoriasId" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (127)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "vencimento" of "titulos".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (142)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "itensId" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (127)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "categoriasId" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (127)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "vencimento" of "titulos".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (142)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "itensId" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (127)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "categoriasId" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (127)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "vencimento" of "titulos".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (142)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "itensId" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (127)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "categoriasId" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (127)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "vencimento" of "titulos".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (142)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "itensId" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (127)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "categoriasId" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (127)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "vencimento" of "titulos".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (142)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "itensId" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (127)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "categoriasId" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (127)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "vencimento" of "titulos".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (142)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "itensId" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (127)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "categoriasId" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (127)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:13:37 [warning] [application] Failed to set unsafe attribute "vencimento" of "titulos".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (142)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:14:26 [error] [php] Division by zero (D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php:350)
+Stack trace:
+#0 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#1 D:\wamp\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\wamp\www\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\wamp\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#4 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\wamp\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\wamp\www\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#7 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#8 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\wamp\www\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/orcamentos/deleteItem/98
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (350)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:15:13 [error] [php] Division by zero (D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php:350)
+Stack trace:
+#0 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#1 D:\wamp\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\wamp\www\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\wamp\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#4 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\wamp\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\wamp\www\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#7 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#8 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\wamp\www\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/orcamentos/deleteItem/98
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (350)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:15:15 [error] [php] Division by zero (D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php:350)
+Stack trace:
+#0 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#1 D:\wamp\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\wamp\www\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\wamp\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#4 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\wamp\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\wamp\www\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#7 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#8 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\wamp\www\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/orcamentos/deleteItem/98
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (350)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:15:16 [error] [php] Division by zero (D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php:350)
+Stack trace:
+#0 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#1 D:\wamp\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\wamp\www\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\wamp\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#4 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\wamp\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\wamp\www\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#7 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#8 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\wamp\www\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/orcamentos/deleteItem/98
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (350)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:15:17 [error] [php] Division by zero (D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php:350)
+Stack trace:
+#0 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#1 D:\wamp\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\wamp\www\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\wamp\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#4 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\wamp\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\wamp\www\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#7 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#8 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\wamp\www\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/orcamentos/deleteItem/98
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (350)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:16:02 [error] [php] Division by zero (D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php:350)
+Stack trace:
+#0 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#1 D:\wamp\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\wamp\www\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\wamp\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#4 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\wamp\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\wamp\www\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#7 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#8 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\wamp\www\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/orcamentos/deleteItem/98
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (350)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:16:03 [error] [php] Division by zero (D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php:350)
+Stack trace:
+#0 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#1 D:\wamp\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\wamp\www\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\wamp\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#4 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\wamp\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\wamp\www\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#7 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#8 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\wamp\www\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/orcamentos/deleteItem/98
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (350)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:16:04 [error] [php] Division by zero (D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php:350)
+Stack trace:
+#0 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#1 D:\wamp\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\wamp\www\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\wamp\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#4 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\wamp\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\wamp\www\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#7 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#8 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\wamp\www\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/orcamentos/deleteItem/98
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (350)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:16:41 [error] [php] Division by zero (D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php:350)
+Stack trace:
+#0 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#1 D:\wamp\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\wamp\www\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\wamp\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#4 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\wamp\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\wamp\www\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#7 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#8 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\wamp\www\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/orcamentos/deleteItem/98
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (350)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:16:42 [error] [php] Division by zero (D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php:350)
+Stack trace:
+#0 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#1 D:\wamp\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\wamp\www\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\wamp\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#4 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\wamp\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\wamp\www\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#7 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#8 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\wamp\www\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/orcamentos/deleteItem/98
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (350)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:16:43 [error] [php] Division by zero (D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php:350)
+Stack trace:
+#0 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): OrcamentosController->runAction()
+#1 D:\wamp\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\wamp\www\autoescola\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\wamp\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): OrcamentosController->filterAccessControl()
+#4 D:\wamp\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\wamp\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\wamp\www\autoescola\yii\framework\web\CController.php(265): OrcamentosController->runActionWithFilters()
+#7 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(282): OrcamentosController->run()
+#8 D:\wamp\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\wamp\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\wamp\www\autoescola\index.php(13): CWebApplication->run()
+REQUEST_URI=/autoescola/orcamentos/deleteItem/98
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (350)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:17:41 [warning] [application] Failed to set unsafe attribute "valorAprazo" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (382)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:17:51 [warning] [application] Failed to set unsafe attribute "valorAprazo" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (284)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:18:06 [warning] [application] Failed to set unsafe attribute "valorAprazo" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (382)
+in D:\wamp\www\autoescola\index.php (13)
+2018/03/29 01:18:12 [warning] [application] Failed to set unsafe attribute "valorAprazo" of "itensorcamento".
+in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (284)
+in D:\wamp\www\autoescola\index.php (13)

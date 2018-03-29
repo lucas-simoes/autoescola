@@ -103,7 +103,7 @@ class OrcamentosController extends Controller {
             'status' => 1,
             'clientesId' => $cliente->id,
             'data' => date('Y-m-d', time()),
-            'validade' => date('Y-m-d', strtotime("+30 days")),
+            'validade' => date('Y-m-d', strtotime("+90 days")),
             'usuariosId' => Yii::app()->user->UserId,
         ));
 
@@ -282,15 +282,16 @@ class OrcamentosController extends Controller {
             $itens->setAttribute('orcamentosId', $model->orcamentosId);
 
             $itens->attributes = $_POST['itensorcamento'];
+            $itens->valorDesconto = 0;
 
             $model->setAttribute('valorBruto', $model->valorPrazo + $itens->valorTotalPrazo);
             $model->setAttribute('valorLiquido', $model->valorLiquido + $itens->valorTotalLiquido);
             $model->setAttribute('valorPrazo', $model->valorPrazo + $itens->valorTotalPrazo);
 
-            $valorDesconto = $model->valorPrazo - $model->valorLiquido;
-            $desconto = round($valorDesconto / $model->valorPrazo * 100, 2);
+            /*$valorDesconto = $model->valorPrazo - $model->valorLiquido;
+            $desconto = round($valorDesconto / $model->valorPrazo>0?$model->valorPrazo:1 * 100, 2);*/
 
-            $model->setAttribute('valorDesconto', $desconto);
+            $model->setAttribute('valorDesconto', 0);
 
             $model->attributes;
 
@@ -302,6 +303,7 @@ class OrcamentosController extends Controller {
                 $titulos->setAttribute('valor', $itens->valorTotalLiquido);
                 $titulos->setAttribute('itensorcamentoId', $itens->itensId);
                 $titulos->setAttribute('produtosId', $itens->produtosId);
+                $titulos->setAttribute('valorParcela', $itens->valorTotalLiquido);
 
                 if ($titulos->save()) {
                     $model->save();
@@ -344,10 +346,10 @@ class OrcamentosController extends Controller {
         $model->setAttribute('valorLiquido', $model->valorLiquido - $item->valorTotalLiquido);
         $model->setAttribute('valorPrazo', $model->valorPrazo - $item->valorTotalPrazo);
 
-        $valorDesconto = $model->valorPrazo - $model->valorLiquido;
-        $desconto = round($valorDesconto / $model->valorPrazo * 100, 2);
+        /*$valorDesconto = $model->valorPrazo - $model->valorLiquido;
+        $desconto = round($valorDesconto>0?$valorDesconto:1 / $model->valorPrazo * 100, 2);*/
 
-        $model->setAttribute('valorDesconto', $desconto);
+        $model->setAttribute('valorDesconto', 0);
 
         $model->save();
 
@@ -373,9 +375,10 @@ class OrcamentosController extends Controller {
                 $item->setAttributes(array(
                     'quantidade' => 1,
                     'valorUnitario' => number_format($produto->valorAvista, 2, '.', ','),
+                    'valorAprazo' => number_format($produto->valorAprazo, 2, '.', ','),
                     'valorDesconto' => 0,
                     'valorTotalLiquido' => number_format(1 * $produto->valorAvista, 2, '.', ','),
-                    'valorTotalPrazo' => number_format(1 * $produto->valorAvista, 2, '.', ','),
+                    'valorTotalPrazo' => number_format(1 * $produto->valorAprazo, 2, '.', ','),
                 ));
 
                 $json = CJSON::encode($item);

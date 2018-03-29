@@ -16,7 +16,9 @@
  */
 class itensorcamento extends CActiveRecord
 {
-	/**
+    
+    public $valorAprazo;
+    /**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
@@ -65,13 +67,14 @@ class itensorcamento extends CActiveRecord
 			'orcamentosId' => 'Orcamentos',
 			'produtosId' => 'Cód. Produto/Serviço',
 			'quantidade' => 'Qtde.',
-			'valorUnitario' => 'Valor Unitario',
+			'valorUnitario' => 'Valor a Vista',
 			'valorDesconto' => 'Desconto (%)',
-			'valorTotalLiquido' => 'Total Liquido',
-			'valorTotalPrazo' => 'Total Prazo',
+			'valorTotalLiquido' => 'Total a Vista',
+			'valorTotalPrazo' => 'Total a Prazo',
 			'modalidadesId' => 'Modalidade',
                         'modalidades.nome' => 'Modalidade',
-                        'produtos.descricao' => 'Produto/Serviço'
+                        'produtos.descricao' => 'Produto/Serviço',
+                        'valorAprazo' =>'Total a Prazo'
 		);
 	}
 

@@ -230,6 +230,21 @@
             <li><a href="<?php echo Yii::app()->createUrl('empresas/admin') ?>"><i class="fa fa fa-list"></i> Lista de Empresas</a></li>
           </ul>
         </li>
+        <?php }  ?>
+        
+        <?php if (Yii::app()->user->isAdmin){  ?>
+        <li class="treeview">        
+          <a href="#">
+            <i class="fa fa-cogs"></i>
+            <span>Configurações</span>            
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo Yii::app()->createUrl('cofiguracoes/create') ?>"><i class="fa fa-plus-circle"></i> Configurações</a></li>
+          </ul>
+        </li>
         <?php }  ?> 
         
         <?php if (Yii::app()->user->isAdmin){  ?>

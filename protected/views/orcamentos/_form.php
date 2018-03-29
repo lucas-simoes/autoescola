@@ -216,19 +216,29 @@
                         <div class="col-md-2">
                             <div class="form-group">
                                 <?php echo $formItens->labelEx($itens,'valorUnitario'); ?>
-                                <?php echo $formItens->textField($itens,'valorUnitario',array('size'=>11,'maxlength'=>11, 'class'=>'form-control money', 'onfocusout'=>'updateValores()', 'onkeypress'=>'return isNumberKey(event)','type' => 'number')); ?>
+                                <?php echo $formItens->textField($itens,'valorUnitario',array('size'=>11,'maxlength'=>11, 'class'=>'form-control money', 'readOnly'=>TRUE, 'onkeypress'=>'return isNumberKey(event)','type' => 'number')); ?>
                                 <?php echo $formItens->error($itens,'valorUnitario'); ?>
                             </div>
                         </div>
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <?php echo $formItens->labelEx($itens,'valorDesconto'); ?>
-                                <?php echo $formItens->textField($itens,'valorDesconto',array('size'=>11,'maxlength'=>11, 'class'=>'form-control money', 'onfocusout'=>'updateValores()', 'onkeypress'=>'return isNumberKey(event)','type' => 'number')); ?>
-                                <?php echo $formItens->error($itens,'valorDesconto'); ?>
+                                <?php echo $formItens->labelEx($itens,'valorAprazo'); ?>
+                                <?php echo $formItens->textField($itens,'valorAprazo',array('size'=>11,'maxlength'=>11, 'class'=>'form-control money', 'readOnly'=>TRUE, 'onkeypress'=>'return isNumberKey(event)','type' => 'number')); ?>
+                                <?php echo $formItens->error($itens,'valorAprazo'); ?>
                             </div>
                         </div>
                         
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <?php echo $formItens->labelEx($itens,'valorTotalLiquido'); ?>
+                                <?php echo $formItens->textField($itens,'valorTotalLiquido',array('size'=>11,'maxlength'=>11, 'class'=>'form-control money', 'readOnly'=>TRUE, 'onkeypress'=>'return isNumberKey(event)','type' => 'number')); ?>
+                                <?php echo $formItens->error($itens,'valorTotalLiquido'); ?>
+                            </div>
+                        </div>                 
+                    </div>
+                    
+                    <div class="row">                       
                          
                         <div class="col-md-2">
                             <div class="form-group">
@@ -236,21 +246,12 @@
                                 <?php echo $formItens->textField($itens,'valorTotalPrazo',array('size'=>11,'maxlength'=>11, 'class'=>'form-control money', 'readOnly'=>TRUE, 'onkeypress'=>'return isNumberKey(event)', 'type' => 'number')); ?>
                                 <?php echo $formItens->error($itens,'valorTotalPrazo'); ?>
                             </div>
-                        </div>                        
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-md-2">
-                            <div class="form-group">
-                                <?php echo $formItens->labelEx($itens,'valorTotalLiquido'); ?>
-                                <?php echo $formItens->textField($itens,'valorTotalLiquido',array('size'=>11,'maxlength'=>11, 'class'=>'form-control money', 'onfocusout'=>'calculaDesconto()', 'readOnly'=>TRUE, 'onkeypress'=>'return isNumberKey(event)','type' => 'number')); ?>
-                                <?php echo $formItens->error($itens,'valorTotalLiquido'); ?>
-                            </div>
-                        </div>
+                        </div>       
+                        
                         
                         <?php echo $formItens->hiddenField($titulos, 'produtosId'); ?>
                         
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <?php echo $formItens->labelEx($itens,'modalidadesId'); ?>                                                              
                                 <?php echo $formItens->dropDownList($itens,'modalidadesId', CHtml::listData(modalidades::model()->findAll(), 'modalidadesId', 'nome'), array('class'=>'form-control select2', 'selected'=>true, 'empty'=>'')); ?>
@@ -261,30 +262,14 @@
                         <div class="col-md-2">
                             <div class="form-group">
                                 <?php echo $formItens->labelEx($titulos, 'parcelas'); ?>
-                                <?php echo $formItens->numberField($titulos, 'parcelas', array('class'=>'form-control', 'onfocusout'=>'calculaValorParcela()'));?>
+                                <?php echo $formItens->numberField($titulos, 'parcelas', array('class'=>'form-control'));?>
                                 <?php echo $formItens->error($titulos, 'parcelas'); ?>
                             </div>
                         </div>
                         
                         <div class="col-md-2">
-                            <div class="form-group">
-                                <?php echo $formItens->labelEx($titulos, 'valorParcela'); ?>
-                                <?php echo $formItens->textField($titulos, 'valorParcela', array('class'=>'form-control money', 'readOnly'=>TRUE, 'type' => 'number'));?>
-                                <?php echo $formItens->error($titulos, 'valorParcela'); ?>
-                            </div>
-                        </div>
-                        
-                        <!--<div class="col-md-2">
-                            <div class="form-group">
-                                <?php echo $formItens->labelEx($titulos, 'vencimento'); ?>
-                                <?php echo $formItens->dateField($titulos, 'vencimento', array('class'=>'form-control'));?>
-                                <?php echo $formItens->error($titulos, 'vencimento'); ?>
-                            </div>
-                        </div>-->
-                        
-                        <div class="col-md-1">
                             <div class="form-group" style="padding-top: 25px">
-                                <?php echo CHtml::submitButton('Inserir Item', array('class'=>'btn btn-info pull-right')); ?>
+                                <?php echo CHtml::submitButton('Inserir Item', array('class'=>'btn btn-info')); ?>
                             </div>
                         </div>
                     </div>
@@ -334,40 +319,20 @@
 </section>
 
 <script type="text/javascript">
-    function updateForm(data) {        
+function updateForm(data) {        
     document.getElementById('itensorcamento_valorUnitario').value = data.valorUnitario;
     document.getElementById('itensorcamento_quantidade').value = data.quantidade;
-    document.getElementById('itensorcamento_valorDesconto').value = data.valorDesconto;
     document.getElementById('itensorcamento_valorTotalLiquido').value = data.valorTotalLiquido;
     document.getElementById('itensorcamento_valorTotalPrazo').value = data.valorTotalPrazo;
-    document.getElementById('itensorcamento_valorUnitario').value = data.valorTotalPrazo;
-    
+    document.getElementById('itensorcamento_valorAprazo').value = data.valorTotalPrazo;
+
     document.getElementById('titulos_parcelas').value = 1;
-    document.getElementById('titulos_valorParcela').value = document.getElementById('itensorcamento_valorTotalLiquido').value;
 }
 
 function updateValores() {
     var valorUn = document.getElementById('itensorcamento_valorUnitario');
+    var valorPr = document.getElementById('itensorcamento_valorAprazo');
     var qtd = document.getElementById('itensorcamento_quantidade');
-    var desconto = document.getElementById('itensorcamento_valorDesconto');
-    var liq = document.getElementById('itensorcamento_valorTotalLiquido');
-    var prazo = document.getElementById('itensorcamento_valorTotalPrazo');
-    var valorParcela = document.getElementById('titulos_valorParcela');
-    
-    var descPerc = desconto.value / 100;
-    
-    if (qtd.value <= 0) {
-        qtd.value = 1;
-    }
-    
-    prazo.value = numberToReal(qtd.value * valorUn.value);
-    liq.value = numberToReal(prazo.value - (prazo.value * descPerc));
-    valorParcela.value = liq.value;
-}
-
-function calculaDesconto() {
-    var qtd = document.getElementById('itensorcamento_quantidade');
-    var desconto = document.getElementById('itensorcamento_valorDesconto');
     var liq = document.getElementById('itensorcamento_valorTotalLiquido');
     var prazo = document.getElementById('itensorcamento_valorTotalPrazo');
     
@@ -375,17 +340,8 @@ function calculaDesconto() {
         qtd.value = 1;
     }
     
-    var valorDesc = prazo.value - liq.value;
-    
-    desconto.value = numberToReal(roun (valorDesc / prazo.value) * 100); 
-}
-
-function calculaValorParcela() {
-    var valorParcela = document.getElementById('titulos_valorParcela');
-    var qtdParcelas = document.getElementById('titulos_parcelas');
-    var liq = document.getElementById('itensorcamento_valorTotalLiquido');
-    
-    valorParcela.value = numberToReal(liq.value / qtdParcelas.value);
+    prazo.value = numberToReal(qtd.value * valorPr.value);
+    liq.value = numberToReal(valorUn.value * qtd.value);
 }
 
 function confirmation(data) {

@@ -1,3 +1,18 @@
+<?php
+    $logo = cofiguracoes::model()->findByAttributes(array('chave' => 'logo'));
+    if (!isset($logo)) {
+        $logo = new cofiguracoes();
+    }
+?>
+<?php if ($logo->valor != '') : ?>
+<table width="100%" border="0" cellspacing="10" cellpadding="4">
+    
+    <tr align="center" style="text-align: center">
+        <td><?php echo CHtml::image(Yii::app()->createAbsoluteUrl('/') . '/imgs/' . $logo->valor, '', array('class'=>'img-responsive img-sm', 'style'=>'width: 150px')); ?></td>
+    </tr>
+    
+</table>
+<?php endif; ?>
 <h3 style="text-align:center">Orçamento</h3>
 <h5 style="text-align:center"><?php echo $model->empresas->nome; ?></h5>
 <hr />
@@ -25,7 +40,7 @@
                                 ),
                                 array(
                                     'header'=>'Quant.',
-                                    'value'=>'$data->itens->quantidade',
+                                    'value'=>'(integer)$data->itens->quantidade',
                                     'htmlOptions' => array('style' => 'font-size: 10px; text-align: right; border: 1'),
                                 ),
                                 array(
