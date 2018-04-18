@@ -22,7 +22,7 @@ $('.search-form form').submit(function(){
         <h1>Orçamentos</h1>
 
 
-        <div class="search-form" style="display:none">
+        <div class="search-form">
             <?php
             $this->renderPartial('_search', array(
                 'model' => $model,

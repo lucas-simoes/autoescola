@@ -1,3 +1,9 @@
+<?php
+    Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/bower_components/select2/dist/js/select2.full.min.js', CClientScript::POS_END);
+    Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/orcamentos.js', CClientScript::POS_END);
+    Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/dist/css/skins/_all-skins.min.css', CClientScript::POS_HEAD);
+?>
+
 <div class="wide form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -5,69 +11,23 @@
 	'method'=>'get',
 )); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'orcamentosId'); ?>
-		<?php echo $form->textField($model,'orcamentosId'); ?>
-	</div>
+    <div class="row">
+        <div class="col-md-4">
+            <?php echo $form->label($model,'data'); ?>
+            <?php echo $form->dateField($model,'data', array('class'=>'form-control input-sm')); ?>
+        </div>
 
-	<div class="row">
-		<?php echo $form->label($model,'data'); ?>
-		<?php echo $form->textField($model,'data'); ?>
-	</div>
+        <div class="col-md-6">
+            <?php echo $form->label($model,'clientesId'); ?>
+            <?php echo $form->dropDownList($model, 'clientesId', CHtml::listData(clientes::model()->findAll(), 'id', 'nome'), array('class'=>'form-control select2', 'empty'=>'', 'style'=>'width: 100%')); ?>
+        </div>       
 
-	<div class="row">
-		<?php echo $form->label($model,'clientesId'); ?>
-		<?php echo $form->textField($model,'clientesId'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'valorBruto'); ?>
-		<?php echo $form->textField($model,'valorBruto',array('size'=>11,'maxlength'=>11)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'valorDesconto'); ?>
-		<?php echo $form->textField($model,'valorDesconto',array('size'=>11,'maxlength'=>11)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'valorLiquido'); ?>
-		<?php echo $form->textField($model,'valorLiquido',array('size'=>11,'maxlength'=>11)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'status'); ?>
-		<?php echo $form->textField($model,'status'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'usuariosId'); ?>
-		<?php echo $form->textField($model,'usuariosId'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'validade'); ?>
-		<?php echo $form->textField($model,'validade'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'valorPrazo'); ?>
-		<?php echo $form->textField($model,'valorPrazo',array('size'=>11,'maxlength'=>11)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'inclusao'); ?>
-		<?php echo $form->textField($model,'inclusao'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'empresasId'); ?>
-		<?php echo $form->textField($model,'empresasId'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
-	</div>
+        <div class="col-md-2">
+            <div class="row buttons" style="padding-top: 20px">
+                <?php echo CHtml::submitButton('Filtrar', array('class'=>'btn btn-default')); ?>
+            </div>
+        </div>
+    </div>
 
 <?php $this->endWidget(); ?>
 
