@@ -130,23 +130,15 @@
                     <div class="col-md-1">
                         <div class="form-group">
                             <?php echo $formItens->labelEx($itens,'valorUnitario'); ?>
-                            <?php echo $formItens->textField($itens,'valorUnitario',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'updateValores()')); ?>
+                            <?php echo $formItens->textField($itens,'valorUnitario',array('size'=>11,'maxlength'=>11, 'class'=>'form-control money', 'readOnly'=>TRUE)); ?>
                             <?php echo $formItens->error($itens,'valorUnitario'); ?>
                         </div>
                     </div>
 
                     <div class="col-md-1">
                         <div class="form-group">
-                            <?php echo $formItens->labelEx($itens,'valorDesconto'); ?>
-                            <?php echo $formItens->textField($itens,'valorDesconto',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'updateValores()')); ?>
-                            <?php echo $formItens->error($itens,'valorDesconto'); ?>
-                        </div>
-                    </div>
-
-                    <div class="col-md-1">
-                        <div class="form-group">
                             <?php echo $formItens->labelEx($itens,'valorTotalLiquido'); ?>
-                            <?php echo $formItens->textField($itens,'valorTotalLiquido',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'onfocusout'=>'calculaDesconto()')); ?>
+                            <?php echo $formItens->textField($itens,'valorTotalLiquido',array('size'=>11,'maxlength'=>11, 'class'=>'form-control money', 'readOnly'=>TRUE)); ?>
                             <?php echo $formItens->error($itens,'valorTotalLiquido'); ?>
                         </div>
                     </div>
@@ -154,7 +146,7 @@
                     <div class="col-md-1">
                         <div class="form-group">
                             <?php echo $formItens->labelEx($itens,'valorTotalPrazo'); ?>
-                            <?php echo $formItens->textField($itens,'valorTotalPrazo',array('size'=>11,'maxlength'=>11, 'class'=>'form-control', 'readOnly'=>TRUE)); ?>
+                            <?php echo $formItens->textField($itens,'valorTotalPrazo',array('size'=>11,'maxlength'=>11, 'class'=>'form-control money', 'readOnly'=>TRUE, 'readOnly'=>TRUE)); ?>
                             <?php echo $formItens->error($itens,'valorTotalPrazo'); ?>
                         </div>
                     </div>
@@ -186,7 +178,6 @@
                                 'produtos.descricao',
                                 'quantidade',
                                 'valorUnitario',
-                                'valorDesconto',
                                 'valorTotalLiquido',
                                 'valorTotalPrazo',
                                 'modalidades.nome',
@@ -221,32 +212,27 @@
     function updateForm(data) {        
     document.getElementById('itenscategoria_valorUnitario').value = data.valorUnitario;
     document.getElementById('itenscategoria_quantidade').value = data.quantidade;
-    document.getElementById('itenscategoria_valorDesconto').value = data.valorDesconto;
-    document.getElementById('itenscategoria_valorTotalLiquido').value = data.valorTotalLiquido;
-    document.getElementById('itenscategoria_valorTotalPrazo').value = data.valorTotalPrazo;
+    document.getElementById('itenscategoria_valorTotalLiquido').value = numberToReal(data.valorTotalLiquido);
+    document.getElementById('itenscategoria_valorTotalPrazo').value = numberToReal(data.valorTotalPrazo);
 }
 
 function updateValores() {
     var valorUn = document.getElementById('itenscategoria_valorUnitario');
     var qtd = document.getElementById('itenscategoria_quantidade');
-    var desconto = document.getElementById('itenscategoria_valorDesconto');
     var liq = document.getElementById('itenscategoria_valorTotalLiquido');
     var prazo = document.getElementById('itenscategoria_valorTotalPrazo');
-    
-    var descPerc = desconto.value / 100;
     
     if (qtd.value <= 0) {
         qtd.value = 1;
     }
     
-    prazo.value = qtd.value * valorUn.value;
-    liq.value = prazo.value - (prazo.value * descPerc);
+    prazo.value = numberToReal(qtd.value * prazo.value);
+    liq.value = numberToReal(liq.value * qtd.value);
 }
 
 function calculaDesconto() {
     var valorUn = document.getElementById('itenscategoria_valorUnitario');
     var qtd = document.getElementById('itenscategoria_quantidade');
-    var desconto = document.getElementById('itenscategoria_valorDesconto');
     var liq = document.getElementById('itenscategoria_valorTotalLiquido');
     var prazo = document.getElementById('itenscategoria_valorTotalPrazo');
     
@@ -257,5 +243,11 @@ function calculaDesconto() {
     var valorDesc = prazo.value - liq.value;
     
     desconto.value = roun (valorDesc / prazo.value) * 100; 
+}
+
+function numberToReal(numero) {
+    var numero = numero.toFixed(2).split('.');
+    numero[0] = numero[0].split(/(?=(?:...)*$)/).join(',');
+    return numero.join('.');
 }
 </script>

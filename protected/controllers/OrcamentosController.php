@@ -148,7 +148,7 @@ class OrcamentosController extends Controller {
                             $model->setAttribute('valorPrazo', $model->valorPrazo + $catItens->valorTotalPrazo);
 
                             $valorDesconto = $model->valorPrazo - $model->valorLiquido;
-                            $desconto = round($valorDesconto / $model->valorPrazo * 100, 2);
+                            $desconto = 0;
 
                             $model->setAttribute('valorDesconto', $desconto);
 
@@ -158,7 +158,6 @@ class OrcamentosController extends Controller {
                 }
 
                 $this->redirect(array('update', 'id' => $model->orcamentosId));
-                //$this->renderPartial('itens', array('itens'=>$itens));
             }
         }
 

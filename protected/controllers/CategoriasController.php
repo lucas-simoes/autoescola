@@ -189,9 +189,8 @@ class CategoriasController extends Controller
                 
                 $itens->setAttribute('categoriasId', $model->id);
                 
-                $itens = new itenscategoria();
-                
                 $itens->attributes = $_POST['itenscategoria'];
+                $itens->setAttribute('valorDesconto', 0); //Esse valor sempre será 0 (zero).
                 
                 if ($itens->save()) {
                     $this->redirect(array('update','id'=>$model->id));

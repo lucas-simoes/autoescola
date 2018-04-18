@@ -9351,3 +9351,28 @@ in D:\wamp\www\autoescola\index.php (13)
 2018/03/29 01:18:12 [warning] [application] Failed to set unsafe attribute "valorAprazo" of "itensorcamento".
 in D:\wamp\www\autoescola\protected\controllers\OrcamentosController.php (284)
 in D:\wamp\www\autoescola\index.php (13)
+2018/04/17 15:55:21 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::execute(): SQLSTATE[HY000]: General error: 1364 Field 'valorDesconto' doesn't have a default value. A declaração SQL executada foi: INSERT INTO `itenscategoria` (`categoriasId`, `produtosId`, `quantidade`, `valorUnitario`, `valorTotalLiquido`, `valorTotalPrazo`, `modalidadesId`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\CategoriasController.php (196)
+in D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php (13)
+2018/04/17 15:55:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[HY000]: General error: 1364 Field 'valorDesconto' doesn't have a default value. The SQL statement executed was: INSERT INTO `itenscategoria` (`categoriasId`, `produtosId`, `quantidade`, `valorUnitario`, `valorTotalLiquido`, `valorTotalPrazo`, `modalidadesId`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 D:\Automacao\Projetos\Development\Projects\www\autoescola\protected\controllers\CategoriasController.php(196): CActiveRecord->save()
+#3 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\actions\CInlineAction.php(49): CategoriasController->actionInserirItem()
+#4 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(282): CController->run('inserirItem')
+#13 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('categorias/inse...')
+#14 D:\Automacao\Projetos\Development\Projects\www\autoescola\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 D:\Automacao\Projetos\Development\Projects\www\autoescola\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/autoescola/categorias/inserirItem
+HTTP_REFERER=http://localhost/autoescola/categorias/update/5
+---

@@ -118,6 +118,21 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MENU</li>
+        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-users"></i>
+            <span>Clientes</span>            
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo Yii::app()->createUrl('clientes/create') ?>"><i class="fa fa-plus-circle"></i> Novo Cliente</a></li>
+            <li><a href="<?php echo Yii::app()->createUrl('clientes/admin') ?>"><i class="fa fa fa-list"></i> Lista de Clientes</a></li>
+          </ul>
+        </li>
+        
         <li class="treeview">
           <a href="#">
             <i class="fa fa-money"></i> <span>Orçamentos</span>
@@ -155,20 +170,6 @@
           <ul class="treeview-menu">
             <li class="active"><a href="<?php echo Yii::app()->createUrl('categorias/create') ?>"><i class="fa fa-plus-circle"></i> Nova Categoria</a></li>
             <li><a href="<?php echo Yii::app()->createUrl('categorias/admin') ?>"><i class="fa fa fa-list"></i> Lista de Categorias</a></li>
-          </ul>
-        </li>
-        
-         <li class="treeview">
-          <a href="#">
-            <i class="fa fa-users"></i>
-            <span>Clientes</span>            
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo Yii::app()->createUrl('clientes/create') ?>"><i class="fa fa-plus-circle"></i> Novo Cliente</a></li>
-            <li><a href="<?php echo Yii::app()->createUrl('clientes/admin') ?>"><i class="fa fa fa-list"></i> Lista de Clientes</a></li>
           </ul>
         </li>
         
