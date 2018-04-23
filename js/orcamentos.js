@@ -11,17 +11,17 @@ $(function () {
     //Money Euro
     $('[data-mask]').inputmask()
     
-    $(".money").mask() .inputmask('decimal', {
-                'alias': 'numeric',
-                'groupSeparator': ',',
-                'autoGroup': true,
-                'digits': 2,
-                'radixPoint': ".",
-                'digitsOptional': false,
-                'allowMinus': false,
-                'prefix': 'R$ ',
-                'placeholder': ''
-    });
+    //$(".money").mask() .inputmask('decimal', {
+    //            'alias': 'numeric',
+     //           'groupSeparator': '',
+    //            'autoGroup': true,
+    //            'digits': 2,
+    //            'radixPoint': ".",
+    //            'digitsOptional': false,
+    //            'allowMinus': false,
+    //            'prefix': 'R$ ',
+    //            'placeholder': ''
+    //});
 
     //Date range picker
     $('#reservation').daterangepicker()

@@ -66,9 +66,9 @@ class CategoriasController extends Controller
 
 		if(isset($_POST['categorias']))
 		{
-			$model->attributes=$_POST['categorias'];
+			$model->attributes=$_POST['categorias'];                        
 			if($model->save())
-				$this->redirect(array('update','id'=>$model->id));
+				$this->redirect(array('update','id'=>$model->id));                            
 		}
 
 		$this->render('create',array(
@@ -194,6 +194,7 @@ class CategoriasController extends Controller
                 
                 if ($itens->save()) {
                     $this->redirect(array('update','id'=>$model->id));
+                    //var_dump($itens->attributes);
                 } else {
                     $this->render('update',array(
 			'model'=>$model,

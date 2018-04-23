@@ -144,6 +144,8 @@ class usuarios extends CActiveRecord
                 $criteria->compare('uf',$this->uf,true);
                 
                 $criteria->compare('admin',$this->admin);
+                
+                $criteria->addCondition('login <> "admin"');
 
 		return new CActiveDataProvider('usuarios', array(
 			'criteria'=>$criteria,
