@@ -9453,3 +9453,75 @@ Stack trace:
 #10 /opt/lampp/htdocs/autoescola/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
 #11 /opt/lampp/htdocs/autoescola/index.php(13): CWebApplication->run()
 REQUEST_URI=/autoescola/categorias/inserirItem
+2018/05/09 17:44:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "imgs/LOGOMARCA-1.jpg".' in /opt/lampp/htdocs/autoescola/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/autoescola/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('imgs/LOGOMARCA-...')
+#1 /opt/lampp/htdocs/autoescola/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/autoescola/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/imgs/LOGOMARCA-1.jpg
+---
+2018/05/09 17:44:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "imgs/LOGOMARCA-1.jpg".' in /opt/lampp/htdocs/autoescola/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/autoescola/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('imgs/LOGOMARCA-...')
+#1 /opt/lampp/htdocs/autoescola/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/autoescola/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/imgs/LOGOMARCA-1.jpg
+---
+2018/05/09 17:44:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "imgs/LOGOMARCA-1.jpg".' in /opt/lampp/htdocs/autoescola/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/autoescola/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('imgs/LOGOMARCA-...')
+#1 /opt/lampp/htdocs/autoescola/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/autoescola/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/imgs/LOGOMARCA-1.jpg
+---
+2018/05/09 17:47:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "imgs/LOGOMARCA-1.jpg".' in /opt/lampp/htdocs/autoescola/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/autoescola/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('imgs/LOGOMARCA-...')
+#1 /opt/lampp/htdocs/autoescola/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/autoescola/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/imgs/LOGOMARCA-1.jpg
+---
+2018/05/09 17:47:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "imgs/LOGOMARCA-1.jpg".' in /opt/lampp/htdocs/autoescola/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/autoescola/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('imgs/LOGOMARCA-...')
+#1 /opt/lampp/htdocs/autoescola/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/autoescola/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/imgs/LOGOMARCA-1.jpg
+---
+2018/05/09 17:47:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "imgs/LOGOMARCA-1.jpg".' in /opt/lampp/htdocs/autoescola/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/autoescola/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('imgs/LOGOMARCA-...')
+#1 /opt/lampp/htdocs/autoescola/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/autoescola/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/imgs/LOGOMARCA-1.jpg
+---
+2018/05/09 17:48:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "imgs/LOGOMARCA-1.jpg".' in /opt/lampp/htdocs/autoescola/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/autoescola/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('imgs/LOGOMARCA-...')
+#1 /opt/lampp/htdocs/autoescola/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/autoescola/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/imgs/LOGOMARCA-1.jpg
+---
+2018/05/09 17:48:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "imgs/LOGOMARCA-1.jpg".' in /opt/lampp/htdocs/autoescola/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/autoescola/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('imgs/LOGOMARCA-...')
+#1 /opt/lampp/htdocs/autoescola/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/autoescola/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/imgs/LOGOMARCA-1.jpg
+---
+2018/05/09 17:48:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Não foi possível resolver a requisição "imgs/LOGOMARCA-1.jpg".' in /opt/lampp/htdocs/autoescola/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/autoescola/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('imgs/LOGOMARCA-...')
+#1 /opt/lampp/htdocs/autoescola/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/autoescola/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/autoescola/imgs/LOGOMARCA-1.jpg
+---

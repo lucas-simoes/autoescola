@@ -66,6 +66,12 @@
 <p><strong>Valor Total a Vista: R$<?php echo $model->valorLiquido; ?></strong></p>
 <p><strong>Valor Total a Prazo: R$<?php echo $model->valorBruto; ?></strong></p>
 <table width="100%" border="0" cellspacing="10" cellpadding="4">
+    <tr>
+        <td colspan="3">
+            <font size=1>Documentos Necessários: Identidade com foto atual, carteira nacional de habilitação,
+            CPF, comprovante de residência de no máximo 90 dias.</font>
+        </td>
+    </tr>
     
     <tr align="center">
         <td><font size=1><strong>Telefone: </strong><?php echo $model->empresas->telefone; ?></font></td>
