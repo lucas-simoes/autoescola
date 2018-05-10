@@ -63,9 +63,15 @@
  )); ?>
 
 <hr />
-<p><strong>Valor Total a Vista: R$<?php echo $model->valorLiquido; ?></strong></p>
-<p><strong>Valor Total a Prazo: R$<?php echo $model->valorBruto; ?></strong></p>
 <table width="100%" border="0" cellspacing="10" cellpadding="4">
+    <tr>
+        <td>
+            <font size=2><strong>Valor Total a Vista: R$<?php echo $model->valorLiquido; ?></strong></font>
+        </td>
+        <td>
+            <font size=2><strong>Valor Total a Prazo: R$<?php echo $model->valorBruto; ?></strong></font>
+        </td>
+    </tr>
     <tr>
         <td colspan="3">
             <font size=1>Documentos Necessários: Identidade com foto atual, carteira nacional de habilitação,
