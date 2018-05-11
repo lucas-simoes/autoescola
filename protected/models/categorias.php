@@ -83,6 +83,10 @@ class categorias extends CActiveRecord
 		$criteria->compare('nome',$this->nome,true);
 
 		$criteria->compare('empresasId',$this->empresasId);
+                
+                if (!Yii::app()->user->isAdmin) {
+                    $criteria->condition = 'empresasId = ' . Yii::app()->user->Empresa;
+                }
 
 		return new CActiveDataProvider('categorias', array(
 			'criteria'=>$criteria,

@@ -130,6 +130,10 @@ class orcamentos extends CActiveRecord
 		$criteria->compare('empresasId',$this->empresasId);
                 
                 $criteria->compare('categoriaid',$this->categoriaid);
+                
+                if (!Yii::app()->user->isAdmin) {
+                    $criteria->condition = 'empresasId = ' . Yii::app()->user->Empresa;
+                }
 
 		return new CActiveDataProvider('orcamentos', array(
 			'criteria'=>$criteria,

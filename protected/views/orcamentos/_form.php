@@ -87,7 +87,7 @@
                         <?php 
                             if (!Yii::app()->user->isAdmin) {
                                 if ($model->isNewRecord) {
-                                    echo CHtml::hiddenField('empresasId', Yii::app()->user->Empresa);
+                                    echo CHtml::hiddenField('orcamentos[empresasId]', Yii::app()->user->Empresa);
                                 } else {
                                     echo $form->hiddenField($model, 'empresasId');
                                 } 
@@ -105,7 +105,11 @@
                                     
                                     
                                     <?php echo $form->labelEx($model, 'categoriaid'); ?>
+                                    <?php if (Yii::app()->user->isAdmin) : ?>
                                     <?php echo $form->dropDownList($model, 'categoriaid', CHtml::listData(categorias::model()->findAll(), 'id', 'nome'), array('class'=>'form-control', 'empty'=>'')); ?>
+                                    <?php else : ?>
+                                    <?php echo $form->dropDownList($model, 'categoriaid', CHtml::listData(categorias::model()->findAllByAttributes(array('empresasId'=>Yii::app()->user->Empresa)), 'id', 'nome'), array('class'=>'form-control', 'empty'=>'')); ?>
+                                    <?php endif; ?>
                                     <?php echo $form->error($model, 'categoriaid') ?>
                                 </div>
                             </div>
