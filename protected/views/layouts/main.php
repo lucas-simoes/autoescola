@@ -89,7 +89,21 @@
         </ul>
       </div>
     </nav>
+    <div class="col-lg-12 col-md-12" style="background-color: red">
+        <?php 
+            $data1 = new DateTime( '2018-06-7' );
+            $data2 = new DateTime(date('y-m-d', time()));
+
+            $intervalo = $data1->diff( $data2 );
+        ?>
+        <p style="text-align: center; color: white">
+            <strong>
+                Atenção! O prazo de validade da licença do sistema expira em <?php echo $intervalo->d; ?> dias!
+                Por favor entre em contato com o suporte.
+            </strong></p>
+    </div>   
   </header>
+  
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
