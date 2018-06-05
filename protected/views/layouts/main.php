@@ -89,7 +89,7 @@
         </ul>
       </div>
     </nav>
-    <div class="col-lg-12 col-md-12" style="background-color: red">
+    <div class="col-lg-12 col-md-12" style="background-color: red; display: none">
         <?php 
             $data1 = new DateTime( '2018-06-7' );
             $data2 = new DateTime(date('y-m-d', time()));
